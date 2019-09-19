@@ -18,7 +18,7 @@
     <TextBlock
       type="text-center"
       title="Lid zijn is meedoen!"
-      text="Een hoop activiteiten organiseren we voor iedereen. Maar als lid krijg je natuurlijk veel meer voordelen! Je krijgt dan korting bij activiteiten, wordt ook uitgenodigd voor activiteiten die exclusief voor leden zijn, kan reageren op vacatures voor onder andere stages en kun je meebouwen aan de vereniging. "
+      text="Een hoop activiteiten organiseren we voor iedereen. Maar als lid krijg je natuurlijk veel meer voordelen! Je krijgt dan korting bij activiteiten of je wordt uitgenodigd voor activiteiten die exclusief voor leden zijn. Ook kunnen we je helpen met het zoeken van een stage en kan je er altijd terecht als je ergens niet uitkomt. Interesse?"
       readMoreButtonText="Word lid"
       :contained="true"
       :button="{
@@ -27,11 +27,10 @@
       }"
     />
 
-    <ImageBlock
-      type="image-right"
-      title="Commissie of bestuur?"
-      text="Lijkt het je leuk om je een jaar lang naast je studie keihard in te zetten voor de vereniging? We zijn op zoek naar een nieuw bestuur! Als bestuur ben je het gezicht van de vereniging en bepaal je welke kant de vereniging opgaat het komende collegejaar. Tijdens een bestuursjaar leer je een hoop en ontmoet je heel veel enthousiaste mensen. Wil je meer weten? "
-      image="https://indicium.hu/thumbs/800x800r/2019-03/dsc-5016.jpg"
+    <TextBlock
+      type="text-center"
+      title="Commissies?"
+      text="Lijkt je het leuk om de vereniging te helpen door het meeorganiseren van activiteiten, zoals borrels, feestjes, gastcolleges, lunchlezingen, reizen, of wil je je programmeerskills verbeteren? Neem eens een kijkje bij onze commissies, deze commissies bestaan uit enthousiaste leden die helpen om de vereniging draaiende te houden. Wil je meer informatie of wil je weten wat voor commissies er allemaal zijn?"
       :contained="true"
       :button="{
         text: 'Meer weten',
