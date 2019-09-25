@@ -67,7 +67,7 @@ export default {
       return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, '')
     },
     fetchEvents() {
-      axios.get('http://old.indicium.hu/json/events?page%5Bsize%5D=1000')
+      axios.get('https://old.indicium.hu/json/events?page%5Bsize%5D=1000')
         .then((response) => {
           const events = response.data.data
           const today = new Date().getTime()
@@ -77,7 +77,7 @@ export default {
               title: evt.attributes.title,
               description: this.stripHTMLFromString(evt.attributes.contentblocks[0].content),
               date: new Date(evt.attributes.start).getTime() / 1000,
-              url: `evenement/${evt.attributes.slug}`,
+              url: `https://old.indicium.hu/evenement/${evt.attributes.slug}`,
               categories: evt.attributes.categories
             }))
 

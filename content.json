@@ -122,6 +122,16 @@
             "text": "Bezoek website",
             "url": "https://www.axians.nl/"
           }
+        },
+        {
+          "title": "Utrecht Promotions",
+          "description": "Utrecht promotions is onze textieldrukker die de bedrukking op onze kleding regelt.",
+          "imgUrl": "/partners/utrecht-promotions-logo.png",
+          "type": "image-right",
+          "button": {
+            "text": "Bezoek website",
+            "url": "https://www.utrecht-promotions.nl/"
+          }
         }
       ]
     },

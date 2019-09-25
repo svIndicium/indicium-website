@@ -15,8 +15,8 @@ node_js:
 
 env:
   global:
-    - secure: "QykKHxCXS3At+/EoaVNPOfP7r74h2zrbtI3/8PO6AJSfGrpKzWPgyUcoWhIk/rTHesqg+3tdf8Vk+yNh+9vKKEVktj2FVtG6LZVeiVd0gBl2EYO9t4271DYTfsWonGmN3W7owej+brtYLyJ7Ov9Hv15hJpzLGjn0yDw5Y/K7DuLGOnqqUcyRLPyw99OgojgLp3gh91+VV4aGhzYKIYYOoVA648sZyfqYhnTzjDs4I/w/Xx+vidac3n4e3nhQ3lZuLwlv9dOeVgpNxQKuM0rXKMCztnFhTS8MgpmCQ/vZ8SERbNp7CTQ59ht3/KvbVVwe6rVCB1cyvtbb01PiJEMBtb3NRsbGEGycbMXOaHu8zuQ/Gj7yPPgHmFflOyQ+jftSrUwrggtNRpyLZam8TZpyDt+DWZ/U67ps8iC4qAa9KRIW5ZfX7SYaGWzpmccxNqxFKeti1UqRK0KPoYEOLKGnlYawa/L2BUZ0ZondNoMF59r89rBCbwONb8jY8qfzIL7HADfU7ZwOQP8HcjkzkiRVzY9PHwHkgS3IxLKg69ctyXv/RVT4qHbQrS/tRdScS6hnxPQSLRXBMvYTPKParUkKTMaCI9AxT3biixjJMwQaLaiucm1AtuI073kYA5edjhVNYwGloZJvwA+qf7QUxxXD/vcfYnFTglLiaWBWGyRZbGw="
-    - secure: "XsfbkDGoMmp4jWzzPDRmIjNH7l5utWj6fDRZoyqRg06PY5DGsz3XRTMtvQrAG01NJB2VB0sCtBGb+FUxSfqvhPaSLMbswzWahEn6wKjvqEu3js7fSQ6EMZ9ChpMf4mhW5B/zcmN9BWIQCu1LJUnhUfOqlhvRTez7PP1z4RVjkwFZQBsWIlTz4WbmU98e8BB3f6BI++UGrqaIhYdIK32W+97/itjnxzXL6GmObKijw5d200cnt/VMWpNZ86OdlxC5LiJMmhM5MIFF6raIavOqaGgQ0O2VQTGtEuqkYD8N0NM9W8HX9RaMllLLM8IeLoZN1cbDKAgnYDSxL6wjV9JPUFEoRc0sqpupZjhQDSyvsvivpLSx7AQIQH77f+eJ5diAYH+HnVdqQYHDKm/Oihc+PzfzSJ6C5SwOQB8Wosqq2l2DgduU06XpISHFPTib4Z58NUC7B68SQ9cUFtb75EY0V6C6nTdzbosbGV8/yqPyZVp1htYybJHY+ct41mLDjAfCW7y2JqC9kkGpE7ipUmxxk5TmSdUFy8JEIBLDfIG7CUcpZb5csShB15mJeyGSlBOytsMONIIaQhKAm9mlgx4aVM/Xaqi5fQJhuoup8wg/PwVTEwQgY8r0oj0OXbI2oGvrcDpXh1ObyrP61DGuHvl6ec42+GxO14BpLPdG/31c2+M="
+    - secure: "KY6dbvmi9Otm85l+HnMp6kQSiIo0QiQk2u0aXI6k4U/G2muhdPXbUkhB7uJdDjP5AkO3O8VsdekVIOS0x4rrLCPNVlbdLaeY2LAKayKlg3esh50J7g/6AKK65THgM1vY5GgR7Z51kEkvR4AJcx3b3hGw0IIho+CU3XoMT6Il0WvXZsS4F843eTRl2KH23x8Ng3tkO8Yo0c2xOuETA8xoRs88hd+MYBpII0Pk1vs5eZQaMyMPeAdE7q8kCo4NYhcRoQpP7xbxD7DOOBH/Qj+fIvZIfjggBTQi28x5k9MAESrKaXmcs2Eod+xtD/gw+zqSKHEnYE02vgAaRqrfYwfdiNqdyRyIpITom0+lnM9jmgt4dq28k5gE7PngA2TL/g2nOf8KJez8cgCxm+uyqM768V6PnnmPxANwTh7Tk0ca9vnHag1O+upzOyDGR/K306Hvh5B3br2Cx9Ir04aqa3uaE8k+qKVGLeY3LVlGIut1lFCSS366COpBfDS1yVwJS9chZ/E01lOVoszlMTqc8VDbQRsyUg4zdHyHn3KK7mvAlYnbTW/BQugwqhcCWy49u+itMzXhSC1X+BSyWFL7R+GsvzG6eS3PNwgaFPT0W2mo4vXN+wKwB26DQd6LsT6Q4WP5ZBfJb03cfn/p49wQTc9ritWZGbDBumVDmiofBq2nqpA="
+    - secure: "VsFDd1DXtO8Ldy95H2igrEyZnAjenRphAb04cIm7yaUdSGyxinjR3/kicIPQigqlaN+F4FllhBqCGsjhMH5WOEsq03DEbedOld08iSzxMLPXGEj+wpuPeEge553RdGplURTcF5GFT+kMCoVyBopMmiB+mQ2KGX4bpDeFrbWf9Lo7TnWKrN192SZ3JF2TetO1bF50pbDHCOkWD7uQZCMUFOZnaPWHgQJCF/KHPeke1uctkVVMmEBE4HBBxj8PtnLEnlTha0GESRRjHp7aSr7otAj0aW80LIEseTc2bUOV3LXZBtB9nVqbPE2PNLMzeW/DlVt+33njIRe8y0Y5KhizD8CSsLgzNym/IigKo0GP2Apbeuhxi8M9UFiyNKWl8sxkFAmQjAYn4AqoxGj34PQJdMrfa68UqxEZcFtExb0GvjvLtBnjmGErbYZvsfQTinzvpPAI7zmvxkbgiY2aOMt5hIEo6mdw+exSutTMII1puTLGPEXBxc4UCcTT+YQjapXGaV8cEoybl0pXP7+pdiAdIjqrg5rIhAgExsXtrCLQAG/0iiII/vRnrTyZM8NFkLADZicv7UxcWAdJ42euwZoW6C2IwI0CGg8K7g9+OVJjVsYUpIt76jQhQyKuTRFnmjHJ58O3RhbKCobswzEQvpBZID1waX45fJn/Bws3oR269qg="
 
 
 addons:
@@ -36,13 +36,13 @@ script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sonar-scanner; fi'
   - echo "Skipping tests"
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "stable"; elif [ "$TRAVIS_BRANCH" == "dev" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
-  - docker build -t svindicium/website:$TAG .
+  - docker build -t docker.pkg.github.com/svindicium/website-2019/website:$TAG .
 
 deploy:
   provider: script
   script:
-    echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin;
-    docker push svindicium/website:$TAG;
+    echo "$DOCKER_PASS" | docker login docker.pkg.github.com -u "$DOCKER_USER" --password-stdin;
+    docker push docker.pkg.github.com/svindicium/website-2019/website:$TAG;
   on:
     all_branches: true
 

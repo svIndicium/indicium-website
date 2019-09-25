@@ -35,7 +35,7 @@ export default {
         title: event.attributes.title,
         start: event.attributes.start,
         end: event.attributes.end,
-        url: `evenement/${event.attributes.slug}`,
+        url: `https://old.indicium.hu/evenement/${event.attributes.slug}`,
         allday: true
       }))
 
