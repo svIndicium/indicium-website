@@ -9,7 +9,7 @@
           </li>
         </ul>
         <div class="contrast-toggle">
-          <input id="contrast-toggle" type="checkbox" @change="changeContrast"/>
+          <input id="contrast-toggle" type="checkbox" @change="changeContrast" />
           <label for="contrast-toggle">Hoger contrast</label>
         </div>
       </div>
@@ -18,12 +18,7 @@
         <h4>Contact</h4>
         <ul class="footer-menu contact">
           <li v-for="(value, key) in contactInfo" :key="key">
-            <a v-if="key === 'email'" :href="'mailto:' + value">
-              {{ value }}
-            </a>
-            <span v-else>
-              {{ value }}
-            </span>
+            {{ value }}
           </li>
         </ul>
       </div>
@@ -33,12 +28,6 @@
 
 <script>
 export default {
-  methods: {
-    changeContrast(e) {
-      const isChecked = e.target.checked
-      document.documentElement.style.setProperty('--text-color', isChecked ? '#000' : '#8d8f91')
-    }
-  },
   data: () => ({
     contactInfo: {
       address: 'Heidelberglaan 15',
@@ -63,10 +52,10 @@ export default {
         title: 'Over Indicium',
         link: '/over-indicium'
       },
-      {
-        title: 'Uitleenservice',
-        link: '#'
-      },
+      // {
+      //   title: 'Uitleenservice',
+      //   link: '#'
+      // },
       {
         title: 'Activiteiten',
         link: '/activiteiten'
@@ -80,7 +69,13 @@ export default {
         link: '/privacypolicy'
       }
     ]
-  })
+  }),
+  methods: {
+    changeContrast(e) {
+      const isChecked = e.target.checked
+      document.documentElement.style.setProperty('--text-color', isChecked ? '#000' : '#8d8f91')
+    }
+  }
 
 }
 </script>

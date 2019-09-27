@@ -2,6 +2,9 @@
   <a v-if="url.startsWith('http')" :href="url" :class="['btn', size, center ? 'center' : '']">
     <slot></slot>
   </a>
+  <a v-else-if="url.startsWith('mailto:')" :href="url" :class="['btn', size, center ? 'center' : '']">
+    <slot></slot>
+  </a>
   <n-link v-else :to="url" :class="['btn', size, center ? 'center' : '']">
     <slot></slot>
   </n-link>
