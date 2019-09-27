@@ -132,7 +132,7 @@ export default {
   &.text-center {
     text-align: center;
     @media screen and (max-width: $bp-tablet-sm) {
-      margin: 0 16px;
+      margin: 0;
       text-align: left;
     }
   }

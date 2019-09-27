@@ -161,8 +161,8 @@ export default {
     .close {
       display: block;
       position: absolute;
-      top:16px;
-      right: 16px;
+      top: 24px;
+      right: 24px;
     }
   }
 }

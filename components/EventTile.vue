@@ -32,7 +32,7 @@ export default {
     },
     getCategoryColors() {
       return this.allCategories.reduce((activeCategories, category) => {
-        if(this.event.categories !== '') {
+        if (this.event.categories !== '') {
           const categories = this.event.categories.map(c => c)
           if (categories.includes(category.courseTitle)) {
             activeCategories.push(category)

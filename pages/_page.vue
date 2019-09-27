@@ -1,36 +1,34 @@
 <template>
-<div :class="['page', $route.params.page]">
-  <div class="container">
-    <div v-for="(contentObj, idx) in page.content" :key="idx">
+  <div :class="['page', $route.params.page]">
+    <div class="container">
+      <div v-for="(contentObj, idx) in page.content" :key="idx">
+        <div v-if="contentObj.type.startsWith('text')">
+          <TextBlock
+            :type="contentObj.type"
+            :title="contentObj.title"
+            :subTitle="contentObj.subTitle"
+            :text="contentObj.description"
+            :button="contentObj.button"
+            :card="contentObj.card"
+            :textLink="contentObj.textLink"
+          />
+        </div>
 
-      <div v-if="contentObj.type.startsWith('text')">
-        <TextBlock
-          :type="contentObj.type"
-          :title="contentObj.title"
-          :subTitle="contentObj.subTitle"
-          :text="contentObj.description"
-          :button="contentObj.button"
-          :card="contentObj.card"
-          :textLink="contentObj.textLink"
-        />
-      </div>
-
-      <div v-if="contentObj.type.startsWith('image')">
-        <ImageBlock
-          :type="contentObj.type"
-          :title="contentObj.title"
-          :text="contentObj.description"
-          :image="contentObj.imgUrl"
-          :button="contentObj.button"
-        />
+        <div v-if="contentObj.type.startsWith('image')">
+          <ImageBlock
+            :type="contentObj.type"
+            :title="contentObj.title"
+            :text="contentObj.description"
+            :image="contentObj.imgUrl"
+            :button="contentObj.button"
+          />
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
-/* eslint-disable */
 import content from '../content.json'
 
 import TextBlock from '../components/TextBlock'
@@ -41,7 +39,7 @@ export default {
     TextBlock,
     ImageBlock
   },
-  data:() => ({
+  data: () => ({
     page: {}
   }),
   validate({ params }) {

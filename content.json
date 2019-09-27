@@ -136,6 +136,21 @@
       ]
     },
     {
+      "slug": "privacypolicy",
+      "title": "Privacy Policy",
+      "content": [
+        {
+          "title": "Privacy Policy",
+          "description": "Onze privacy policy kan je hieronder downloaden!",
+          "type": "text-center",
+          "button": {
+            "text": "Download",
+            "url": "https://indicium.hu/privacypolicy.pdf"
+          }
+        }
+      ]
+    },
+    {
       "slug": "statuten",
       "title": "Statuten",
       "content": [

@@ -2,8 +2,8 @@
   <div class="heading">
     <AnimatedLine :top="0" right="-10px" :interval="2000" :doHideMobile="true" />
     <AnimatedLine right="75px" :bottom="0" :interval="4000" :rotate="90" :doHideMobile="true" />
-    <AnimatedLine right="115px" :bottom="0" :interval="6000" :rotate="90" :doHideMobile="true"/>
-    <AnimatedLine :left="0" top="28px" :interval="8000" :rotate="180" :doHideMobile="true" />
+    <AnimatedLine right="115px" :bottom="0" :interval="6000" :rotate="90" :doHideMobile="true" />
+    <AnimatedLine left="-16px" top="28px" :interval="8000" :rotate="180" :doHideMobile="true" />
 
     <AnimatedLine left="-10%" bottom="28px" :interval="2500" :rotate="180" :doHideMobile="false" />
     <AnimatedLine left="40vw" top="2px" :interval="3500" :rotate="45" :doHideMobile="false" />
@@ -11,11 +11,13 @@
     <div class="heading-content">
       <img class="logo" src="/logo/indicium-logo-top.svg" alt="Indicium Logo" />
 
-      <h1 class="fadeInUp">Wij zijn de <span class="bold">studie</span>vereniging voor HBO-ICT van Hogeschool Utrecht</h1>
+      <h1 class="fadeInUp">
+        Wij zijn de <span class="bold">studie</span>vereniging voor HBO-ICT van Hogeschool Utrecht
+      </h1>
 
       <div class="buttons fadeInUp">
         <Button size="l" url="https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform">
-          Wordt lid
+          Word lid
         </Button>
         <TextLink url="/activiteiten">
           Bekijk agenda
@@ -29,7 +31,6 @@
 import Button from '../components/interactions/button'
 import TextLink from '../components/interactions/TextLink'
 import AnimatedLine from '../components/AnimatedLine'
-import NavToggle from '../components/NavToggle'
 
 export default {
   name: 'Heading',

@@ -67,6 +67,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/scss/variables.scss';
+
 .image-block {
   max-width: 928px;
   margin: 0 auto;
@@ -87,13 +89,11 @@ export default {
       flex-basis: calc(50% - 32px);
       padding: 0 16px;
       min-width: 348px;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
 
       @media screen and (min-width: 414px) {
         margin-top: 32px;
       }
+
       img {
         display: block;
         max-width: 100%;
@@ -103,6 +103,10 @@ export default {
       flex-grow: 1;
       flex-basis: calc(50% - 32px);
       padding: 0 16px;
+
+      @media screen and (max-width: $bp-tablet-sm) {
+        padding: 0;
+      }
     }
   }
 

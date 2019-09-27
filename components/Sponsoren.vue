@@ -1,11 +1,13 @@
 <template>
   <div class="sponsoren">
     <h5 class="center">Sponsoren</h5>
-    <slick
-      :options="slickOptions"
-    >
-      <img v-for="(s, idx) in sponsoren" :src="s.path" alt="sponsor logo title" :key="idx" />
-    </slick>
+    <!-- <n-link to="/partners"> -->
+      <slick
+        :options="slickOptions"
+      >
+        <img v-for="(s, idx) in sponsoren" :src="s.path" alt="sponsor logo title" :key="idx" />
+      </slick>
+    <!-- </n-link> -->
   </div>
 </template>
 
