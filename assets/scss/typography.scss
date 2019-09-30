@@ -1,6 +1,8 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
 h1 {
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 140%;
   font-style: normal;
   color: var(--text-color);
@@ -17,7 +19,7 @@ h1 {
 
 h2 {
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 500;
   line-height: 140%;
   color: var(--text-color);
 
@@ -34,7 +36,7 @@ h3 {
   font-size: 32px;
   line-height: 140%;
   color: var(--text-color);
-  font-weight: 600;
+  font-weight: 500;
 
   @media screen and (max-width: $bp-tablet-md) {
     font-size: 28px;
@@ -47,7 +49,7 @@ h3 {
 
 h4 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 140%;
   color: var(--text-color);
   margin: 8px 0;
@@ -55,7 +57,7 @@ h4 {
 
 h5 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 140%;
   color: var(--text-color);
   margin-bottom: 8px;
@@ -87,7 +89,7 @@ a {
     letter-spacing: -.2px;
     line-height: 24px;
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
 
     &::after {
       content: '';
@@ -108,8 +110,11 @@ a {
 
 
 span {
+  &.extra-bold {
+    font-weight: 900;
+  }
   &.bold {
-    font-weight: 800;
+    font-weight: 700;
   }
 
   &.medium {
@@ -117,7 +122,7 @@ span {
   }
 
   &.light {
-    font-weight: 200;
+    font-weight: 300;
   }
 }
 

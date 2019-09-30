@@ -97,7 +97,7 @@ export default {
 
 .events-container {
   max-width: 1084px;
-  margin: 40px auto;
+  margin: 0 auto 128px;
 
   .categories {
     ul {

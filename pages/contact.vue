@@ -1,25 +1,28 @@
 <template>
   <div class="container contact">
-    <h1> Contact </h1>
+    <h2>{{ page.title }}</h2>
 
     <div class="flex">
       <div class="column left">
         <ul>
-          <li>Heidelberglaan 15</li>
-          <li>3584 CS Utrecht</li>
-          <li>HL15-4.092</li>
-          <li>bestuur@indicium.hu</li>
+          <li v-for="(obj, idx) in getBlockContentByTitle('Info', page.content).list" :key="idx">
+            <span class="medium">{{ obj.label }}</span>
+            :
+            {{ obj.value }}
+          </li>
         </ul>
 
-        <p>KVK: 68788878</p>
         <p>Of stuur direct een email naar het bestuur:</p>
-        <Button size="l" url="mailto:bestuur@indicium.hu">
-          Mail direct
-        </Button>
+        <Button size="l" url="mailto:bestuur@indicium.hu">Mail direct</Button>
       </div>
       <div class="column right">
         <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.7310543306226!2d5.173675415856721!3d52.08462557973417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6693e9a2d0c9f%3A0xa9867c6558813da4!2sHogeschool%20Utrecht%2C%20Heidelberglaan%2015%2C%203584%20CS%20Utrecht!5e0!3m2!1sen!2snl!4v1568892960255!5m2!1sen!2snl" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.7310543306226!2d5.173675415856721!3d52.08462557973417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6693e9a2d0c9f%3A0xa9867c6558813da4!2sHogeschool%20Utrecht%2C%20Heidelberglaan%2015%2C%203584%20CS%20Utrecht!5e0!3m2!1sen!2snl!4v1568892960255!5m2!1sen!2snl"
+            frameborder="0"
+            style="border:0;"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
@@ -27,18 +30,40 @@
 </template>
 
 <script>
-import Button from '../components/interactions/button'
+import Button from '../components/interactions/button';
+import { getBlockContentByTitle, getPageData } from '../utils';
 
 export default {
   name: 'Contact',
   components: {
     Button
+  },
+  methods: {
+    getBlockContentByTitle: getBlockContentByTitle
+  },
+  data: () => ({
+    page: getPageData('contact')
+  }),
+  head() {
+    return {
+      title: this.page.title !== undefined ? this.page.title : content.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            this.page.description !== undefined
+              ? this.page.description
+              : content.description
+        }
+      ]
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/scss/variables.scss';
+@import '../assets/scss/variables.scss';
 .contact {
   padding-bottom: 64px;
 
@@ -72,7 +97,7 @@ export default {
       width: 100%;
       height: 100%;
       display: block;
-      background: #DBEDEA;
+      background: #dbedea;
       border-radius: 4px;
       z-index: -1;
     }

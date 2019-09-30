@@ -12,7 +12,7 @@
       <img class="logo" src="/logo/indicium-logo-top.svg" alt="Indicium Logo" />
 
       <h1 class="fadeInUp">
-        Wij zijn dé <span class="bold">studie</span>vereniging voor HBO-ICT van Hogeschool Utrecht
+        Wij zijn dé <span class="extra-bold">studie</span>vereniging voor HBO-ICT van Hogeschool Utrecht
       </h1>
 
       <div class="buttons fadeInUp">

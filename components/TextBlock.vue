@@ -1,8 +1,8 @@
 <template>
   <div v-if="type === 'text-center'" :class="['text-block', type, { contained }, { card }]">
-    <h1 v-if="title">
+    <h2 v-if="title">
       {{ title }}
-    </h1>
+    </h2>
     <h4 v-if="subTitle">
       {{ subTitle }}
     </h4>
@@ -18,9 +18,9 @@
   </div>
 
   <div v-else-if="type === 'text-left'" :class="['text-block', type, { contained }, { card }]">
-    <h1 v-if="title">
+    <h2 v-if="title">
       {{ title }}
-    </h1>
+    </h2>
     <h4 v-if="subTitle">
       {{ subTitle }}
     </h4>
@@ -36,9 +36,9 @@
   </div>
 
   <div v-else-if="type === 'text-right'" :class="['text-block', type, { contained }, { card }]">
-    <h1 v-if="title">
+    <h2 v-if="title">
       {{ title }}
-    </h1>
+    </h2>
     <h4 v-if="subTitle">
       {{ subTitle }}
     </h4>
@@ -54,9 +54,9 @@
   </div>
 
   <div v-else class="text-block">
-    <h1 v-if="title">
+    <h2 v-if="title">
       {{ title }}
-    </h1>
+    </h2>
     <h4 v-if="subTitle">
       {{ subTitle }}
     </h4>
@@ -123,7 +123,11 @@ export default {
 @import '../assets/scss/variables.scss';
 
 .text-block {
-  margin: 0 auto 48px;
+  margin: 0 auto 128px;
+
+  @media screen and (max-width: $bp-tablet-sm) {
+    margin: 0 auto 48px;
+  }
 
   &.contained {
     max-width: 928px;

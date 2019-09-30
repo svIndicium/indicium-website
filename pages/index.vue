@@ -8,9 +8,9 @@
 
     <div class="container">
       <TextBlock
-        type="text-center"
-        title="Over Indicium"
-        text="Wij zijn dé studievereniging voor HBO-ICT van Hogeschool Utrecht. We organiseren het hele jaar door activiteiten zoals bedrijfsbezoeken, kroegcolleges, gastcolleges, lunchlezingen, en nog veel meer over allerlei verschillende onderwerpen. Maar we organiseren natuurlijk ook activiteiten voor gezelligheid! Kom eens langs op onze borrels, LAN-party's of iets anders dat we organiseren!"
+        :type="getBlockContentByTitle('Over Indicium', page.content).type"
+        :title="getBlockContentByTitle('Over Indicium', page.content).title"
+        :text="getBlockContentByTitle('Over Indicium', page.content).description"
         :contained="true"
       />
     </div>
@@ -19,35 +19,30 @@
 
     <div class="container">
       <TextBlock
-        type="text-center"
-        title="Lid zijn is meedoen!"
-        text="Een hoop activiteiten organiseren we voor iedereen. Maar als lid krijg je natuurlijk veel meer voordelen! Je krijgt dan korting bij activiteiten of je wordt uitgenodigd voor activiteiten die exclusief voor leden zijn. Ook kunnen we je helpen met het zoeken van een stage en kan je er altijd terecht als je ergens niet uitkomt. Interesse?"
-        readMoreButtonText="Word lid"
+        :type="getBlockContentByTitle('Lid zijn is meedoen!', page.content).type"
+        :title="getBlockContentByTitle('Lid zijn is meedoen!', page.content).title"
+        :text="getBlockContentByTitle('Lid zijn is meedoen!', page.content).description"
+        :button="getBlockContentByTitle('Lid zijn is meedoen!', page.content).button"
         :contained="true"
-        :button="{
-          text: 'Direct Inschrijven',
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform'
-        }"
       />
       <TextBlock
-        type="text-center"
-        title="Commissies?"
-        text="Lijkt je het leuk om de vereniging te helpen door het meeorganiseren van activiteiten, zoals borrels, feestjes, gastcolleges, lunchlezingen, reizen, of wil je je programmeerskills verbeteren? Neem eens een kijkje bij onze commissies, deze commissies bestaan uit enthousiaste leden die helpen om de vereniging draaiende te houden. Wil je meer informatie of wil je weten wat voor commissies er allemaal zijn?"
+        :type="getBlockContentByTitle('Commissies?', page.content).type"
+        :title="getBlockContentByTitle('Commissies?', page.content).title"
+        :text="getBlockContentByTitle('Commissies?', page.content).description"
+        :button="getBlockContentByTitle('Commissies?', page.content).button"
         :contained="true"
-        :button="{
-          text: 'Meer weten',
-          url: '/over-indicium'
-        }"
       />
     </div>
   </div>
 </template>
 
 <script>
-import Heading from '../components/Heading'
-import Sponsoren from '../components/Sponsoren'
-import TextBlock from '../components/TextBlock'
-import Events from '../components/Events'
+import Heading from '../components/Heading';
+import Sponsoren from '../components/Sponsoren';
+import TextBlock from '../components/TextBlock';
+import Events from '../components/Events';
+import content from '../content.json';
+import { getBlockContentByTitle, getPageData } from '../utils';
 
 export default {
   name: 'Home',
@@ -57,10 +52,26 @@ export default {
     TextBlock,
     Events
   },
+  methods: {
+    getBlockContentByTitle: getBlockContentByTitle
+  },
+  data: () => ({
+    page: getPageData('')
+  }),
   head() {
     return {
-      title: 'Indicium'
-    }
+      title: this.page.title !== undefined ? this.page.title : content.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            this.page.description !== undefined
+              ? this.page.description
+              : content.description
+        }
+      ]
+    };
   }
-}
+};
 </script>
