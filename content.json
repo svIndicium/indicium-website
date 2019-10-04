@@ -176,6 +176,7 @@
       ]
     },
     {
+      "render": true,
       "slug": "privacypolicy",
       "title": "Privacy Policy",
       "content": [
