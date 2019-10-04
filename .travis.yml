@@ -36,13 +36,13 @@ script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sonar-scanner; fi'
   - echo "Skipping tests"
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "stable"; elif [ "$TRAVIS_BRANCH" == "dev" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
-  - docker build -t docker.pkg.github.com/svindicium/website-2019/website:$TAG .
+  - docker build -t docker.pkg.github.com/svindicium/indicium-website/website:$TAG .
 
 deploy:
   provider: script
   script:
     echo "$DOCKER_PASS" | docker login docker.pkg.github.com -u "$DOCKER_USER" --password-stdin;
-    docker push docker.pkg.github.com/svindicium/website-2019/website:$TAG;
+    docker push docker.pkg.github.com/svindicium/indicium-website/website:$TAG;
   on:
     all_branches: true
 
