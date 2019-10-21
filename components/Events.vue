@@ -48,7 +48,7 @@ export default {
         hex: 'A2E172'
       },
       {
-        courseTitle: 'SNE',
+        courseTitle: 'CSC',
         hex: 'E1DB72'
       },
       {
