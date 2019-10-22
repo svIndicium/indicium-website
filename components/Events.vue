@@ -6,14 +6,14 @@
 
     <div class="categories">
       <ul>
-        <li v-for="(category, idx) in allCategories" :key="idx">
+        <li v-for="(category, idx) in allCategories" :key="idx" @click="filterCategories(category)" :class="{ 'in-active': !activeCategories.includes(category.courseTitle) }">
           <span :style="{backgroundColor: `#${category.hex}`}"></span>{{ category.courseTitle }}
         </li>
       </ul>
     </div>
 
     <div v-if="!isLoading && events.length > 0" class="events">
-      <EventTile v-for="(event, idx) in events" :key="idx" :event="event" :allCategories="allCategories" />
+      <EventTile v-for="(event, idx) in filteredEvents" :key="idx" :event="event" :allCategories="allCategories" />
     </div>
     <Loading v-else-if="isLoading" />
     <div v-else-if="!isLoading && events.length === 0">
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import axios from 'axios'
 import EventTile from './EventTile'
 import Loading from './Loading'
@@ -38,6 +39,7 @@ export default {
   data: () => ({
     isLoading: true,
     events: [],
+    activeCategories: ['SD', 'TI', 'SNE', 'BIM', 'AI'],
     allCategories: [
       {
         courseTitle: 'SD',
@@ -64,6 +66,13 @@ export default {
   mounted() {
     this.fetchEvents()
   },
+  computed: {
+    filteredEvents() {
+      return this.events.filter(event => {
+          return event.categories.filter(cat => this.activeCategories.includes(cat)).length > 0;
+      })
+    }
+  },
   methods: {
     stripHTMLFromString(str = '') {
       return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, '')
@@ -87,6 +96,15 @@ export default {
           this.$set(this, 'isLoading', false)
           this.$set(this, 'events', featureEvents)
         })
+        .then(this.addSampleEvents)
+    },
+    filterCategories({ courseTitle }) {
+      const catIdx = this.activeCategories.indexOf(courseTitle)
+      if(this.activeCategories.includes(courseTitle)) {
+        this.activeCategories.splice(catIdx, 1)
+      } else {
+        this.activeCategories.push(courseTitle)
+      }
     }
   }
 }
@@ -110,6 +128,10 @@ export default {
         align-items: center;
         padding: 16px;
 
+        &.in-active span {
+          background-color: lightgrey !important;
+        }
+
         @media screen and (max-width: $bp-tablet-sm) {
           padding: 8px;
         }
@@ -120,12 +142,8 @@ export default {
           height: 24px;
           background-color: #f2f2f2;
           margin-right: 8px;
-          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 0 rgba(186, 186, 186, .3);
           transition: box-shadow 300ms;
-
-          &:hover {
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-          }
 
         }
       }

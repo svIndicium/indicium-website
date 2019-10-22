@@ -50,6 +50,6 @@ export default {
 @import "~/node_modules/@fullcalendar/daygrid/main.css";
 
 .fc-toolbar h2 {
-  font-size: 1rem !important;
+  font-size: 1.2rem !important;
 }
 </style>
