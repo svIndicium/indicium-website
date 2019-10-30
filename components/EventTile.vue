@@ -29,6 +29,7 @@ export default {
     toDateString() {
       const date = new Date(this.event.date * 1000)
       return `${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()}`
+
     },
     getCategoryColors() {
       return this.allCategories.reduce((activeCategories, category) => {
@@ -51,7 +52,7 @@ export default {
     }
   },
   methods: {
-    getMonthAsString(currentMonth) {
+    getMonthAsString(currentMonth = new Date().getMonth()) {
       const monthList = [
         'Januari',
         'Februari',
@@ -111,12 +112,12 @@ export default {
   }
 
   h4 {
-    color: #8d8f91;
+    color: var(--text-color);
     margin: 0;
   }
 
   p {
-    color: #8d8f91;
+    color: var(--text-color);
     margin: 0;
     text-overflow: ellipsis;
   }
