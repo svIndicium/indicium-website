@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     stripHTMLFromString(str = '') {
-      return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, '')
+      return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, ' ')
     },
     fetchEvents() {
       axios.get('https://old.indicium.hu/json/events?page%5Bsize%5D=1000')

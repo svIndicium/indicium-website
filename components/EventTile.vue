@@ -5,7 +5,7 @@
     </div>
     <h5>{{ toDateString }}</h5>
     <h4>{{ event.title }}</h4>
-    <p class="small">{{ event.description.slice(0, 140) }}</p>
+    <p class="small">{{ getDescription }}</p>
   </a>
 </template>
 
@@ -41,6 +41,13 @@ export default {
 
         return activeCategories
       }, [])
+    },
+    getDescription() {
+      const text = this.event.description.slice(0, 140).trim()
+      if (this.event.description.length > 140) {
+        return `${text}...`
+      }
+      return text
     }
   },
   methods: {
