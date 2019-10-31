@@ -8,7 +8,7 @@
         Gerelateerde studierichtingen: {{ page.categories.join(", ") }}
       </h5>
       <p v-if="page.description" v-html="page.description"></p>
-      <Button v-if="page.inschrijflink" :url="page.inschrijflink" size="l">
+      <Button v-if="page.inschrijflink" id="activity_sign_up" :url="page.inschrijflink" size="l">
         Schrijf je in
       </Button>
     </div>
@@ -35,6 +35,7 @@ export default {
     axios.get(`https://old.indicium.hu/json/events/${this.$route.params.activiteit.split('-').reverse()[0]}`)
       .then(res => res.data.data)
       .then(res => ({
+        id: res.id,
         title: res.attributes.title,
         inschrijflink: res.attributes.inschrijflink,
         description: res.attributes.contentblocks[0].content,
