@@ -69,25 +69,27 @@ export default {
   background-size: cover;
   position: relative;
   z-index: -11;
-  margin-top: -35px;
+  overflow: hidden;
+  //margin-top: -35px;
 
-  &:after {
-    content: '';
-    background-color: rgba(255, 255, 255, 1.0);
-    height: 300px;
-    width: 105%;
-    display: block;
-    position: absolute;
-    left: -10px;
-    bottom: -200px;
-    transform: rotate(-10deg);
-    z-index: -10;
-  }
 }
 
-  .container {
-    h2, p, button {
-      z-index: -9;
-    }
-  }
+ // .container {
+ //   position: relative;
+ //   overflow-x: hidden;
+//
+//    &:before {
+//      content: '';
+//      background-color: black;
+//      height: 300px;
+//      width: 120%;
+//      display: block;
+//      overflow: hidden;
+//      position: absolute;
+//      left: -10px;
+//      top: 0;
+//      transform: rotate(-10deg);
+//      z-index: -10;
+//     }
+//  }
 </style>
