@@ -1,72 +1,47 @@
 <template>
   <div :class="['page', $route.params.page]">
+    <div v-if="page.image" :style="{'background-image': 'url(' + page.image + ')'}" class="image-container">
+    </div>
     <div class="container">
-      <div v-for="(contentObj, idx) in page.content" :key="idx">
-        <div v-if="contentObj.type.startsWith('text')">
-          <TextBlock
-            :type="contentObj.type"
-            :title="contentObj.title"
-            :subTitle="contentObj.subTitle"
-            :text="contentObj.description"
-            :button="contentObj.button"
-            :card="contentObj.card"
-            :textLink="contentObj.textLink"
-          />
-        </div>
-
-        <div v-if="contentObj.type.startsWith('image')">
-          <ImageBlock
-            :type="contentObj.type"
-            :title="contentObj.title"
-            :text="contentObj.description"
-            :image="contentObj.imgUrl"
-            :button="contentObj.button"
-          />
-        </div>
-      </div>
+      <h2>{{ page.title }}</h2>
+      <h5 v-if="page.categories">
+        Gerelateerde studierichtingen: {{ page.categories.join(", ") }}
+      </h5>
+      <p v-if="page.description" v-html="page.description"></p>
+      <Button v-if="page.inschrijflink" :url="page.inschrijflink" size="l">
+        Schrijf je in
+      </Button>
     </div>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
+import axios from 'axios'
 
-  import TextBlock from '../../components/TextBlock'
-  import ImageBlock from '../../components/ImageBlock'
+import Button from '../../components/interactions/button'
 
-  export default {
+export default {
   components: {
-    TextBlock,
-    ImageBlock
+    Button
   },
   data: () => ({
     page: {}
   }),
   async validate({ params }) {
-    const { data } = await axios.get(`https://old.indicium.hu/json/events?filter[slug]=${params.activiteit}`)
-    return data.meta.count === 1
+    const { data } = await axios.get(`https://old.indicium.hu/json/events/${params.activiteit.split('-').reverse()[0]}`)
+    return data.data.id !== undefined
   },
-  async mounted() {
-    const { data } = await axios.get(`https://old.indicium.hu/json/events?filter[slug]=${this.$route.params.activiteit}`)
-    const pageData = this.transform(data.data[0])
-    this.$set(this, 'page', pageData)
-    console.log({ pageData })
-  },
-  methods: {
-    transform(oldSitePage) {
-      const newSitePage = {
-        title: oldSitePage.attributes.title,
-        content: [],
-      }
-      oldSitePage.attributes.contentblocks
-        .forEach((block) => {
-          newSitePage.content[newSitePage.content.length] = {
-            type: 'text-left',
-            description: block.content
-          }
-        })
-      return newSitePage
-    }
+  mounted() {
+    axios.get(`https://old.indicium.hu/json/events/${this.$route.params.activiteit.split('-').reverse()[0]}`)
+      .then(res => res.data.data)
+      .then(res => ({
+        title: res.attributes.title,
+        inschrijflink: res.attributes.inschrijflink,
+        description: res.attributes.contentblocks[0].content,
+        image: res.attributes.contentblocks.length > 1 ? res.attributes.contentblocks[1].image.url : null,
+        categories: res.attributes.categories
+      }))
+      .then(res => this.$set(this, 'page', res))
   },
   head() {
     return {
@@ -86,6 +61,32 @@
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.image-container {
+  height: 500px;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  z-index: -11;
+  margin-top: -35px;
 
+  &:after {
+    content: '';
+    background-color: rgba(255, 255, 255, 1.0);
+    height: 300px;
+    width: 105%;
+    display: block;
+    position: absolute;
+    left: -10px;
+    bottom: -200px;
+    transform: rotate(-10deg);
+    z-index: -10;
+  }
+}
+
+  .container {
+    h2, p, button {
+      z-index: -9;
+    }
+  }
 </style>
