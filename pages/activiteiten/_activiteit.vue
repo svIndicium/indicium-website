@@ -67,7 +67,7 @@ export default {
           }
         })
     }
-  }
+  },
   head() {
     return {
       title: this.page.title !== undefined ? this.page.title : 'Indicium',
