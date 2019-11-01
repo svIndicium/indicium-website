@@ -88,7 +88,7 @@ export default {
               title: evt.attributes.title,
               description: this.stripHTMLFromString(evt.attributes.contentblocks[0].content),
               date: new Date(evt.attributes.start).getTime() / 1000,
-              url: `https://old.indicium.hu/evenement/${evt.attributes.slug}`,
+              url: `/activiteiten/${evt.attributes.slug}-${evt.id}`,
               categories: evt.attributes.categories
             }))
 
