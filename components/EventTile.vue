@@ -5,7 +5,7 @@
     </div>
     <h5>{{ toDateString }}</h5>
     <h4>{{ event.title }}</h4>
-    <p class="small">{{ event.description.slice(0, 140) }}</p>
+    <p class="small">{{ getDescription }}</p>
   </a>
 </template>
 
@@ -29,6 +29,7 @@ export default {
     toDateString() {
       const date = new Date(this.event.date * 1000)
       return `${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()}`
+
     },
     getCategoryColors() {
       return this.allCategories.reduce((activeCategories, category) => {
@@ -41,10 +42,17 @@ export default {
 
         return activeCategories
       }, [])
+    },
+    getDescription() {
+      const text = this.event.description.slice(0, 140).trim()
+      if (this.event.description.length > 140) {
+        return `${text}...`
+      }
+      return text
     }
   },
   methods: {
-    getMonthAsString(currentMonth) {
+    getMonthAsString(currentMonth = new Date().getMonth()) {
       const monthList = [
         'Januari',
         'Februari',
@@ -104,12 +112,12 @@ export default {
   }
 
   h4 {
-    color: #8d8f91;
+    color: var(--text-color);
     margin: 0;
   }
 
   p {
-    color: #8d8f91;
+    color: var(--text-color);
     margin: 0;
     text-overflow: ellipsis;
   }
