@@ -8,7 +8,7 @@
         Gerelateerde studierichtingen: {{ page.categories.join(", ") }}
       </h5>
       <p v-if="page.description" v-html="page.description"></p>
-      <Button v-if="page.inschrijflink" id="activity_sign_up" :url="page.inschrijflink" size="l">
+      <Button v-if="page.signUpLink" id="activity_sign_up" :url="page.signUpLink" size="l">
         Schrijf je in
       </Button>
     </div>
@@ -27,17 +27,18 @@ export default {
   data: () => ({
     page: {}
   }),
-  async validate({ params }) {
-    const { data } = await axios.get(`https://old.indicium.hu/json/events/${params.activiteit.split('-').reverse()[0]}`)
-    return data.data.id !== undefined
+  validate({ params }) {
+    const activityId = params.activiteit.split('-').reverse()[0]
+    return /^\d+$/.test(activityId)
   },
   mounted() {
-    axios.get(`https://old.indicium.hu/json/events/${this.$route.params.activiteit.split('-').reverse()[0]}`)
+    const activityId = this.$route.params.activiteit.split('-').reverse()[0]
+    axios.get(`https://old.indicium.hu/json/events/${activityId}`)
       .then(res => res.data.data)
       .then(res => ({
         id: res.id,
         title: res.attributes.title,
-        inschrijflink: res.attributes.inschrijflink,
+        signUpLink: res.attributes.inschrijflink,
         description: res.attributes.contentblocks[0].content,
         image: res.attributes.contentblocks.length > 1 ? res.attributes.contentblocks[1].image.url : null,
         categories: res.attributes.categories
