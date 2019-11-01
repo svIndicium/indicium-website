@@ -1,6 +1,6 @@
 <template>
   <div v-if="error === null" :class="['page', $route.params.page]">
-    <div v-if="page.image" :style="{'background-image': 'url(' + page.image + ')'}" class="image-container">
+    <div v-if="page.image" :style="getHeaderImage" class="image-container">
     </div>
     <div class="container">
       <h2>{{ page.title }}</h2>
@@ -37,6 +37,11 @@ export default {
   validate({ params }) {
     const activityId = params.activiteit.split('-').reverse()[0]
     return /^\d+$/.test(activityId)
+  },
+  computed: {
+    getHeaderImage() {
+      return { 'background-image': `url(${this.page.image})` }
+    }
   },
   mounted() {
     const activityId = this.$route.params.activiteit.split('-').reverse()[0]
