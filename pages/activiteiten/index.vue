@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import content from '../content.json';
-import { getBlockContentByTitle, getPageData } from '../utils';
+import content from '../../content.json'
+import { getBlockContentByTitle, getPageData } from '../../utils'
 
 export default {
   data: () => ({
@@ -30,9 +30,9 @@ export default {
               : content.description
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

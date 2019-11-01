@@ -75,7 +75,8 @@ export default {
     { src: '~/plugins/busje', ssr: false },
   ],
   modules: [
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    ['@nuxtjs/google-tag-manager', {id: 'GTM-TPDRMLG'}]
   ],
   generate: {
     // routes: () => {

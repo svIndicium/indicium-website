@@ -3,7 +3,6 @@
     <h2 class="center">
       Opkomende activiteiten
     </h2>
-
     <div class="categories">
       <ul>
         <li v-for="(category, idx) in allCategories" :key="idx" @click="filterCategories(category)" :class="{ 'in-active': !activeCategories.includes(category.courseTitle) }">
@@ -89,7 +88,7 @@ export default {
               title: evt.attributes.title,
               description: this.stripHTMLFromString(evt.attributes.contentblocks[0].content),
               date: new Date(evt.attributes.start).getTime() / 1000,
-              url: `https://old.indicium.hu/evenement/${evt.attributes.slug}`,
+              url: `/activiteiten/${evt.attributes.slug}-${evt.id}`,
               categories: evt.attributes.categories
             }))
 
