@@ -84,7 +84,7 @@ export default {
 <style lang="scss" scoped>
 .image-container {
   height: 500px;
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   position: relative;
   z-index: -11;
