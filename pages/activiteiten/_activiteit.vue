@@ -1,5 +1,5 @@
 <template>
-  <div :class="['page', $route.params.page]">
+  <div v-if="error === null" :class="['page', $route.params.page]">
     <div v-if="page.image" :style="{'background-image': 'url(' + page.image + ')'}" class="image-container">
     </div>
     <div class="container">
@@ -13,6 +13,12 @@
       </Button>
     </div>
   </div>
+  <div v-else class="container">
+    <h2>Evenement niet gevonden!</h2>
+    <Button url="/activiteiten">
+      Ga terug
+    </Button>
+  </div>
 </template>
 
 <script>
@@ -25,7 +31,8 @@ export default {
     Button
   },
   data: () => ({
-    page: {}
+    page: {},
+    error: null
   }),
   validate({ params }) {
     const activityId = params.activiteit.split('-').reverse()[0]
@@ -44,6 +51,12 @@ export default {
         categories: res.attributes.categories
       }))
       .then(res => this.$set(this, 'page', res))
+      .catch((err) => {
+        this.error = {
+          statusCode: err.response.status,
+          message: err.response.data
+        }
+      })
   },
   head() {
     return {
