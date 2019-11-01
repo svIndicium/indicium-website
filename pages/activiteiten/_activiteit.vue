@@ -44,25 +44,30 @@ export default {
     }
   },
   mounted() {
-    const activityId = this.$route.params.activiteit.split('-').reverse()[0]
-    axios.get(`https://old.indicium.hu/json/events/${activityId}`)
-      .then(res => res.data.data)
-      .then(res => ({
-        id: res.id,
-        title: res.attributes.title,
-        signUpLink: res.attributes.inschrijflink,
-        description: res.attributes.contentblocks[0].content,
-        image: res.attributes.contentblocks.length > 1 ? res.attributes.contentblocks[1].image.url : null,
-        categories: res.attributes.categories
-      }))
-      .then(res => this.$set(this, 'page', res))
-      .catch((err) => {
-        this.error = {
-          statusCode: err.response.status,
-          message: err.response.data
-        }
-      })
+    this.fetchActivity()
   },
+  methods: {
+    fetchActivity() {
+      const activityId = this.$route.params.activiteit.split('-').reverse()[0]
+      axios.get(`https://old.indicium.hu/json/events/${activityId}`)
+        .then(res => res.data.data)
+        .then(res => ({
+          id: res.id,
+          title: res.attributes.title,
+          signUpLink: res.attributes.inschrijflink,
+          description: res.attributes.contentblocks[0].content,
+          image: res.attributes.contentblocks.length > 1 ? res.attributes.contentblocks[1].image.url : null,
+          categories: res.attributes.categories
+        }))
+        .then(res => this.$set(this, 'page', res))
+        .catch((err) => {
+          this.error = {
+            statusCode: err.response.status,
+            message: err.response.data
+          }
+        })
+    }
+  }
   head() {
     return {
       title: this.page.title !== undefined ? this.page.title : 'Indicium',
