@@ -1,11 +1,11 @@
 {
-  "title": "Indicium - ICT Studie vereniging",
+  "title": "Indicium - ICT Studievereniging",
   "description": "Wij zijn dé studievereniging voor HBO-ICT van Hogeschool Utrecht.",
   "pages": [
     {
       "render": false,
       "slug": "",
-      "title": "Indicium - ICT Studie vereniging",
+      "title": "Indicium - ICT Studievereniging",
       "description": "Wij zijn dé studievereniging voor HBO-ICT van Hogeschool Utrecht",
       "content": [
         {
@@ -45,7 +45,7 @@
       "content": [
         {
           "title": "Over Indicium",
-          "description": "Een vereniging van HBO-ICT-studenten die studeren aan de Hogeschool Utrecht. Deze hele vereniging wordt draaiende gehouden door deze studenten! ",
+          "description": "Indicium is een studievereniging van HBO-ICT-studenten die studeren aan de Hogeschool Utrecht. Deze hele vereniging wordt draaiende gehouden door deze studenten! ",
           "type": "text-center"
         },
         {
@@ -60,11 +60,11 @@
         {
           "title": "Commissies",
           "type": "text-left",
-          "description": "De verschillende activiteiten en acties worden geregeld door commissies. Wij houden van commissieleden, zo worden die uitgenodigd op exclusieve borrels, leuke uitjes en andere leuke voordelen!"
+          "description": "De verschillende activiteiten en acties worden geregeld door commissies. Wij houden van commissieleden, daarom worden ze uitgenodigd op exclusieve borrels, leuke uitjes en andere leuke voordelen!"
         },
         {
           "subTitle": "Activiteitencommissie",
-          "description": "De activiteitencommissie houd zich bezig met het organiseren van activiteiten van de vereniging. Ze organiseren bijvoorbeeld dingen zoals borrels, feestjes, reizen of andere niet-educatieve activiteiten zoals karten of bowlen!",
+          "description": "De activiteitencommissie houd zich bezig met het organiseren van activiteiten van de vereniging. Ze organiseert bijvoorbeeld borrels, feestjes, reizen of andere niet-educatieve activiteiten (denk aan karten of bowlen)!",
           "type": "text-left",
           "card": true,
           "textLink": {
@@ -74,7 +74,7 @@
         },
         {
           "subTitle": "Devcommissie",
-          "description": "De studievereniging heeft verschillende software in beheer om het werk makkelijker te maken, denk hierbij aan de ledenadministratie, een vacaturebank of de website. Bij de devcommissie ga je proberen je programmeerskills naar de next level te brengen door adviezen van meerderejaars en interessante (nieuwe) technieken.",
+          "description": "De studievereniging heeft verschillende software in beheer om het werk makkelijker te maken, denk hierbij aan de ledenadministratie, een vacaturebank of de website. Bij de devcommissie ga je proberen je programmeerskills naar een hoger level te brengen door adviezen van meerderejaars en interessante (nieuwe) technieken.",
           "type": "text-left",
           "card": true,
           "textLink": {
@@ -84,7 +84,7 @@
         },
         {
           "subTitle": "Educatiecommissie",
-          "description": "De educatiecommissie is verantwoordelijk voor alle gastcolleges, bedrijfsbezoeken, lunchlezingen en andere educatieve activiteiten. Wil jij college krijgen over onderwerpen die school niet helemaal aanbied (zoals bijvoorbeeldquantum computing, security), of wil jij weten hoe bedrijven dingen aanpakken? Kom eens kijken bij de devocommissie!",
+          "description": "De educatiecommissie is verantwoordelijk voor alle gastcolleges, bedrijfsbezoeken, lunchlezingen en andere educatieve activiteiten. Wil jij colleges krijgen over onderwerpen die niet door school worden aangeboden (zoals quantum computing of security), of wil jij weten hoe bedrijven dingen aanpakken? Kom eens kijken bij de educatiecommissie!",
           "type": "text-left",
           "card": true,
           "textLink": {
@@ -94,7 +94,7 @@
         },
         {
           "subTitle": "Introcommissie",
-          "description": "Het begin van elk schooljaar organiseert Indicium een introkamp voor de nieuwe eerstejaars. Hier moeten de nodige voorbereidingen voor worden getroffen, zoals contact met sponsoren, activiteiten regelen en andere zaken. Lijkt het jou leuk om een supertof kamp op poten te zetten? Meld je dan aan! Het kamp wordt meestal gehouden in een van de laatste twee weken van de zomervakantie.",
+          "description": "Aan het begin van elk schooljaar organiseert Indicium een introductiekamp voor de nieuwe eerstejaars. Hier moeten de nodige voorbereidingen voor worden getroffen, zoals contact met sponsoren, activiteiten regelen en andere zaken. Lijkt het jou leuk om een supertof kamp op poten te zetten? Meld je dan aan! Het kamp wordt meestal gehouden in een van de laatste twee weken van de zomervakantie.",
           "type": "text-left",
           "card": true,
           "textLink": {
@@ -103,7 +103,7 @@
           }
         },
         {
-          "description": "Heb je wel interesse om iets te doen, maar weet je niet of het iets voor je is? Stuur dan een mailtje naar <a href=\"mailto:joostlekkerkerker@indicium.hu\">joostlekkerkerker@indicium.hu</a>!",
+          "description": "Heb je wel interesse om je steentje bij te dragen, maar weet je niet of het iets voor je is? Stuur dan een mailtje naar <a href=\"mailto:joostlekkerkerker@indicium.hu\">joostlekkerkerker@indicium.hu</a>!",
           "type": "text-left"
         }
       ]
@@ -177,12 +177,12 @@
     },
     {
       "render": true,
-      "slug": "privacypolicy",
-      "title": "Privacy Policy",
+      "slug": "privacyreglement",
+      "title": "Privacyreglement",
       "content": [
         {
-          "title": "Privacy Policy",
-          "description": "Onze privacy policy kan je hieronder downloaden!",
+          "title": "Privacyreglement",
+          "description": "Ons privacyreglement kun je hieronder downloaden!",
           "type": "text-center",
           "button": {
             "text": "Download",
@@ -199,7 +199,7 @@
         {
           "title": "Statuten",
           "type": "text-center",
-          "description": "Dit zijn de statuten van de vereniging"
+          "description": "Dit zijn de statuten van de vereniging:"
         },
         {
           "type": "text-left",
@@ -211,33 +211,29 @@
       "render": false,
       "slug": "activiteiten",
       "title": "Activiteiten",
-      "description": "Activiteiten kalender voor Indicium studievereniging voor HBO ICT Hogeschool Utrecht.",
+      "description": "Activiteitenkalender van Indicium studievereniging voor HBO-ICT Hogeschool Utrecht.",
       "content": []
     },
     {
       "render": false,
       "slug": "contact",
       "title": "Contact",
-      "description": "Neem contact op met Indicium studievereniging voor HBO ICT Hogeschool Utrecht.",
+      "description": "Neem contact op met Indicium studievereniging voor HBO-ICT Hogeschool Utrecht.",
       "content": [
         {
           "title": "Info",
           "type": "info",
           "list": [
             {
-              "label": "Straat",
-              "value": "Heidelberglaan 15"
-            },
-            {
               "label": "Adres",
-              "value": "3584 CS Utrecht"
+              "value": "Heidelberglaan 15\n3584 CS Utrecht"
             },
             {
               "label": "Lokaal",
               "value": "HL15-4.092"
             },
             {
-              "label": "Email Adres",
+              "label": "E-mailadres",
               "value": "bestuur@indicium.hu"
             },
             {
