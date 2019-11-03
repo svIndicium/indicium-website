@@ -28,8 +28,7 @@ export default {
   computed: {
     toDateString() {
       const date = new Date(this.event.date * 1000)
-      return `${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()}`
-
+      return `${this.getDayAsString(date.getDay())} ${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()}`
     },
     getCategoryColors() {
       return this.allCategories.reduce((activeCategories, category) => {
@@ -69,6 +68,19 @@ export default {
       ]
 
       return monthList[currentMonth]
+    },
+    getDayAsString(currentDay = new Date().getDay()) {
+      const week = [
+        'Maandag',
+        'Dinsdag',
+        'Woensdag',
+        'Donderdag',
+        'Vrijdag',
+        'Zaterdag',
+        'Zondag'
+      ]
+
+      return week[currentDay - 1]
     }
   }
 }
