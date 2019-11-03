@@ -5,6 +5,9 @@
     </div>
     <div class="text">
       <h1>{{ title }}</h1>
+      <h4 v-if="subTitle">
+        {{ subTitle }}
+      </h4>
       <p>{{ text }}</p>
       <Button v-if="button" size="l" :url="button.url">
         {{ button.text }}
@@ -15,6 +18,9 @@
   <div v-else-if="type === 'image-right'" :class="['image-block', type]">
     <div class="text">
       <h1>{{ title }}</h1>
+      <h4 v-if="subTitle">
+        {{ subTitle }}
+      </h4>
       <p>{{ text }}</p>
 
       <Button v-if="button" size="l" :url="button.url">
@@ -49,6 +55,10 @@ export default {
     title: {
       type: String,
       default: 'title'
+    },
+    subTitle: {
+      type: String,
+      default: null
     },
     text: {
       type: String,
