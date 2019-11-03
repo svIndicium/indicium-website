@@ -83,6 +83,7 @@ export default {
           const today = new Date().getTime()
           const featureEvents = events
             .filter(evt => new Date(evt.attributes.start).getTime() > today)
+            .filter(evt => evt.attributes.status === 'published')
             .sort((eventA, eventB) => new Date(eventA.attributes.start) - new Date(eventB.attributes.start))
             .map(evt => ({
               title: evt.attributes.title,

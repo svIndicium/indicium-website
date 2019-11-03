@@ -22,7 +22,7 @@ export default {
     events: []
   }),
   mounted() {
-    axios.get('https://old.indicium.hu/json/events?&filter[start]<2019-10-13&filter[end]=>2017-09-01&page[size]=1000')
+    axios.get('https://old.indicium.hu/json/events?&filter[start]<2019-10-13&filter[end]=>2017-09-01&filter[status]=published&page[size]=1000')
       .then((response) => {
         const events = response.data.data
         this.mapFetchedEvents(events)
