@@ -6,13 +6,11 @@
       <div class="column left">
         <ul>
           <li v-for="(obj, idx) in getBlockContentByTitle('Info', page.content).list" :key="idx">
-            <span class="medium">{{ obj.label }}</span>
-            :
-            {{ obj.value }}
+            <span class="medium">{{ obj.label }}</span>: {{ obj.value }}
           </li>
         </ul>
 
-        <p>Of stuur direct een email naar het bestuur:</p>
+        <p>Of stuur direct een e-mail naar het bestuur:</p>
         <Button size="l" url="mailto:bestuur@indicium.hu">Mail direct</Button>
       </div>
       <div class="column right">

@@ -18,6 +18,7 @@
           <ImageBlock
             :type="contentObj.type"
             :title="contentObj.title"
+            :subTitle="contentObj.subTitle"
             :text="contentObj.description"
             :image="contentObj.imgUrl"
             :button="contentObj.button"

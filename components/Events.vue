@@ -1,7 +1,7 @@
 <template>
   <div id="events" class="events-container">
     <h2 class="center">
-      Opkomende activiteiten
+      Aankomende activiteiten
     </h2>
     <div class="categories">
       <ul>
@@ -17,7 +17,7 @@
     <Loading v-else-if="isLoading" />
     <div v-else-if="!isLoading && events.length === 0">
       <p class="center">
-        Geen opkomende activiteiten gevonden... 😢
+        Geen aankomende activiteiten gevonden... 😢
       </p>
     </div>
   </div>
@@ -38,7 +38,7 @@ export default {
   data: () => ({
     isLoading: true,
     events: [],
-    activeCategories: ['SD', 'TI', 'SNE', 'BIM', 'AI'],
+    activeCategories: ['SD', 'TI', 'CSC', 'BIM', 'AI'],
     allCategories: [
       {
         courseTitle: 'SD',
@@ -49,7 +49,7 @@ export default {
         hex: 'A2E172'
       },
       {
-        courseTitle: 'SNE',
+        courseTitle: 'CSC',
         hex: 'E1DB72'
       },
       {
@@ -74,10 +74,10 @@ export default {
   },
   methods: {
     stripHTMLFromString(str = '') {
-      return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, ' ')
+      return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, ' ').replace('&nbsp;', ' ')
     },
     fetchEvents() {
-      axios.get('https://old.indicium.hu/json/events?page%5Bsize%5D=1000')
+      axios.get('https://old.indicium.hu/json/events?filter[status]=published&page%5Bsize%5D=1000')
         .then((response) => {
           const events = response.data.data
           const today = new Date().getTime()
