@@ -1,7 +1,7 @@
 <template>
   <div id="events" class="events-container">
     <h2 class="center">
-      Opkomende activiteiten
+      Aankomende activiteiten
     </h2>
     <div class="categories">
       <ul>
@@ -17,7 +17,7 @@
     <Loading v-else-if="isLoading" />
     <div v-else-if="!isLoading && events.length === 0">
       <p class="center">
-        Geen opkomende activiteiten gevonden... 😢
+        Geen aankomende activiteiten gevonden... 😢
       </p>
     </div>
   </div>
