@@ -77,13 +77,12 @@ export default {
       return str.replace(/(<([^>]+)>)/ig, '').replace(/\n|\r/g, ' ').replace('&nbsp;', ' ')
     },
     fetchEvents() {
-      axios.get('https://old.indicium.hu/json/events?page%5Bsize%5D=1000')
+      axios.get('https://old.indicium.hu/json/events?filter[status]=published&page%5Bsize%5D=1000')
         .then((response) => {
           const events = response.data.data
           const today = new Date().getTime()
           const featureEvents = events
             .filter(evt => new Date(evt.attributes.start).getTime() > today)
-            .filter(evt => evt.attributes.status === 'published')
             .sort((eventA, eventB) => new Date(eventA.attributes.start) - new Date(eventB.attributes.start))
             .map(evt => ({
               title: evt.attributes.title,
