@@ -38,7 +38,7 @@ export default {
   data: () => ({
     isLoading: true,
     events: [],
-    activeCategories: ['SD', 'TI', 'SNE', 'BIM', 'AI'],
+    activeCategories: ['SD', 'TI', 'CSC', 'BIM', 'AI'],
     allCategories: [
       {
         courseTitle: 'SD',
@@ -49,7 +49,7 @@ export default {
         hex: 'A2E172'
       },
       {
-        courseTitle: 'SNE',
+        courseTitle: 'CSC',
         hex: 'E1DB72'
       },
       {
