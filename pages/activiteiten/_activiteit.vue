@@ -46,7 +46,10 @@ export default {
       return { 'background-image': `url(${this.page.image})` }
     },
     getEventDate() {
-      return `${this.getDateAsString(this.page.start)} - ${this.isSameDay(this.page.start, this.page.end) ? this.getTimeAsString(this.page.end) : this.getDateAsString(this.page.end)}`
+      let res = this.getDateAsString(this.page.start)
+      res += ' - '
+      res += this.isSameDay(this.page.start, this.page.end) ? this.getTimeAsString(this.page.end) : this.getDateAsString(this.page.end)
+      return res
     }
   },
   mounted() {
@@ -79,7 +82,16 @@ export default {
       if (date1 === undefined || date2 === undefined) {
         return false
       }
-      return date1.getDate() === date2.getDate() && date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth()
+
+      const isSameDay = date1.getDate() === date2.getDate()
+      const isSameMonth = date1.getMonth() === date2.getMonth()
+      const isSameYear = date1.getFullYear() === date2.getFullYear()
+
+      return (
+        isSameDay &&
+        isSameMonth &&
+        isSameYear
+      )
     },
     getMonthAsString(currentMonth = new Date().getMonth()) {
       const monthList = [
@@ -116,7 +128,8 @@ export default {
       return `${this.getDayAsString(date.getDay())} ${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()} ${this.getTimeAsString(date)}`
     },
     getTimeAsString(date) {
-      return `${date.getHours() === 0 ? '00' : date.getHours()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}`
+      const minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
+      return `${date.getHours()}:${minutes}`
     }
   },
   head() {
