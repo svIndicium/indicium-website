@@ -4,6 +4,9 @@
     </div>
     <div class="container">
       <h2>{{ page.title }}</h2>
+      <h5 v-if="page.start">
+        {{ getEventDate }}
+      </h5>
       <h5 v-if="page.categories">
         Gerelateerde studierichtingen: {{ page.categories.join(", ") }}
       </h5>
@@ -41,6 +44,9 @@ export default {
   computed: {
     getHeaderImage() {
       return { 'background-image': `url(${this.page.image})` }
+    },
+    getEventDate() {
+      return `${this.getDateAsString(this.page.start)} - ${this.isSameDay(this.page.start, this.page.end) ? this.getTimeAsString(this.page.end) : this.getDateAsString(this.page.end)}`
     }
   },
   mounted() {
@@ -57,7 +63,9 @@ export default {
           signUpLink: res.attributes.inschrijflink,
           description: res.attributes.contentblocks[0].content,
           image: res.attributes.contentblocks.length > 1 ? res.attributes.contentblocks[1].image.url : null,
-          categories: res.attributes.categories
+          categories: res.attributes.categories,
+          start: new Date(res.attributes.start),
+          end: new Date(res.attributes.end)
         }))
         .then(res => this.$set(this, 'page', res))
         .catch((err) => {
@@ -66,6 +74,49 @@ export default {
             message: err.response.data
           }
         })
+    },
+    isSameDay(date1, date2) {
+      if (date1 === undefined || date2 === undefined) {
+        return false
+      }
+      return date1.getDate() === date2.getDate() && date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth()
+    },
+    getMonthAsString(currentMonth = new Date().getMonth()) {
+      const monthList = [
+        'Januari',
+        'Februari',
+        'Maart',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Augustus',
+        'September',
+        'Oktober',
+        'November',
+        'December'
+      ]
+
+      return monthList[currentMonth]
+    },
+    getDayAsString(currentDay = new Date().getDay()) {
+      const week = [
+        'Maandag',
+        'Dinsdag',
+        'Woensdag',
+        'Donderdag',
+        'Vrijdag',
+        'Zaterdag',
+        'Zondag'
+      ]
+
+      return week[currentDay - 1]
+    },
+    getDateAsString(date) {
+      return `${this.getDayAsString(date.getDay())} ${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()} ${this.getTimeAsString(date)}`
+    },
+    getTimeAsString(date) {
+      return `${date.getHours() === 0 ? '00' : date.getHours()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}`
     }
   },
   head() {
