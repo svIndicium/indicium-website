@@ -46,10 +46,10 @@ export default {
       return { 'background-image': `url(${this.page.image})` }
     },
     getEventDate() {
-      let res = this.getDateAsString(this.page.start)
-      res += ' - '
-      res += this.isSameDay(this.page.start, this.page.end) ? this.getTimeAsString(this.page.end) : this.getDateAsString(this.page.end)
-      return res
+      const { start, end } = this.page
+      return `${this.getDateAsString(start)} - ${this.isSameDay(start, end)
+        ? this.getTimeAsString(end)
+        : this.getDateAsString(end)}`
     }
   },
   mounted() {
