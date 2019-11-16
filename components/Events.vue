@@ -5,7 +5,7 @@
     </h2>
     <div class="categories">
       <ul>
-        <li v-for="(category, idx) in allCategories" :key="idx" @click="filterCategories(category)" :class="{ 'in-active': !activeCategories.includes(category.courseTitle) }">
+        <li v-for="(category, idx) in allCategories" :key="idx" :class="{ 'in-active': !activeCategories.includes(category.courseTitle) }" @click="filterCategories(category)">
           <span :style="{backgroundColor: `#${category.hex}`}"></span>{{ category.courseTitle }}
         </li>
       </ul>
@@ -20,6 +20,18 @@
         Geen aankomende activiteiten gevonden... 😢
       </p>
     </div>
+    <div class="container center">
+      <p class="center">
+        Wil je automatisch alle evenementen in je agenda krijgen? Zorg ervoor dat alle richtingen waar je activiteiten van wilt ontvangen aan staan en klik op onderstaande knop om de link te kopiëren en importeer deze in je favoriete agenda applicatie!
+      </p>
+      <Button
+        v-clipboard:copy="feedLink"
+        size="l"
+        :center="true"
+      >
+        Kopieër naar klembord
+      </Button>
+    </div>
   </div>
 </template>
 
@@ -28,10 +40,12 @@
 import axios from 'axios'
 import EventTile from './EventTile'
 import Loading from './Loading'
+import Button from './interactions/button'
 
 export default {
   name: 'Events',
   components: {
+    Button,
     EventTile,
     Loading
   },
@@ -70,6 +84,14 @@ export default {
       return this.events.filter(event => {
           return event.categories.filter(cat => this.activeCategories.includes(cat)).length > 0;
       })
+    },
+    feedLink() {
+      const url = 'https://ics.indicium.hu/v1/ics'
+      if (this.activeCategories.length === this.allCategories.length) {
+        return url
+      }
+      const categories = this.activeCategories.join(",")
+      return `${url}?categories=${categories}`
     }
   },
   methods: {
