@@ -1,5 +1,8 @@
 <template>
-  <a v-if="url.startsWith('http')" :href="url" :class="['btn', size, center ? 'center' : '']">
+  <div v-if="callback" :class="['btn', size, center ? 'center' : '']" @click="callback">
+    <slot></slot>
+  </div>
+  <a v-else-if="url.startsWith('http')" :href="url" :class="['btn', size, center ? 'center' : '']">
     <slot></slot>
   </a>
   <a v-else-if="url.startsWith('mailto:')" :href="url" :class="['btn', size, center ? 'center' : '']">
@@ -26,6 +29,10 @@ export default {
     url: {
       type: String,
       default: '#'
+    },
+    callback: {
+      type: Function,
+      default: null
     }
   }
 }
@@ -40,6 +47,7 @@ export default {
     border: 0;
     transition: 200ms;
     display: inline-flex;
+    cursor: pointer;
 
     &.s {
       padding: 8px;
