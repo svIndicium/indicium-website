@@ -73,6 +73,7 @@ export default {
     { src: '~/plugins/full-calendar', ssr: false },
     { src: '~/plugins/slick', ssr: false },
     { src: '~/plugins/busje', ssr: false },
+    { src: '~/plugins/clipboard', ssr: true },
   ],
   modules: [
     '@nuxtjs/google-analytics',
