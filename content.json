@@ -110,6 +110,49 @@
     },
     {
       "render": true,
+      "slug": "introkamp",
+      "title": "Introkamp",
+      "content": [
+        {
+          "title": "Introkamp",
+          "description": "Elk jaar organiseert de studievereniging een introkamp voor alle nieuwe HBO-ICT studenten aan de Hogeschool Utrecht. Leer je nieuwe medestudenten kennen aan de hand van een gezellige tijd samen.",
+          "type": "text-center",
+          "button": {
+            "text": "Meld je je aan voor updates",
+            "url": "https://forms.gle/iJ7U785SX167qHs36"
+          }
+        },
+        {
+          "title": "Leer elkaar kennen",
+          "description": "Op het introkamp leer je je medestudenten kennen op een gezellige manier aan de hand van leuke activiteiten, zodat je je opleiding direct begint met nieuwe vrienden en kennissen! Op het introkamp maak je ook kennis met meerderejaars die alle vragen over de opleiding kan beantwoorden.",
+          "type": "image-right",
+          "imgUrl": "/introkamp/1.jpg"
+        },
+        {
+          "title": "Leer Indicium kennen",
+          "description": "Indicium is een studievereniging gericht op het verbinden van studenten met studenten, en het verbinden van studenten met bedrijven. Wij organiseren gezellige activiteiten, zoals bowlen of karten, maar we organiseren ook educatieve activiteiten zoals gastcolleges, excursies naar conferenties en workshops.",
+          "type": "image-left",
+          "imgUrl": "/introkamp/2.jpg"
+        },
+        {
+          "title": "Geen verplichtingen",
+          "description": "Studieverenigingen doen niet aan ontgroeningen. Wij dus ook niet! Je bent tot niks verplicht en zo creeëren we gezelligheid zonder verplichtingen!",
+          "type": "image-right",
+          "imgUrl": "/introkamp/3.jpg"
+        },
+        {
+          "title": "",
+          "description": "Kom jij volgend jaar HBO-ICT studeren bij de Hogeschool Utrecht? Laat je email adres achter en we laten je weten wanneer je je kan inschrijven!",
+          "type": "text-center",
+          "button": {
+            "text": "Schrijf je in voor updates",
+            "url": "https://forms.gle/iJ7U785SX167qHs36"
+          }
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "partners",
       "title": "Partners",
       "content": [
