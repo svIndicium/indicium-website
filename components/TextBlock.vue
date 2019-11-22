@@ -123,7 +123,7 @@ export default {
 @import '../assets/scss/variables.scss';
 
 .text-block {
-  margin: 0 auto 128px;
+  margin: 0 auto 48px;
 
   @media screen and (max-width: $bp-tablet-sm) {
     margin: 0 auto 48px;

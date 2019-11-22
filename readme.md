@@ -1,6 +1,6 @@
 # Website for SV Indicium
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=svIndicium_website-2019&metric=alert_status)](https://sonarcloud.io/dashboard?id=svIndicium_website-2019)
-[![Build Status](https://travis-ci.com/svIndicium/indicium-website.svg?branch=master)](https://travis-ci.com/svIndicium/indicium-website)
+[![Build Status](https://travis-ci.com/svIndicium/indicium-website.svg?branch=dev)](https://travis-ci.com/svIndicium/indicium-website)
 > Indicium website 2019 made with NuxtJS(VueJS)
 
 ## Dev Setup
