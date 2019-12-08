@@ -236,6 +236,43 @@
     },
     {
       "render": true,
+      "slug": "bestuur",
+      "title": "Het bestuur",
+      "content": [
+        {
+          "title": "Het bestuur",
+          "type": "text-center",
+          "description": "Dit is het vijftallige bestuur wat de studievereniging leidt"
+        },
+        {
+          "title": "Jesper Obbes",
+          "subTitle": "Voorzitter",
+          "type": "text-left"
+        },
+        {
+          "title": "Simon Parmet",
+          "subTitle": "Secretaris",
+          "type": "text-right"
+        },
+        {
+          "title": "Yasin Karapinar",
+          "subTitle": "Penningmeester",
+          "type": "text-left"
+        },
+        {
+          "title": "Rick Holtman",
+          "subTitle": "Vicevoorzitter",
+          "type": "text-right"
+        },
+        {
+          "title": "Joost Lekkerkerker",
+          "subTitle": "Algemeen commissaris",
+          "type": "text-left"
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "statuten",
       "title": "Statuten",
       "content": [
