@@ -177,13 +177,13 @@
           }
         },
         {
-          "title": "Snow B.V.",
-          "description": "Snow B.V. is een IT-consultancybedrijf dat gespecialiseerd is in Linux en opensource-tools. We werken onder andere voor Nederlandse top-200-bedrijven en bieden hooggekwalificeerde ondersteuning bij het beheer van hun IT-infrastructuur en bedrijfsapplicaties. Onze 110 consultants zijn specialisten op de kennisgebieden system management & integration, architecture, networking, security, cloud, containers en automation. Professionele en persoonlijke ontwikkeling, een veilige werkomgeving en duurzame inzetbaarheid staan bij ons centraal! Wekelijks zijn er bijvoorbeeld trainingen, workshops en meetups over zowel technische vaardigheden (denk aan: Red Hat System Administration en Linux Performance Tuning) als professionele vaardigheden (denk aan: Adviseren als Expert en Krachtig Presenteren). Nergens anders bouw je je cv zo goed op als bij Snow.",
-          "imgUrl": "/partners/snow-logo.svg",
+          "title": "Sue B.V.",
+          "description": "Sue is met ruim honderd IT-specialisten het grootste IT-consultancybedrijf op het gebied van Unix, Linux en open source. Al meer dan twintig jaar bieden wij top-200 bedrijven en MKB’s in Nederland deskundige assistentie bij het beheer van hun IT-infrastructuur en bedrijfsapplicaties, denk hierbij o.a. aan system management & integration, cloud, automation, networking, security, containers en configuration management. Sue kenmerkt zich door een informele en ambitieuze sfeer, veel gezellige activiteiten en volop ruimte voor jouw persoonlijke ontwikkeling. We hebben een fietsclub, fotowedstrijden, bootcamps en pubquizzen. Wekelijks zijn er trainingen, workshops en meetups over zowel technische vaardigheden (denk aan Red Hat System Administration) als professionele vaardigheden (denk aan Adviseren als Expert). Nergens anders bouw je je cv zo goed op als bij Sue!",
+          "imgUrl": "/partners/sue.png",
           "type": "image-left",
           "button": {
             "text": "Bezoek website",
-            "url": "https://snow.nl/"
+            "url": "https://sue.nl/"
           }
         },
         {

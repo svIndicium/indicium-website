@@ -45,7 +45,7 @@ export default {
         path: '/partners/moneymonk-logo.png'
       },
       {
-        path: '/partners/snow-logo.svg'
+        path: '/partners/sue.png'
       },
       {
         path: '/partners/hu-logo.svg'
