@@ -72,6 +72,10 @@ export default {
       title: Math.random() > 0.6 ? 'Over Indicium' : 'Commissies',
       url: '/over-indicium'
     },
+      {
+        title: 'Vacatures',
+        url: 'https://old.indicium.hu/vacatures'
+      },
     {
       title: 'Contact',
       url: '/contact'
