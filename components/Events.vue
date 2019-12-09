@@ -27,7 +27,7 @@
       <Button
         size="l"
         :center="true"
-        :callback="copyFeedLinkToClipboard"
+        @click.native="copyFeedLinkToClipboard"
       >
         Kopieër naar klembord
       </Button>
