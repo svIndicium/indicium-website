@@ -60,7 +60,7 @@
         {
           "title": "Commissies",
           "type": "text-left",
-          "description": "De verschillende activiteiten en acties worden geregeld door commissies. Wij houden van commissieleden, daarom worden ze uitgenodigd op exclusieve borrels, leuke uitjes en andere leuke voordelen!"
+          "description": "De verschillende activiteiten en acties worden geregeld door commissies. Wij houden van commissieleden, daarom worden ze uitgenodigd voor exclusieve borrels, leuke uitjes en genieten ze nog meer voordelen!"
         },
         {
           "subTitle": "Activiteitencommissie",
@@ -211,7 +211,7 @@
       "render": false,
       "slug": "activiteiten",
       "title": "Activiteiten",
-      "description": "Activiteitenkalender van Indicium studievereniging voor HBO-ICT Hogeschool Utrecht.",
+      "description": "Activiteitenkalender van studievereniging Indicium voor HBO-ICT Hogeschool Utrecht.",
       "content": []
     },
     {
@@ -226,7 +226,11 @@
           "list": [
             {
               "label": "Adres",
-              "value": "Heidelberglaan 15\n3584 CS Utrecht"
+              "value": "Heidelberglaan 15"
+            },
+            {
+              "label": "Postcode",
+              "value": "3584 CS Utrecht"
             },
             {
               "label": "Lokaal",
