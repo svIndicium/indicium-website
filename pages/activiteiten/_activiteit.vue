@@ -10,7 +10,7 @@
       <h5 v-if="page.categories">
         Gerelateerde studierichtingen: {{ page.categories.join(", ") }}
       </h5>
-      <p v-if="page.description" v-html="page.description"></p>
+      <div v-if="page.description" v-html="page.description"></div>
       <Button v-if="page.signUpLink" id="activity_sign_up" :url="page.signUpLink" size="l">
         Schrijf je in
       </Button>
@@ -33,14 +33,6 @@ export default {
   components: {
     Button
   },
-  data: () => ({
-    page: {},
-    error: null
-  }),
-  validate({ params }) {
-    const activityId = params.activiteit.split('-').reverse()[0]
-    return /^\d+$/.test(activityId)
-  },
   computed: {
     getHeaderImage() {
       return { 'background-image': `url(${this.page.image})` }
@@ -52,15 +44,12 @@ export default {
         : this.getDateAsString(end)}`
     }
   },
-  mounted() {
-    this.fetchActivity()
-  },
-  methods: {
-    fetchActivity() {
-      const activityId = this.$route.params.activiteit.split('-').reverse()[0]
-      axios.get(`https://old.indicium.hu/json/events/${activityId}`)
-        .then(res => res.data.data)
-        .then(res => ({
+  asyncData({ params }) {
+    const activityId = params.activiteit.split('-').reverse()[0]
+    return axios.get(`https://old.indicium.hu/json/events/${activityId}`)
+      .then(res => res.data.data)
+      .then(res => ({
+        page: {
           id: res.id,
           title: res.attributes.title,
           signUpLink: res.attributes.inschrijflink,
@@ -69,15 +58,22 @@ export default {
           categories: res.attributes.categories,
           start: new Date(res.attributes.start),
           end: new Date(res.attributes.end)
-        }))
-        .then(res => this.$set(this, 'page', res))
-        .catch((err) => {
-          this.error = {
-            statusCode: err.response.status,
-            message: err.response.data
-          }
-        })
-    },
+        },
+        error: null
+      }))
+      .catch(err => ({
+        error: {
+          statusCode: err.response.status,
+          message: err.response.data
+        },
+        page: null
+      }))
+  },
+  validate({ params }) {
+    const activityId = params.activiteit.split('-').reverse()[0]
+    return /^\d+$/.test(activityId)
+  },
+  methods: {
     isSameDay(date1, date2) {
       if (date1 === undefined || date2 === undefined) {
         return false
@@ -142,7 +138,7 @@ export default {
           content:
               this.page.description !== undefined
                 ? this.page.description
-                : 'content.description'
+                : 'Indicium - De studievereniging voor ICT bij Hogeschool Utrecht'
         }
       ]
     }
