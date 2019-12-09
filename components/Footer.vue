@@ -65,8 +65,8 @@ export default {
         link: '/partners'
       },
       {
-        title: 'Privacy policy',
-        link: '/privacypolicy'
+        title: 'Privacyreglement',
+        link: '/privacyreglement'
       }
     ]
   }),
