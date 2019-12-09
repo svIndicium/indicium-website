@@ -91,18 +91,18 @@ export default {
     },
     getMonthAsString(currentMonth = new Date().getMonth()) {
       const monthList = [
-        'Januari',
-        'Februari',
-        'Maart',
-        'April',
-        'Mei',
-        'Juni',
-        'Juli',
-        'Augustus',
-        'September',
-        'Oktober',
-        'November',
-        'December'
+        'januari',
+        'februari',
+        'maart',
+        'april',
+        'mei',
+        'juni',
+        'juli',
+        'augustus',
+        'september',
+        'oktober',
+        'november',
+        'december'
       ]
 
       return monthList[currentMonth]
@@ -138,7 +138,7 @@ export default {
           content:
               this.page.description !== undefined
                 ? this.page.description
-                : 'Indicium - De studievereniging voor ICT bij Hogeschool Utrecht'
+                : 'Indicium - De studievereniging voor HBO-ICT bij Hogeschool Utrecht'
         }
       ]
     }
