@@ -226,11 +226,7 @@
           "list": [
             {
               "label": "Adres",
-              "value": "Heidelberglaan 15"
-            },
-            {
-              "label": "Postcode",
-              "value": "3584 CS Utrecht"
+              "value": "Heidelberglaan 15, 3584 CS Utrecht"
             },
             {
               "label": "Lokaal",
