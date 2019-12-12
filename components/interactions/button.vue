@@ -40,6 +40,7 @@ export default {
     border: 0;
     transition: 200ms;
     display: inline-flex;
+    cursor: pointer;
 
     &.s {
       padding: 8px;
