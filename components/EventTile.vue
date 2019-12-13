@@ -53,18 +53,18 @@ export default {
   methods: {
     getMonthAsString(currentMonth = new Date().getMonth()) {
       const monthList = [
-        'Januari',
-        'Februari',
-        'Maart',
-        'April',
-        'Mei',
-        'Juni',
-        'Juli',
-        'Augustus',
-        'September',
-        'Oktober',
-        'November',
-        'December'
+        'januari',
+        'februari',
+        'maart',
+        'april',
+        'mei',
+        'juni',
+        'juli',
+        'augustus',
+        'september',
+        'oktober',
+        'november',
+        'december'
       ]
 
       return monthList[currentMonth]
