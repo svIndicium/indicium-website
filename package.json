@@ -18,7 +18,7 @@
     "axios": "^0.19.0",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.10.2",
+    "nuxt": "^2.11.0",
     "vue-slick": "^1.1.15"
   },
   "devDependencies": {
