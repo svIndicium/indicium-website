@@ -207,10 +207,20 @@
           }
         },
         {
+          "title": "Student aan huis",
+          "description": "Studentaanhuis, de digitale wegenwacht van Nederland\nHeb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze deskundige IT-studenten lossen het snel en vakkundig voor je op.\nWij verhelpen niet alleen je problemen, maar zorgen er ook voor dat je altijd veilig en goed van al je digitale apparaten gebruik kunt blijven maken. Wij fixen het wel!\n",
+          "imgUrl": "/partners/SAH.svg",
+          "type": "image-right",
+          "button": {
+            "text": "Bezoek website",
+            "url": "https://www.studentaanhuis.nl/"
+          }
+        },
+        {
           "title": "Utrecht Promotions",
           "description": "Utrecht promotions is onze textieldrukker die de bedrukking op onze kleding regelt.",
           "imgUrl": "/partners/utrecht-promotions-logo.png",
-          "type": "image-right",
+          "type": "image-left",
           "button": {
             "text": "Bezoek website",
             "url": "https://www.utrecht-promotions.nl/"

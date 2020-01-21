@@ -48,6 +48,9 @@ export default {
         path: '/partners/sue.png'
       },
       {
+        path: '/partners/SAH.svg'
+      },
+      {
         path: '/partners/hu-logo.svg'
       }
     ]
