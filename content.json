@@ -53,7 +53,8 @@
           "type": "text-center",
           "button": {
             "text": "Meer informatie",
-            "url": "https://forms.gle/awx8SQpjLycPWybv6"
+            "url": "https://forms.gle/awx8SQpjLycPWybv6",
+            "id": "merchandise-button"
           }
         }
       ]
