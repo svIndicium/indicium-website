@@ -22,17 +22,20 @@ export default {
       variableWidth: true,
       slidesToScroll: 1,
       centerMode: true,
-      responsive: [{
-        breakpoint: 1100,
-        settings: {
-          centerMode: false,
-          initialSlide: 0,
-          slidesToShow: 2,
-          autoplay: true,
-          prevArrow: false,
-          nextArrow: false,
+      prevArrow: false,
+      nextArrow: false,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 1100,
+          settings: {
+            centerMode: false,
+            initialSlide: 0,
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
         }
-      }]
+      ]
     },
     sponsoren: [
       {
@@ -49,6 +52,12 @@ export default {
       },
       {
         path: '/partners/SAH.svg'
+      },
+      {
+        path: '/partners/utrecht-promotions-logo.png'
+      },
+      {
+        path: '/partners/moneymonk-logo.png'
       },
       {
         path: '/partners/hu-logo.svg'
