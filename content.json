@@ -54,7 +54,7 @@
           "button": {
             "text": "Meer informatie",
             "url": "https://forms.gle/awx8SQpjLycPWybv6",
-            "id": "merchandise-button"
+            "id": "merchandise_button"
           }
         }
       ]
