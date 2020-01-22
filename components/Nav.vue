@@ -86,6 +86,10 @@
           url: '/over-indicium'
         },
         {
+          title: 'Merchandise',
+          url: '/merchandise'
+        },
+        {
           title: 'Vacatures',
           url: 'https://old.indicium.hu/vacatures'
         },
