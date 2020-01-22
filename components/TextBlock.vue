@@ -8,11 +8,11 @@
     </h4>
     <p v-if="text" v-html="text"></p>
 
-    <Button v-if="button" size="l" :center="type === 'center'" :url="button.url">
+    <Button v-if="button" :id="button.id" size="l" :center="type === 'center'" :url="button.url">
       {{ button.text }}
     </Button>
 
-    <TextLink v-if="textLink" :url="textLink.url">
+    <TextLink v-if="textLink" :id="textLink.id" :url="textLink.url">
       {{ textLink.text }}
     </TextLink>
   </div>
@@ -26,11 +26,11 @@
     </h4>
     <p v-if="text" v-html="text"></p>
 
-    <Button v-if="button" size="l" :center="type === 'center'" :url="button.url">
+    <Button v-if="button" :id="button.id" size="l" :center="type === 'center'" :url="button.url">
       {{ button.text }}
     </Button>
 
-    <TextLink v-if="textLink" :url="textLink.url">
+    <TextLink v-if="textLink" :id="textLink.id" :url="textLink.url">
       {{ textLink.text }}
     </TextLink>
   </div>
@@ -44,11 +44,11 @@
     </h4>
     <p v-if="text" v-html="text"></p>
 
-    <Button v-if="button" size="l" :center="type === 'center'" :url="button.url">
+    <Button v-if="button" :id="button.id" size="l" :center="type === 'center'" :url="button.url">
       {{ button.text }}
     </Button>
 
-    <TextLink v-if="textLink" :url="textLink.url">
+    <TextLink v-if="textLink" :id="textLink.id" :url="textLink.url">
       {{ textLink.text }}
     </TextLink>
   </div>
@@ -62,11 +62,11 @@
     </h4>
     <p v-if="text" v-html="text"></p>
 
-    <Button v-if="button" size="l" :url="button.url">
+    <Button v-if="button" :id="button.id" size="l" :url="button.url">
       {{ button.text }}
     </Button>
 
-    <TextLink v-if="textLink" :url="textLink.url">
+    <TextLink v-if="textLink" :id="textLink.id" :url="textLink.url">
       {{ textLink.text }}
     </TextLink>
   </div>
