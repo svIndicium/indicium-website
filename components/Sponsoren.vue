@@ -1,12 +1,14 @@
 <template>
   <div class="sponsoren">
-    <h5 class="center">Sponsoren</h5>
+    <h5 class="center">
+      Sponsoren
+    </h5>
     <!-- <n-link to="/partners"> -->
-      <slick
-        :options="slickOptions"
-      >
-        <img v-for="(s, idx) in sponsoren" :src="s.path" alt="sponsor logo title" :key="idx" />
-      </slick>
+    <slick
+      :options="slickOptions"
+    >
+      <img v-for="(s, idx) in sponsoren" :key="idx" :src="s.path" alt="sponsor logo title" />
+    </slick>
     <!-- </n-link> -->
   </div>
 </template>
@@ -22,17 +24,20 @@ export default {
       variableWidth: true,
       slidesToScroll: 1,
       centerMode: true,
-      responsive: [{
-        breakpoint: 1100,
-        settings: {
-          centerMode: false,
-          initialSlide: 0,
-          slidesToShow: 2,
-          autoplay: true,
-          prevArrow: false,
-          nextArrow: false,
+      prevArrow: false,
+      nextArrow: false,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 1100,
+          settings: {
+            centerMode: false,
+            initialSlide: 0,
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
         }
-      }]
+      ]
     },
     sponsoren: [
       {
@@ -49,6 +54,12 @@ export default {
       },
       {
         path: '/partners/SAH.svg'
+      },
+      {
+        path: '/partners/utrecht-promotions-logo.png'
+      },
+      {
+        path: '/partners/moneymonk-logo.png'
       },
       {
         path: '/partners/hu-logo.svg'

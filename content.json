@@ -40,6 +40,27 @@
     },
     {
       "render": true,
+      "slug": "merchandise",
+      "title": "Merchandise",
+      "content": [
+        {
+          "type": "image",
+          "imgUrl": "/images/merch.png"
+        },
+        {
+          "title": "Merchandise",
+          "description": "Wil jij ook zo'n fancy hoodie? Of heb je liever een trui of shirt? Dat kan, voor meer informatie klik hieronder!",
+          "type": "text-center",
+          "button": {
+            "text": "Meer informatie",
+            "url": "https://forms.gle/awx8SQpjLycPWybv6",
+            "id": "merchandise_button"
+          }
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "over-indicium",
       "title": "Over Indicium",
       "content": [

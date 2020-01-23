@@ -9,7 +9,7 @@
         {{ subTitle }}
       </h4>
       <p>{{ text }}</p>
-      <Button v-if="button" size="l" :url="button.url">
+      <Button v-if="button" :id="button.id" size="l" :url="button.url">
         {{ button.text }}
       </Button>
     </div>
@@ -23,7 +23,7 @@
       </h4>
       <p>{{ text }}</p>
 
-      <Button v-if="button" size="l" :url="button.url">
+      <Button v-if="button" :id="button.id" size="l" :url="button.url">
         {{ button.text }}
       </Button>
     </div>
