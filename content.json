@@ -61,6 +61,23 @@
     },
     {
       "render": true,
+      "slug": "studieboeken",
+      "title": "Studieboeken",
+      "content": [
+        {
+          "title": "Studieboeken",
+          "description": "Je kan via Indicium studieboeken kopen met korting! Klik op onderstaande knop en selecteer SV Indicium.",
+          "type": "text-center",
+          "button": {
+            "text": "Meer informatie",
+            "url": "https://oshu.itdepartment.nl/",
+            "id": "studystore_button"
+          }
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "over-indicium",
       "title": "Over Indicium",
       "content": [
