@@ -22,7 +22,7 @@
     "vue-slick": "^1.1.15"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-config": "^2.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-loader": "^3.0.3",
