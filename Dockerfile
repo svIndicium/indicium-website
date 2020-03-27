@@ -1,5 +1,7 @@
 FROM node:10.8
 
+ARG NUXT_ENV_BRANCH
+ENV NUXT_ENV_BRANCH=$NUXT_ENV_BRANCH
 ENV APP_ROOT /home/appuser
 ENV HOST 0.0.0.0
 
@@ -12,7 +14,7 @@ COPY . ${APP_ROOT}
 
 RUN npm install
 RUN npm rebuild node-sass
-RUN npm run build
+RUN NUXT_ENV_BRANCH=$NUXT_ENV_BRANCH npm run build
 
 USER appuser
 
