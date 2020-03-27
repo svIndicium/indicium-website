@@ -70,9 +70,22 @@ export default {
     '@/assets/scss/main.scss'
   ],
   plugins: [
-    { src: '~/plugins/full-calendar', ssr: false },
-    { src: '~/plugins/slick', ssr: false },
-    { src: '~/plugins/busje', ssr: false },
+    {
+      src: '~/plugins/full-calendar',
+      ssr: false
+    },
+    {
+      src: '~/plugins/slick',
+      ssr: false
+    },
+    {
+      src: '~/plugins/busje',
+      ssr: false
+    },
+    {
+      src: '~/plugins/axios',
+      ssr: false
+    },
   ],
   modules: [
     '@nuxtjs/google-analytics',
