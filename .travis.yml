@@ -35,8 +35,9 @@ install:
 script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sonar-scanner; fi'
   - echo "Skipping tests"
+  - export NUXT_ENV_BRANCH=$TRAVIS_BRANCH
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "stable"; elif [ "$TRAVIS_BRANCH" == "dev" ]; then echo "latest"; else echo $TRAVIS_BRANCH | tr "/" -; fi`
-  - docker build -t docker.pkg.github.com/svindicium/indicium-website/website:$TAG .
+  - docker build --build-arg NUXT_ENV_BRANCH -t docker.pkg.github.com/svindicium/indicium-website/website:$TAG .
 
 deploy:
   provider: script
