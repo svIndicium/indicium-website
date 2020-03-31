@@ -14,7 +14,7 @@
     "@fullcalendar/daygrid": "^4.4.0",
     "@fullcalendar/vue": "^4.4.0",
     "@nuxtjs/google-analytics": "^2.2.3",
-    "@nuxtjs/google-tag-manager": "^2.3.1",
+    "@nuxtjs/google-tag-manager": "^2.3.2",
     "axios": "^0.19.2",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
