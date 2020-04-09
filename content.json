@@ -61,6 +61,31 @@
     },
     {
       "render": true,
+      "slug": "ehbt",
+      "title": "Eerste hulp bij thuisquarantaine",
+      "content": [
+        {
+          "title": "Eerste hulp bij thuisquarantaine",
+          "description": "In deze moeilijke tijd is het fijn om dingen te hebben om te doen om je niet te vervelen. Zo kun je nieuwe dingen leren zoals programmeertalen of iets anders. Een aantal bedrijven hebben hun services tijdelijk uitgebreid vanwege de crisis, de educom heeft een lijst opgesteld met die services, en andere dingen die je kan doen of leren. Elke week zal hij worden aangevuld met jullie input en andere dingen die we vinden.",
+          "type": "text-center",
+          "button": {
+            "text": "Bekijk hier de lijst",
+            "url": "https://indicium.hu/ehbt.pdf"
+          }
+        },
+        {
+          "title": "Toevoegingen?",
+          "description": "Heb jij nu ook iets leuks gevonden wat op deze lijst moet? Vul de form in en misschien komt hij wel op de lijst!",
+          "type": "text-center",
+          "button": {
+            "text": "Invulformulier",
+            "url": "https://forms.gle/cRnPiU3iTcuP8SNw8"
+          }
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "studieboeken",
       "title": "Studieboeken",
       "content": [
