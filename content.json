@@ -86,6 +86,70 @@
     },
     {
       "render": true,
+      "slug": "bestuur-worden",
+      "title": "Bestuur worden",
+      "content": [
+        {
+          "title": "Bestuur worden",
+          "description": "Het bestuur is misschien wel het meest actieve orgaan van de vereniging. Het bestuur is de groep leden die er onder andere voor zorgt dat de commissies allemaal doen wat ze moeten doen, ervoor zorgen dat er genoeg activiteiten plaatsvinden en regelt een hoop andere dingen. Het is een drukke taak die wel te doen is naast een jaar studeren, maar wel van je vraagt om goed te plannen. ",
+          "type": "text-left"
+        },
+        {
+          "description": "Je bent altijd een heel collegejaar bestuur. Je start dus aan het begin van het collegejaar en draagt je taak aan het einde weer over. Er worden bijna nooit derde- of vierdejaars aangenomen in verband met stage en afstuderen. Uit ervaring blijkt dat deze mensen niet genoeg tijd kunnen stoppen in de vereniging. En omdat eerstejaars nog niet studeren aan de HU wanneer er een nieuw bestuur wordt gevormd, zitten die ook bijna nooit in het bestuur. De besturen bij Indicium bestaan dus voornamelijk uit tweedejaars. ",
+          "type": "text-left"
+        },
+        {
+          "description": "Er is wel een andere optie: de minor Leiderschap. Deze minor is gemaakt voor studentbestuurders die graag een jaar bestuur willen doen en daarvoor hun studie (deels) aan de kant willen zetten. Deze minor duurt een jaar en levert je net als de meeste minors 30 EC (studiepunten) op. Als je verder geen studievertraging oploopt, kun je dus in 4,5 jaar je diploma halen in plaats van 4 jaar. De minor Leiderschap kun je ook een hoop van leren naast je bestuursjaar.",
+          "type": "text-left",
+          "button": {
+            "text": "Lees meer over de minor leiderschap",
+            "url": "http://minorleiderschap.nl/"
+          }
+        },
+        {
+          "title": "Wat heb je eraan?",
+          "description": "Ontmoet andere bestuurders\nHet is ook een taak waarin je een hele hoop enthousiaste, ambitieuze bestuurders van andere verenigingen ontmoet. Deze mensen zitten net als jij in het bestuur van hun eigen vereniging en staan dus op het punt om dezelfde soort problemen tegen te komen in hun bestuursjaar. Een nuttige brainstormsessie of een gezellige borrel is dus ook altijd mogelijk met deze mensen. Ook wordt je uitgenodigd voor een hoop borrels en activiteiten van andere verenigingen gedurende een bestuursjaar! \n",
+          "type": "text-left"
+        },
+        {
+          "description": "Versterk je CV\nEen jaar bestuur staat enorm goed op je CV. Bedrijven zijn erg happerig op mensen die tijdens hun studententijd een jaar bestuurder zijn geweest van een vereniging. Ze weten dan dat je kunt samenwerken en verantwoordelijkheid kunt dragen. \n",
+          "type": "text-left"
+        },
+        {
+          "description": "Je leert een hoop!\nJe leert echt een hoop van een bestuursjaar! Een jaar lang samenwerken met dezelfde mensen zorgt ervoor dat je goed leert samenwerken. In dat jaar heb je ook veel contact met mensen buiten je bestuur en vereniging, waardoor je communicatieve vaardigheden een boost krijgen. En je bent een van de laatste personen die de kwaliteit van de vereniging kan waarborgen, waardoor je een sterk verantwoordelijkheidsgevoel opbouwt. \nVerder zijn er natuurlijk nog vaardigheden die per bestuursrol uniek zijn. Als penningmeester zul je bijvoorbeeld leren financiële verantwoordelijkheid te dragen voor een organisatie groter dan jijzelf. Als secretaris zullen je administratieve vaardigheden sterk verbeteren. En als voorzitter leer je een bepaalde vorm van leiderschap waar je de rest van je leven een hoop aan zult hebben. \n",
+          "type": "text-left"
+        },
+        {
+          "description": "Geef jouw draai aan de vereniging\nAls bestuurder ben je ook verantwoordelijk voor de vereniging weer een jaar vooruit helpen. Daar kun je natuurlijk je eigen draai aan geven. De vereniging wordt een stuk unieker met elke bestuurder, jij kan daar ook aan bijdragen. \n",
+          "type": "text-left"
+        },
+        {
+          "title": "Is het niet te hoog gegrepen? ",
+          "description": "Zoals hierboven al verteld werd: alle bestuurders zijn ook gewoon studenten. Ze studeren gewoon aan de HU, volgen hun eigen lessen en maken net als andere studenten tentamens en projecten. Het is dus niet iets dat alleen voor hele specifieke mensen is, iedereen kan bestuur worden. Als het je leuk lijkt maar je toch nog twijfelt, vul dan gewoon het interesseformulier onderaan deze pagina in! Dan kun je een keer een van de huidige bestuurders vragen over hoe hun bestuursjaar gaat. ",
+          "type": "text-left"
+        },
+        {
+          "title": "Een half bestuursjaar is niet mogelijk",
+          "description": "Een half bestuursjaar doen is eigenlijk niet mogelijk. De redenen hiervoor zijn natuurlijk duidelijk: je taken moeten halverwege het collegejaar worden overgedragen, de rest van het bestuur moet deze taken ineens overnemen of iemand inwerken die ze overneemt terwijl ze ook nog de vereniging draaiende moeten houden en het is natuurlijk helemaal niet leuk voor de overige bestuurders als een medebestuurder hun verlaat. Daarnaast kun je als bestuurder in een half jaar niet tot volle kracht stijgen, een bestuurder die een jaar lang blijft bestuur doet kan veel meer voor de vereniging betekenen. ",
+          "type": "text-left"
+        },
+        {
+          "title": "Bestuurder worden?",
+          "description": "Klik dan op de link hieronder en vul het formulier in, dan neemt iemand van het huidige bestuur contact met je op. Je moet inloggen met je Google-account. ",
+          "type": "text-left",
+          "button": {
+            "text": "Solliciteer",
+            "url": "https://forms.gle/M1mPs3Kv8jxEj5Tx6"
+          }
+        },
+        {
+          "description": "Kan of wil je niet inloggen met je Google-account, maar wil je wel solliciteren? Stuur dan een mail naar sollicitatie@indicium.hu (of klik op de knop hieronder) met de volgende gegevens: naam, e-mailadres, telefoonnummer, afstudeerrichting (BIM, TI, Open-ICT, SD, CSC, AI), motivatiebrief & CV.",
+          "type": "text-left"
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "studieboeken",
       "title": "Studieboeken",
       "content": [
@@ -118,6 +182,15 @@
           "button": {
             "text": "Meer weten",
             "url": "/bestuur"
+          }
+        },
+        {
+          "title": "Nieuw bestuur",
+          "description": "We zijn op zoek naar nieuw bestuur voor het jaar 2020/2021. Voor meer informatie ga naar de pagina.",
+          "type": "text-left",
+          "button": {
+            "text": "Meer informatie",
+            "url": "/bestuur-worden"
           }
         },
         {
