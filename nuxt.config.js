@@ -1,6 +1,6 @@
 /* eslint-disable */
-import axios from 'axios'
 import content from './content.json'
+
 console.log(JSON.stringify(content.pages, null, 2))
 
 export default {
@@ -14,53 +14,53 @@ export default {
     meta: [{
       charset: 'utf-8'
     },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: process.env.npm_package_description || ''
-    }
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
     ],
     link: [{
       rel: 'icon',
       type: 'image/x-icon',
       href: '/favicons/favicon.ico'
     },
-    {
-      rel: 'apple-touch-icon',
-      type: 'image/x-icon',
-      href: '/favicons/apple-touch-icon.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicons/favicon-32x32.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon-16x16.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicons/favicon.ico'
-    },
-    {
-      rel: 'manifest',
-      href: '/favicons/site.webmanifest'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css'
-    }]
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/x-icon',
+        href: '/favicons/apple-touch-icon.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicons/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicons/favicon.ico'
+      },
+      {
+        rel: 'manifest',
+        href: '/favicons/site.webmanifest'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css'
+      }]
   },
   loading: {
     color: '#72c9e0'
@@ -76,7 +76,7 @@ export default {
   ],
   modules: [
     '@nuxtjs/google-analytics',
-    ['@nuxtjs/google-tag-manager', {id: 'GTM-TPDRMLG'}]
+    '@nuxtjs/gtm',
   ],
   generate: {
     // routes: () => {
@@ -120,5 +120,8 @@ export default {
   },
   googleAnalytics: {
     id: 'UA-147953098-1'
-  }
+  },
+  gtm: {
+    id: 'GTM-TPDRMLG'
+  },
 }
