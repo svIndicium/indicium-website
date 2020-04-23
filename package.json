@@ -10,28 +10,25 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@fullcalendar/core": "^5.2.1",
-    "@fullcalendar/daygrid": "^5.2.0",
-    "@fullcalendar/vue": "^5.2.0",
-    "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/gtm": "^2.3.2",
-    "@svindicium/indicium-components": "^0.1.2",
+    "@fullcalendar/core": "^4.4.0",
+    "@fullcalendar/daygrid": "^4.4.0",
+    "@fullcalendar/vue": "^4.4.0",
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/gtm": "^2.2.3",
     "axios": "^0.19.2",
-    "axios-middleware": "^0.3.1",
-    "jquery": "^3.5.1",
+    "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.14.0",
-    "vuejs-datepicker": "^1.6.2",
+    "nuxt": "^2.12.2",
     "vue-slick": "^1.1.15"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^3.0.0",
-    "eslint": "^7.6.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-loader": "^4.0.2",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.0",
-    "nodemon": "^2.0.4",
-    "sass-loader": "^9.0.2"
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.3",
+    "sass-loader": "^8.0.2"
   }
 }
