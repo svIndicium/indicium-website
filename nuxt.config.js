@@ -86,6 +86,10 @@ export default {
       src: '~/plugins/axios',
       ssr: false
     },
+    {
+      src: '~/plugins/dateinput',
+      ssr: false,
+    },
   ],
   modules: [
     '@nuxtjs/google-analytics',
