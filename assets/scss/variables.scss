@@ -1,5 +1,26 @@
   :root {
     --text-color: #8d8f91;
+
+    --indi-blue-1: #72C9E0;
+    --indi-blue-2: #97D5E5;
+    --indi-blue-3: #DBEFF4;
+
+    --indi-green-1: #73C2B6;
+    --indi-green-2: #97CFC7;
+    --indi-green-3: #DBEDEA;
+
+    --indi-grey: #EFF0F0;
+    --indi-success: var(--indi-green-2);
+    --indi-warning: #FAC052;
+    --indi-error: #CF9797;
+
+    --panel-background: #f3f8fa;
+    --inner-sidebar-background: #F8F9F9;
+
+    --sidebar-width: 286px;
+
+    --header-font: 'Roboto', sans-serif;
+    --text-font: 'Calibri', sans-serif;
   }
 
   // Breakpoints

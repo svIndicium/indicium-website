@@ -16,9 +16,11 @@
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/gtm": "^2.2.3",
     "axios": "^0.19.2",
+    "axios-middleware": "^0.3.1",
     "jquery": "^3.5.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.12.2",
+    "vuejs-datepicker": "^1.6.2",
     "vue-slick": "^1.1.15"
   },
   "devDependencies": {
