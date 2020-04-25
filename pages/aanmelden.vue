@@ -38,12 +38,14 @@
         :error="fieldErrors['mailAddress']"
       />
       <TextInput
+        :key="phoneNumberKey"
         v-model="registration.phoneNumber"
         placeholder="Telefoonnummer"
         name="phoneNumber"
         label="Telefoonnummer"
         required
         :error="fieldErrors['phoneNumber']"
+        @focusout="fixPhoneNumber"
       />
       <client-only>
         <date-input
@@ -81,6 +83,8 @@
         Meld je aan
       </Button>
     </div>
+    <div v-else>
+    </div>
   </div>
 </template>
 
@@ -115,6 +119,7 @@
         statuten: false,
         toReceiveNewsletter: false
       },
+      phoneNumberKey: 0,
       studyTypes: [],
       loading: false,
       error: null,
@@ -152,13 +157,24 @@
     async saveRegistration() {
       this.loading = true
       try {
-        const res = await this.$api.post('/registration', this.registration)
+        const { status } = await this.$api.post('/registration', this.registration)
+        if (status === 201) {
+          this.$router.push('/aangemeld')
+        }
       } catch (e) {
         if (e.response.status === 400) {
           this.error = e.response.data.error
         }
       }
       this.loading = false
+    },
+    fixPhoneNumber() {
+      if (this.registration.phoneNumber !== null) {
+        if (this.registration.phoneNumber.startsWith('06')) {
+          this.$set(this.registration, 'phoneNumber', `+316${this.registration.phoneNumber.slice(2, 10)}`)
+          this.phoneNumberKey += 1
+        }
+      }
     },
     validateRegistration() {
     }

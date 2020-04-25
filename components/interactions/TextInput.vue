@@ -2,7 +2,16 @@
   <div class="text-input">
     <label>{{ label }}<span class="required">{{ required ? ' *' : '' }}</span></label>
     <br />
-    <input v-model="internalValue" type="text" :name="name" :placeholder="placeholder" :class="[!!error ? 'error' : '']" @input="update" />
+    <input
+      v-model="internalValue"
+      type="text"
+      :name="name"
+      :placeholder="placeholder"
+      :class="[!!error ? 'error' : '']"
+      @input="update"
+      @focusin="focusin"
+      @focusout="focusout"
+    />
     <div class="error-message">
       {{ error }}
     </div>
@@ -46,6 +55,12 @@ export default {
   methods: {
     update() {
       this.$emit('input', this.internalValue)
+    },
+    focusin(e) {
+      this.$emit('focusin', e)
+    },
+    focusout(e) {
+      this.$emit('focusout', e)
     },
   },
 }
