@@ -79,7 +79,7 @@
       <div v-if="error" class="global-error-message">
         {{ error.message }}
       </div>
-      <Button size="l" class="submit-buttom" @click.native="validateRegistration">
+      <Button size="l" class="submit-buttom" @click.native="saveRegistration">
         Meld je aan
       </Button>
     </div>
@@ -153,6 +153,7 @@
         })
     },
     async saveRegistration() {
+      this.validateRegistration()
       this.loading = true
       try {
         const { status } = await this.$api.post('/registration', this.registration)
