@@ -79,11 +79,9 @@
       <div v-if="error" class="global-error-message">
         {{ error.message }}
       </div>
-      <Button size="l" class="submit-buttom" @click.native="saveRegistration">
+      <Button size="l" class="submit-buttom" @click.native="validateRegistration">
         Meld je aan
       </Button>
-    </div>
-    <div v-else>
     </div>
   </div>
 </template>
@@ -176,7 +174,30 @@
         }
       }
     },
+    addFieldError(field, error) {
+      this.fieldErrors[field] = error
+    },
     validateRegistration() {
+      this.fieldErrors = {}
+      this.checkNotBlank('firstName', 'Voornaam mag niet leeg zijn.')
+      this.checkNotBlank('lastName', 'Achternaam mag niet leeg zijn.')
+      this.checkNotBlank('mailAddress', 'Emailadres mag niet leeg zijn.')
+      this.checkNotBlank('phoneNumber', 'Telefoonnummer mag niet leeg zijn.')
+      this.checkNotBlank('dateOfBirth', 'Geboortedatum mag niet leeg zijn.')
+      if (this.registration.phoneNumber !== null && (!this.registration.phoneNumber.startsWith('+316') || this.registration.phoneNumber.length !== 12)) {
+        this.addFieldError('phoneNumber', 'Voer alsjeblieft een geldig mobiel nummer in')
+      }
+      if (this.registration.studyTypeId === 0) {
+        this.addFieldError('studyTypeId', 'Selecteer een studierichting')
+      }
+      if (!this.registration.statuten) {
+        this.addFieldError('statuten', 'Ga akkoord met de statuten om verder te gaan')
+      }
+    },
+    checkNotBlank(field, error) {
+      if (this.registration[field] === null || this.registration.firstName === '') {
+        this.addFieldError(field, error)
+      }
     }
   }
 }
