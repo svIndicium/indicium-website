@@ -1,19 +1,16 @@
 <template>
   <div class="container">
     <h2>Emailadres Bevestigen</h2>
-    <div v-if="error">
+    <div v-if="loading">
+      <Loading />
+    </div>
+    <div v-else-if="error">
       <div class="errorcontainer">
         <Icon type="alert-circle" class="icon" />
         <span class="message">
           {{ error }}
         </span>
       </div>
-    </div>
-    <div v-if="result !== null">
-      {{ result }}
-    </div>
-    <div v-else-if="loading === true">
-      <Loading />
     </div>
     <div v-else>
       Om je email te bevestigen heb je een code in je mailbox ontvangen (check ook je spam). Heb je geen mail ontvangen?
@@ -46,7 +43,6 @@
       verification: {},
       loading: false,
       manual: false,
-      result: null,
       error: null
     }
   },
