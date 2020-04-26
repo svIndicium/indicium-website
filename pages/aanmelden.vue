@@ -76,8 +76,13 @@
       <CheckBox v-model="registration.toReceiveNewsletter" class="check-box">
         Ik wil graag de maandelijkse nieuwsbrief ontvangen met aankomende activiteiten, nieuwtjes en updates van de vereniging.
       </CheckBox>
-      <div v-if="error" class="global-error-message">
-        {{ error.message }}
+      <div v-if="error">
+        <div class="errorcontainer">
+          <Icon type="alert-triangle" class="icon" />
+          <span class="message">
+          {{ error }}
+        </span>
+        </div>
       </div>
       <Button size="l" class="submit-buttom" @click.native="saveRegistration">
         Meld je aan
@@ -93,6 +98,7 @@
   import SelectBox from '../components/interactions/SelectBox.vue'
   import CheckBox from '../components/interactions/CheckBox.vue'
   import Loading from '../components/Loading.vue'
+  import Icon from '../components/Icon'
 
   export default {
   name: 'Aanmelden',
@@ -103,6 +109,7 @@
     Button,
     TextLink,
     Loading,
+    Icon,
   },
   data() {
     return {
@@ -154,6 +161,10 @@
     },
     async saveRegistration() {
       this.validateRegistration()
+      if (this.fieldErrors !== {}) {
+        this.error = 'Je aanmelding klopt niet helemaal, verbeter hem en lever hem opnieuw in!'
+        return
+      }
       this.loading = true
       try {
         const { status } = await this.$api.post('/registration', this.registration)
@@ -162,7 +173,7 @@
         }
       } catch (e) {
         if (e.response.status === 400) {
-          this.error = e.response.data.error
+          this.error = e.response.data.error.message
         }
       }
       this.loading = false
@@ -217,8 +228,22 @@
     margin-top: 16px;
   }
 
-  .global-error-message {
+  .errorcontainer {
     margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     color: var(--indi-error);
+    margin-bottom: 16px;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      font-size: 32px;
+    }
+
+    .message {
+      padding-left: 8px;
+    }
   }
 </style>
