@@ -29,6 +29,9 @@ addons:
 cache:
   npm: true
 
+before_install:
+  - echo "//npm.pkg.github.com/:_authToken=$DOCKER_PASS" >> .npmrc
+
 install:
   - npm install
 
