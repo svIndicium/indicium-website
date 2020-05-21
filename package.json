@@ -13,7 +13,7 @@
     "@fullcalendar/core": "^4.4.0",
     "@fullcalendar/daygrid": "^4.4.0",
     "@fullcalendar/vue": "^4.4.0",
-    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/google-analytics": "^2.3.0",
     "@nuxtjs/gtm": "^2.2.3",
     "@svindicium/indicium-components": "^0.1.0",
     "axios": "^0.19.2",
