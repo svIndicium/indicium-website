@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   export default {
     name: 'Nav',
     computed: {
@@ -96,8 +96,7 @@
         {
           title: 'Lid worden',
           url: '/aanmelden'
-        }
-
+        },
         ]
     })
   }
