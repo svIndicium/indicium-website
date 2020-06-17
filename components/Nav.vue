@@ -97,10 +97,6 @@
           title: 'Lid worden',
           url: '/aanmelden'
         },
-        {
-          title: 'Bestuur worden',
-          url: '/bestuur-worden'
-        }
         ]
     })
   }
