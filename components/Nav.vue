@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   export default {
     name: 'Nav',
     computed: {
@@ -94,14 +94,9 @@
           url: '/contact'
         },
         {
-          title: 'Info voor eerstejaars',
-          url: '/info-voor-eerstejaars'
-        },
-        {
           title: 'Lid worden',
           url: '/aanmelden'
-        }
-
+        },
         ]
     })
   }
