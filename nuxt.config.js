@@ -24,11 +24,12 @@ export default {
       content: process.env.npm_package_description || ''
     }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicons/favicon.ico'
-    },
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicons/favicon.ico'
+      },
       {
         rel: 'apple-touch-icon',
         type: 'image/x-icon',
@@ -52,15 +53,8 @@ export default {
       {
         rel: 'manifest',
         href: '/favicons/site.webmanifest'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css'
-      }]
+      }
+    ]
   },
   loading: {
     color: '#72c9e0'
