@@ -155,7 +155,7 @@
       "content": [
         {
           "title": "Studieboeken",
-          "description": "Je kan via Indicium studieboeken kopen met korting! Klik op onderstaande knop en selecteer SV Indicium.",
+          "description": "Je kan via Indicium studieboeken kopen bij StudyStore met 5-12% korting! Klik op onderstaande knop en selecteer SV Indicium.",
           "type": "text-center",
           "button": {
             "text": "Meer informatie",
@@ -289,6 +289,81 @@
     },
     {
       "render": true,
+      "slug": "info-voor-eerstejaars",
+      "title": "Informatie voor nieuwe studenten",
+      "content": [
+        {
+          "title": "Informatie voor nieuwe studenten",
+          "type": "text-center",
+          "description": "Leuk dat je HBO-ICT bij ons komt studeren! Op deze pagina zie je wat Indicium voor jou kan betekenen en waarom je lid moet worden. Ook staat er informatie over onze intro, die dit jaar anders is dan normaal! Ben je nu al overtuigd om lid te worden? Klik dan op de knop hieronder.",
+          "button": {
+            "text": "Lid worden",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform"
+          }
+        },
+        {
+          "title": "",
+          "subTitle": "Wat is Indicium?",
+          "type": "text-left",
+          "description": "Indicium is de studievereniging voor HBO-ICT studenten aan de Hogeschool Utrecht. Wij proberen studenten bij elkaar te brengen om zo een leuke studententijd te creëren."
+        },
+        {
+          "title": "",
+          "subTitle": "Activiteiten",
+          "type": "image-right",
+          "description": "Wij organiseren onder andere informele activiteiten zoals karten, bowlen, LAN-parties of feesten.",
+          "imgUrl": "/images/bowlen.jpg"
+        },
+        {
+          "title": "",
+          "subTitle": "Educatieve activiteiten",
+          "type": "image-right",
+          "description": "Naast informele activiteiten worden er ook educatieve activiteiten georganiseerd, zoals gastcolleges of workshops.",
+          "imgUrl": "/images/gastcollege.jpg"
+        },
+        {
+          "title": "",
+          "subTitle": "Reizen",
+          "type": "image-right",
+          "description": "Vorig jaar zijn we naar Polen en naar Begië geweest om ICT conferenties bij te wonen. Aankomend jaar wordt het nog afwachten of ze doorgaan vanwege het coronavirus.",
+          "imgUrl": "/images/brussel.jpg"
+        },
+        {
+          "subTitle": "Korting op studieboeken",
+          "type": "text-left",
+          "description": "Als lid van Indicium krijg je 5-12% korting op je studieboeken! Voor meer informatie klik je op de knop hieronder.",
+          "button": {
+            "text": "Meer informatie",
+            "url": "https://indicium.hu/studieboeken?utm_source=eerstejaars&utm_medium=website&utm_campaign=studieboeken"
+          }
+        },
+        {
+          "subTitle": "ICTers op safari",
+          "type": "text-left",
+          "description": "Momenteel zijn we hard aan het werk om een leuke dag op te zetten voor jullie. Het wordt een dag waar je in en rond Utrecht elkaar leert kennen op een veilige manier. Inschrijven en meer informatie kan via de knop hieronder.",
+          "button": {
+            "text": "Meer informatie",
+            "url": "https://forms.gle/Zga3Xa7Kzsw84aDF8"
+          }
+        },
+        {
+          "subTitle": "Lid worden",
+          "type": "text-center",
+          "description": "Dus wil je lid worden van Indicium? Dat kan voor maar €15! Je zit nergens aan vast, niks moet, alles mag! Inschrijven doe je via onderstaande knop.",
+          "button": {
+            "text": "Lid worden",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform"
+          }
+        },
+        {
+          "subTitle": "Vragen?",
+          "type": "text-center",
+          "description": "Mocht je nog vragen hebben, dan kan je die sturen naar bestuur@indicium.hu."
+        }
+      ]
+    },
+    {
+      "render": true,
       "slug": "partners",
       "title": "Partners",
       "content": [
@@ -391,17 +466,17 @@
           "description": "Dit is het vijftallige bestuur wat de studievereniging leidt"
         },
         {
-          "title": "Jesper Obbes",
+          "title": "Jasper Nellestijn",
           "subTitle": "Voorzitter",
           "type": "text-left"
         },
         {
-          "title": "Simon Parmet",
+          "title": "Joost Lekkerkerker",
           "subTitle": "Secretaris",
           "type": "text-right"
         },
         {
-          "title": "Yasin Karapinar",
+          "title": "Stefanie Twisker",
           "subTitle": "Penningmeester",
           "type": "text-left"
         },
@@ -411,8 +486,8 @@
           "type": "text-right"
         },
         {
-          "title": "Joost Lekkerkerker",
-          "subTitle": "Algemeen commissaris",
+          "title": "Alex Streumer",
+          "subTitle": "Algemeen lid",
           "type": "text-left"
         }
       ]
