@@ -302,6 +302,15 @@
           }
         },
         {
+          "subTitle": "Introactiviteit: ICTers op safari",
+          "type": "text-left",
+          "description": "Momenteel zijn we hard aan het werk om een leuke dag op te zetten voor jullie. Het wordt een dag waar je in en rond Utrecht elkaar leert kennen op een veilige manier. Inschrijven en meer informatie kan via de knop hieronder.",
+          "button": {
+            "text": "Meer informatie",
+            "url": "https://forms.gle/Zga3Xa7Kzsw84aDF8"
+          }
+        },
+        {
           "title": "",
           "subTitle": "Wat is Indicium?",
           "type": "text-left",
@@ -335,15 +344,6 @@
           "button": {
             "text": "Meer informatie",
             "url": "https://indicium.hu/studieboeken?utm_source=eerstejaars&utm_medium=website&utm_campaign=studieboeken"
-          }
-        },
-        {
-          "subTitle": "ICTers op safari",
-          "type": "text-left",
-          "description": "Momenteel zijn we hard aan het werk om een leuke dag op te zetten voor jullie. Het wordt een dag waar je in en rond Utrecht elkaar leert kennen op een veilige manier. Inschrijven en meer informatie kan via de knop hieronder.",
-          "button": {
-            "text": "Meer informatie",
-            "url": "https://forms.gle/Zga3Xa7Kzsw84aDF8"
           }
         },
         {
