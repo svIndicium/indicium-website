@@ -20,7 +20,7 @@
     "axios-middleware": "^0.3.1",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.13.3",
+    "nuxt": "^2.14.0",
     "vuejs-datepicker": "^1.6.2",
     "vue-slick": "^1.1.15"
   },
