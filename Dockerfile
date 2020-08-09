@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:lts-alpine
 
 ARG NUXT_ENV_BRANCH
 ENV APP_ROOT /home/appuser
