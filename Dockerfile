@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-ARG NUXT_ENV_BRANCH
+ARG MODE=live
 ENV APP_ROOT /home/appuser
 ENV HOST 0.0.0.0
 
@@ -14,7 +14,7 @@ COPY . ${APP_ROOT}
 
 RUN npm install
 RUN npm rebuild node-sass
-RUN NUXT_ENV_BRANCH=$NUXT_ENV_BRANCH npm run build
+RUN npm run build-$MODE
 
 USER appuser
 

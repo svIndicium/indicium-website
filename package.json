@@ -4,8 +4,14 @@
   "description": "Wij zijn de studievereniging voor HBO-ICT van Hogeschool Utrecht",
   "author": "Noud Adrichem <info@noudadrichem.com>",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "npm run dev-dev",
+    "dev-local": "cross-env NUXT_ENV_MODE=local nuxt",
+    "dev-dev": "cross-env NUXT_ENV_MODE=dev nuxt",
+    "dev-live": "cross-env NUXT_ENV_MODE=live nuxt",
+    "build": "npm run build-live",
+    "build-local": "cross-env NUXT_ENV_MODE=local nuxt build",
+    "build-dev": "cross-env NUXT_ENV_MODE=dev nuxt build",
+    "build-live": "cross-env NUXT_ENV_MODE=live nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
@@ -26,6 +32,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.6.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-loader": "^4.0.2",
