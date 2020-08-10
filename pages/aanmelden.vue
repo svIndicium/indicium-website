@@ -154,7 +154,7 @@
   },
   methods: {
     getStudyTypes() {
-      this.$api.get('/studytype')
+      this.$api.get('/studytypes')
         .then((res) => {
           this.studyTypes = res.data
         })
@@ -167,7 +167,7 @@
       }
       this.loading = true
       try {
-        const { status } = await this.$api.post('/registration', this.registration)
+        const { status } = await this.$api.post('/registrations', this.registration)
         if (status === 201) {
           this.$router.push('/aangemeld')
         }
