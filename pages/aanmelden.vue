@@ -161,7 +161,7 @@
     },
     async saveRegistration() {
       this.validateRegistration()
-      if (this.fieldErrors !== {}) {
+      if (Object.keys(this.fieldErrors).length !== 0) {
         this.error = 'Je aanmelding klopt niet helemaal, verbeter hem en lever hem opnieuw in!'
         return
       }
