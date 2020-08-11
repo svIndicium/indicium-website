@@ -9,7 +9,7 @@ api.install = (Vue) => {
     ? 'https://api.indicium.hu/api/v1'
     : process.env.NUXT_ENV_MODE === 'dev'
       ? 'https://dev.api.indicium.hu/api/v1'
-      : 'https://localhost:8080/api/v1'
+      : 'http://localhost:8080/api/v1'
 
   const apiInstance = axios.create({ baseURL })
 
