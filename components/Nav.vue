@@ -94,6 +94,10 @@
           url: '/contact'
         },
         {
+          title: 'Info voor eerstejaars',
+          url: '/info-voor-eerstejaars'
+        },
+        {
           title: 'Lid worden',
           url: '/aanmelden'
         },
