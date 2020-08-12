@@ -16,7 +16,7 @@
       </h1>
 
       <div class="buttons fadeInUp">
-        <Button size="l" url="https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform">
+        <Button size="l" url="/aanmelden">
           Word lid
         </Button>
         <TextLink url="/activiteiten">
