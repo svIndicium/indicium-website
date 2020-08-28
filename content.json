@@ -302,6 +302,15 @@
           }
         },
         {
+          "subTitle": "Buddyprogramma",
+          "type": "text-left",
+          "description": "Heb je veel vragen over het nieuwe schooljaar? Of zoek je contact met nieuwe mensen? Schrijf je in voor het buddy programma! Je wordt gekoppeld aan een meerderejaars, waar je alle vragen over je studie, de studievereniging en de HU kan stellen!",
+          "button": {
+            "text": "Meer informatie",
+            "url": "/buddyprogramma?utm_source=info-voor-eerstejaars&utm_medium=website&utm_campaign=info-voor-eerstejaars"
+          }
+        },
+        {
           "subTitle": "Introactiviteit: ICTers op safari",
           "type": "text-left",
           "description": "Wegens de nieuwe maatregelen van het kabinet kan onze introductiedag niet doorgaan. Dit vinden we erg jammer en hopen jullie terug te zien op een van de activiteiten van de vereniging."
@@ -355,6 +364,22 @@
           "subTitle": "Vragen?",
           "type": "text-center",
           "description": "Mocht je nog vragen hebben, dan kan je die sturen naar bestuur@indicium.hu."
+        }
+      ]
+    },
+    {
+      "render": true,
+      "slug": "buddyprogramma",
+      "title": "Buddyprogramma",
+      "content": [
+        {
+          "title": "Buddyprogramma",
+          "type": "text-center",
+          "description": "Dit jaar ga je waarschijnlijk veel thuiswerken, hierdoor kom je met minder mensen in contact. Daarom introduceren wij het buddy programma! Wij koppelen je aan een meerderejaars waar jij vragen aan kan stellen over de studie, de studievereniging en de HU. Het is gratis en je zit nergens aan vast! Klik op de knop hieronder om je aan te melden.",
+          "button": {
+            "text": "Aanmelden",
+            "url": "https://forms.gle/N9CrvUYSYFR71pqq9"
+          }
         }
       ]
     },
