@@ -77,6 +77,7 @@ export default {
   }
 
   select {
+    background: var(--secondary-background-color);
     border: 2px var(--indi-grey) solid;
     padding: 8px 16px;
     border-radius: 8px;
