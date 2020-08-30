@@ -67,8 +67,6 @@ export default {
         : false
     },
     hideMobile() {
-      console.log('is mobile', this.isMobile)
-      console.log('this.doHideMobile', this.doHideMobile)
       if(this.doHideMobile) {
         return true
       } else if(this.doHideMobile && this.isMobile) {
@@ -79,7 +77,6 @@ export default {
     }
   },
   mounted() {
-    console.log('toggle animated line')
     this.tracingInterval = setInterval(this.toggleTrace, this.interval)
   },
   destroyed() {

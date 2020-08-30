@@ -1,5 +1,7 @@
   :root {
-    --text-color: #8d8f91;
+    --text-color: #616364;
+    --root-background-color: #fff;
+    --secondary-background-color: #f2f2f2;
 
     --indi-blue-1: #72C9E0;
     --indi-blue-2: #97D5E5;
@@ -22,6 +24,28 @@
     --header-font: 'Roboto', sans-serif;
     --text-font: 'Calibri', sans-serif;
   }
+
+  [data-theme="dark"] {
+    --text-color: #f2f2f2;
+    --root-background-color: #000;
+    --secondary-background-color: #242526;
+
+    --indi-blue-1: #448596;
+    --indi-blue-2: #97D5E5;
+    --indi-blue-3: #2A4146;
+
+    --indi-green-1: #73C2B6;
+    --indi-green-2: #97CFC7;
+    --indi-green-3: #DBEDEA;
+
+    --indi-grey: #EFF0F0;
+    --indi-success: var(--indi-green-2);
+    --indi-warning: #FAC052;
+    --indi-error: #CF9797;
+
+    --panel-background: #000;
+    --inner-sidebar-background: #F8F9F9;
+}
 
   // Breakpoints
   $bp-mobile-sm: 321px;
