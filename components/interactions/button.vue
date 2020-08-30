@@ -34,7 +34,7 @@ export default {
 <style lang="scss" scoped>
   .btn {
     color: #fff;
-    background: #72c9e0;
+    background: var(--indi-blue-1);
     box-shadow: 0 0 32px rgba(181, 187, 201, 0.4);
     border-radius: 4px;
     border: 0;

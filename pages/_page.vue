@@ -51,7 +51,6 @@ export default {
       p => p.slug === this.$route.params.page
     );
     this.$set(this, 'page', pageData);
-    console.log({ pageData });
   },
   head() {
     return {

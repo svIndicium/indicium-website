@@ -21,7 +21,6 @@
     "@fullcalendar/vue": "^5.2.0",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/gtm": "^2.3.2",
-    "@svindicium/indicium-components": "^0.1.2",
     "axios": "^0.19.2",
     "axios-middleware": "^0.3.1",
     "jquery": "^3.5.1",
