@@ -167,7 +167,7 @@ export default {
         left: 0;
         height: 100%;
         width: 100%;
-        background: rgba(255, 255, 255, 0.95);
+        background: var(--root-background-color);
         z-index: 100;
         display: flex;
         justify-content: center;
