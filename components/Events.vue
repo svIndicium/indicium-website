@@ -161,7 +161,7 @@ export default {
       justify-content: center;
 
       li {
-        cursor:poiner;
+        cursor:pointer;
         display: inline-flex;
         align-items: center;
         padding: 16px;
