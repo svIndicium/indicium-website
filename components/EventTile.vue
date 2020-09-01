@@ -94,7 +94,7 @@ export default {
   flex: 1;
   flex-direction: column;
   margin: 16px;
-  background: #f3f8fa;
+  background: var(--secondary-background-color);
   padding: 16px;
   box-shadow: 0 0 20px 0 rgba(124, 124, 124, 0.1);
   transition: box-shadow 300ms;
