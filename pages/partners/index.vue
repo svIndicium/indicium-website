@@ -87,7 +87,7 @@ export default {
 
     &:hover {
       .text {
-        opacity: 100%;
+        opacity: 1;
       }
       .logo {
         opacity: 0;
