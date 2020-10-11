@@ -390,7 +390,7 @@
       "content": [
         {
           "title": "MoneyMonk",
-          "description": "Onze missie\nWij helpen ondernemers succesvol ondernemen\nHoe we dat doen?\nWe vereenvoudigen processen, geven je inzichten over jouw financiën en delen onze kennis met je.\n\nDat resulteert in...\nSlimme en eenvoudige administratie software voor dienstverlenende ondernemers.",
+          "description": "",
           "imgUrl": "/partners/moneymonk-logo.png",
           "type": "image-left",
           "button": {
@@ -565,6 +565,50 @@
           ]
         }
       ]
+    }
+  ],
+  "partners": [
+    {
+      "name": "MoneyMonk",
+      "description": "Onze missie\nWij helpen ondernemers succesvol ondernemen\nHoe we dat doen?\nWe vereenvoudigen processen, geven je inzichten over jouw financiën en delen onze kennis met je.\n\nDat resulteert in...\nSlimme en eenvoudige administratie software voor dienstverlenende ondernemers.",
+      "logo": "/partners/moneymonk-logo.png",
+      "slug": "moneymonk",
+      "url": "https://www.moneymonk.nl/"
+    },
+    {
+      "name": "Axians Integrated Solutions",
+      "description": "Wat wij doen? We optimaliseren de bedrijfskritische informatievoorziening door het ontsluiten, bouwen en beheren van API’s. Wij leggen dwarsverbanden tussen systemen en apparaten, om zo (keten)data te verrijken en te visualiseren o.b.v. de technologieën van Red Hat en Microsoft Azure. In afstemming met onze klanten werken wij bij voorkeur agile en omarmen wij de open source gedachte.Je komt terecht in een team met ca.40 medewerkers, waarin zowel JAVA ontwikkelaars, .Net ontwikkelaars en Mendix ontwikkelaars(Mendix is een rapid application platform) werken.We werken met elkaar samen aan verschillende leuke projecten, bijvoorbeeld bij Landal GreenParks en CenterParcs.Hier zijn we bezig met home automation: als de gast in het vakantiehuisje aankomt, dan is het huisje van tevoren al opgewarmd(het tempatuursysteem wordt dus gekoppeld aan het planningssysteem).We werken aan een systeem dat facturen opstelt voor betaling naar de eigenaar / verhuurder van de huisjes;hier wordt data opgehaald uit een ander systeem van Landal, waarbij er een aantal berekeningen wordt uitgevoerd op basis van een lijst functionele regels bij CenterParcs wordt er gewerkt aan een applicatie om de data van verschillende losse applicaties centraal te kunnen beheren en inzien.",
+      "logo": "/partners/axians-logo.png",
+      "slug": "axiansis",
+      "url": "https://www.axians.nl/integrated-solutions/"
+    },
+    {
+      "name": "Sue B.V.",
+      "description": "Sue is met ruim honderd IT-specialisten het grootste IT-consultancybedrijf op het gebied van Unix, Linux en open source. Al meer dan twintig jaar bieden wij top-200 bedrijven en MKB’s in Nederland deskundige assistentie bij het beheer van hun IT-infrastructuur en bedrijfsapplicaties, denk hierbij o.a. aan system management & integration, cloud, automation, networking, security, containers en configuration management. Sue kenmerkt zich door een informele en ambitieuze sfeer, veel gezellige activiteiten en volop ruimte voor jouw persoonlijke ontwikkeling. We hebben een fietsclub, fotowedstrijden, bootcamps en pubquizzen. Wekelijks zijn er trainingen, workshops en meetups over zowel technische vaardigheden (denk aan Red Hat System Administration) als professionele vaardigheden (denk aan Adviseren als Expert). Nergens anders bouw je je cv zo goed op als bij Sue!",
+      "logo": "/partners/sue.png",
+      "slug": "sue",
+      "url": "https://sue.nl/"
+    },
+    {
+      "name": "Cegeka",
+      "description": "Onze missie\nWij zijn een familiebedrijf dat IT-oplossingen levert op basis van vakmanschap. We staan dicht bij onze klanten.\n\nWij helpen organisaties om een efficiënte en gepersonaliseerde ervaring te creëren voor hun klanten, consumenten en burgers.\n\nOnze ambitie is om uit te groeien tot de Europese orchestrator op het gebied van digitale bedrijfsplatformen en ecosystemen in onze focusmarkten.",
+      "logo": "/partners/logo_cegeka.png",
+      "slug": "cegeka",
+      "url": "https://www.cegeka.com/nl-nl/"
+    },
+    {
+      "name": "Student aan huis",
+      "description": "Studentaanhuis, de digitale wegenwacht van Nederland\nHeb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze deskundige IT-studenten lossen het snel en vakkundig voor je op.\nWij verhelpen niet alleen je problemen, maar zorgen er ook voor dat je altijd veilig en goed van al je digitale apparaten gebruik kunt blijven maken. Wij fixen het wel!\n",
+      "logo": "/partners/SAH.svg",
+      "slug": "studentaanhuis",
+      "url": "https://www.studentaanhuis.nl/"
+    },
+    {
+      "name": "Utrecht Promotions",
+      "description": "Textieldrukkerij Utrecht Promotions is onze vaste partner op het gebied van bedrukte en geborduurde textiel.\nLeden van Studievereniging Indicium kunnen hier hun bestellingen plaatsen en krijgen hier bij elke bestelling een standaard kortingspercentage van 10%.\nUtrecht Promotions is gevestigd in de wijk Oudwijk, net buiten het centrum van Utrecht, en is makkelijk per OV en fiets te bereiken.",
+      "logo": "/partners/utrecht-promotions-logo.png",
+      "slug": "utrechtpromotions",
+      "url": "https://www.utrecht-promotions.nl/"
     }
   ]
 }

@@ -15,6 +15,7 @@
 
 <script>
 /* eslint-disable */
+import content from '../content.json'
 export default {
   name: 'Sponsoren',
   data: () => ({
@@ -39,33 +40,13 @@ export default {
         }
       ]
     },
-    sponsoren: [
-      {
-        path: '/partners/axians-logo.png'
-      },
-      {
-        path: '/partners/logo_cegeka.png'
-      },
-      {
-        path: '/partners/moneymonk-logo.png'
-      },
-      {
-        path: '/partners/sue.png'
-      },
-      {
-        path: '/partners/SAH.svg'
-      },
-      {
-        path: '/partners/utrecht-promotions-logo.png'
-      },
-      {
-        path: '/partners/moneymonk-logo.png'
-      },
-      {
-        path: '/partners/hu-logo.svg'
-      }
-    ]
-  })
+    sponsoren: []
+  }),
+  created() {
+    content.partners.forEach(partner => {
+      this.sponsoren.push({path: partner.logo})
+    })
+  }
 }
 </script>
 
