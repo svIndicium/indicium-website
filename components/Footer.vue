@@ -15,6 +15,15 @@
       </div>
 
       <div class="column">
+        <h4>Social media</h4>
+        <ul class="footer-menu contact">
+          <li v-for="(menuItem, key) in socialMediaItems" :key="key">
+            <a :href="menuItem.link">{{ menuItem.title }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column">
         <h4>Contact</h4>
         <ul class="footer-menu contact">
           <li v-for="(value, key) in contactInfo" :key="key">
@@ -67,6 +76,24 @@ export default {
       {
         title: 'Privacyreglement',
         link: '/privacyreglement'
+      }
+    ],
+    socialMediaItems: [
+      {
+        title: 'Facebook',
+        link: 'https://www.facebook.com/SVIndicium'
+      },
+      {
+        title: 'Instagram',
+        link: 'https://instagram.com/svindicium'
+      },
+      {
+        title: 'Github',
+        link: 'https://github.com/svIndicium'
+      },
+      {
+        title: 'LinkedIn',
+        link: 'https://www.linkedin.com/company/s.v.indicium'
       }
     ]
   }),
