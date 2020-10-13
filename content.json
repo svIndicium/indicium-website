@@ -576,11 +576,11 @@
       "url": "https://www.moneymonk.nl/"
     },
     {
-      "name": "Axians Integrated Solutions",
-      "description": "Wat wij doen? We optimaliseren de bedrijfskritische informatievoorziening door het ontsluiten, bouwen en beheren van API’s. Wij leggen dwarsverbanden tussen systemen en apparaten, om zo (keten)data te verrijken en te visualiseren o.b.v. de technologieën van Red Hat en Microsoft Azure. In afstemming met onze klanten werken wij bij voorkeur agile en omarmen wij de open source gedachte.Je komt terecht in een team met ca.40 medewerkers, waarin zowel JAVA ontwikkelaars, .Net ontwikkelaars en Mendix ontwikkelaars(Mendix is een rapid application platform) werken.We werken met elkaar samen aan verschillende leuke projecten, bijvoorbeeld bij Landal GreenParks en CenterParcs.Hier zijn we bezig met home automation: als de gast in het vakantiehuisje aankomt, dan is het huisje van tevoren al opgewarmd(het tempatuursysteem wordt dus gekoppeld aan het planningssysteem).We werken aan een systeem dat facturen opstelt voor betaling naar de eigenaar / verhuurder van de huisjes;hier wordt data opgehaald uit een ander systeem van Landal, waarbij er een aantal berekeningen wordt uitgevoerd op basis van een lijst functionele regels bij CenterParcs wordt er gewerkt aan een applicatie om de data van verschillende losse applicaties centraal te kunnen beheren en inzien.",
-      "logo": "/partners/axians-logo.png",
-      "slug": "axiansis",
-      "url": "https://www.axians.nl/integrated-solutions/"
+      "name": "Hogeschool Utrecht",
+      "description": "Iedere dag leren, werken en onderzoeken duizenden mensen bij Hogeschool Utrecht. Om betere professionals te worden. En om samen bij te dragen aan het werkveld en aan de samenleving. Onderwijs, onderzoek en werkveld komen samen bij de HU.",
+      "logo": "/partners/hu-logo.svg",
+      "slug": "hogeschool-utrecht",
+      "url": "https://www.hu.nl/"
     },
     {
       "name": "Sue B.V.",
