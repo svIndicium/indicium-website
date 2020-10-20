@@ -196,16 +196,26 @@
         {
           "title": "Commissies",
           "type": "text-left",
-          "description": "De verschillende activiteiten en acties worden geregeld door commissies. Wij houden van commissieleden, daarom worden ze uitgenodigd voor exclusieve borrels, leuke uitjes en genieten ze nog meer voordelen!"
+          "description": "De verschillende activiteiten en acties worden geregeld door commissies. Dit zijn groepjes met actieve leden die graag mee willen helpen met Indicium. Je bent vaak ongeveer 1 of 2 uur per week kwijt aan een commissie, en het staat ook nog een goed op je cv! Wij houden van commissieleden, daarom worden ze uitgenodigd voor exclusieve borrels, leuke uitjes en genieten ze nog meer voordelen, zoals commissiekleding!"
         },
         {
           "subTitle": "Activiteitencommissie",
-          "description": "De activiteitencommissie houd zich bezig met het organiseren van activiteiten van de vereniging. Ze organiseert bijvoorbeeld borrels, feestjes, reizen of andere niet-educatieve activiteiten (denk aan karten of bowlen)!",
+          "description": "De activiteitencommissie houd zich bezig met het organiseren van de informele activiteiten van Indicium. Ze organiseren bijvoorbeeld borrels, reizen, bowlen of karten. Verbeter je organisatievaardigheden en kom bij de actiecom!",
           "type": "text-left",
           "card": true,
           "textLink": {
             "text": "Meld je aan!",
             "url": "https://forms.gle/eHKe6KNVtnEUMNeDA"
+          }
+        },
+        {
+          "subTitle": "Gamescom",
+          "description": "De gamescom beheert de game servers van Indicium en organiseert game gerelateerde activiteiten. Hierbij kan je denken aan game nights of een LAN-party.",
+          "type": "text-left",
+          "card": true,
+          "textLink": {
+            "text": "Meld je aan!",
+            "url": "https://forms.gle/fksEX4AYJrJRqtMN6"
           }
         },
         {
@@ -220,7 +230,7 @@
         },
         {
           "subTitle": "Educatiecommissie",
-          "description": "De educatiecommissie is verantwoordelijk voor alle gastcolleges, bedrijfsbezoeken, lunchlezingen en andere educatieve activiteiten. Wil jij colleges krijgen over onderwerpen die niet door school worden aangeboden (zoals quantum computing of security), of wil jij weten hoe bedrijven dingen aanpakken? Kom eens kijken bij de educatiecommissie!",
+          "description": "De educatiecommissie is verantwoordelijk voor alle gastcolleges, bedrijfsbezoeken, lunchlezingen en andere educatieve activiteiten. Ze nodigen interessante gastsprekers uit die je meer kunnen vertellen dan je opleiding je aanbied. Kom eens een keer kijken bij een van onze gastcolleges!",
           "type": "text-left",
           "card": true,
           "textLink": {
@@ -230,7 +240,7 @@
         },
         {
           "subTitle": "Introcommissie",
-          "description": "Aan het begin van elk schooljaar organiseert Indicium een introductiekamp voor de nieuwe eerstejaars. Hier moeten de nodige voorbereidingen voor worden getroffen, zoals contact met sponsoren, activiteiten regelen en andere zaken. Lijkt het jou leuk om een supertof kamp op poten te zetten? Meld je dan aan! Het kamp wordt meestal gehouden in een van de laatste twee weken van de zomervakantie.",
+          "description": "Aan het begin van elk schooljaar organiseert Indicium een introductiekamp voor de nieuwe eerstejaars ICT studenten. Hier moeten de nodige voorbereidingen voor worden getroffen, zoals contact met sponsoren, activiteiten regelen en andere zaken. Lijkt het jou leuk om een supertof kamp op poten te zetten? Meld je dan aan! Het kamp wordt meestal gehouden in een van de laatste twee weken van de zomervakantie.",
           "type": "text-left",
           "card": true,
           "textLink": {
@@ -568,13 +578,6 @@
     }
   ],
   "partners": [
-    {
-      "name": "MoneyMonk",
-      "description": "Onze missie\nWij helpen ondernemers succesvol ondernemen\nHoe we dat doen?\nWe vereenvoudigen processen, geven je inzichten over jouw financiën en delen onze kennis met je.\n\nDat resulteert in...\nSlimme en eenvoudige administratie software voor dienstverlenende ondernemers.",
-      "logo": "/partners/moneymonk-logo.png",
-      "slug": "moneymonk",
-      "url": "https://www.moneymonk.nl/"
-    },
     {
       "name": "Hogeschool Utrecht",
       "description": "Iedere dag leren, werken en onderzoeken duizenden mensen bij Hogeschool Utrecht. Om betere professionals te worden. En om samen bij te dragen aan het werkveld en aan de samenleving. Onderwijs, onderzoek en werkveld komen samen bij de HU.",
