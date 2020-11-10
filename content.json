@@ -91,20 +91,12 @@
       "content": [
         {
           "title": "Bestuur worden",
-          "description": "Het bestuur is misschien wel het meest actieve orgaan van de vereniging. Het bestuur is de groep leden die er onder andere voor zorgt dat de commissies allemaal doen wat ze moeten doen, ervoor zorgen dat er genoeg activiteiten plaatsvinden en regelt een hoop andere dingen. Het is een drukke taak die wel te doen is naast een jaar studeren, maar wel van je vraagt om goed te plannen. ",
+          "description": "Het bestuur is het meest actieve orgaan van de vereniging. Het bestuur is de groep leden die er onder andere voor zorgt dat de commissies allemaal doen wat ze moeten doen, ervoor zorgen dat er genoeg activiteiten plaatsvinden en regelt een hoop andere dingen achter de schermen. Het is een drukke taak die wel te doen is naast een jaar studeren, maar wel van je vraagt om goed te plannen.",
           "type": "text-left"
         },
         {
-          "description": "Je bent altijd een heel collegejaar bestuur. Je start dus aan het begin van het collegejaar en draagt je taak aan het einde weer over. Er worden bijna nooit derde- of vierdejaars aangenomen in verband met stage en afstuderen. Uit ervaring blijkt dat deze mensen niet genoeg tijd kunnen stoppen in de vereniging. En omdat eerstejaars nog niet studeren aan de HU wanneer er een nieuw bestuur wordt gevormd, zitten die ook bijna nooit in het bestuur. De besturen bij Indicium bestaan dus voornamelijk uit tweedejaars. ",
+          "description": "Je bent altijd een heel collegejaar bestuur. Je start dus aan het begin van het collegejaar en draagt je taak aan het einde weer over. Studenten die op stage zijn of aan het afstuderen zijn hebben uit ervaring niet genoeg tijd voor een bestuursjaar. En omdat eerstejaars nog niet studeren aan de HU wanneer er een nieuw bestuur wordt gevormd, zitten die ook bijna nooit in het bestuur. De besturen bij Indicium bestaan dus voornamelijk uit tweedejaars.",
           "type": "text-left"
-        },
-        {
-          "description": "Er is wel een andere optie: de minor Leiderschap. Deze minor is gemaakt voor studentbestuurders die graag een jaar bestuur willen doen en daarvoor hun studie (deels) aan de kant willen zetten. Deze minor duurt een jaar en levert je net als de meeste minors 30 EC (studiepunten) op. Als je verder geen studievertraging oploopt, kun je dus in 4,5 jaar je diploma halen in plaats van 4 jaar. De minor Leiderschap kun je ook een hoop van leren naast je bestuursjaar.",
-          "type": "text-left",
-          "button": {
-            "text": "Lees meer over de minor leiderschap",
-            "url": "http://minorleiderschap.nl/"
-          }
         },
         {
           "title": "Wat heb je eraan?",
@@ -112,11 +104,11 @@
           "type": "text-left"
         },
         {
-          "description": "Versterk je CV\nEen jaar bestuur staat enorm goed op je CV. Bedrijven zijn erg happerig op mensen die tijdens hun studententijd een jaar bestuurder zijn geweest van een vereniging. Ze weten dan dat je kunt samenwerken en verantwoordelijkheid kunt dragen. \n",
+          "description": "Versterk je CV\nEen jaar bestuur staat enorm goed op je CV. Bedrijven zijn erg happig op mensen die tijdens hun studententijd een jaar bestuurder zijn geweest van een vereniging. Ze weten dan dat je kunt samenwerken en verantwoordelijkheid kunt dragen.",
           "type": "text-left"
         },
         {
-          "description": "Je leert een hoop!\nJe leert echt een hoop van een bestuursjaar! Een jaar lang samenwerken met dezelfde mensen zorgt ervoor dat je goed leert samenwerken. In dat jaar heb je ook veel contact met mensen buiten je bestuur en vereniging, waardoor je communicatieve vaardigheden een boost krijgen. En je bent een van de laatste personen die de kwaliteit van de vereniging kan waarborgen, waardoor je een sterk verantwoordelijkheidsgevoel opbouwt. \nVerder zijn er natuurlijk nog vaardigheden die per bestuursrol uniek zijn. Als penningmeester zul je bijvoorbeeld leren financiële verantwoordelijkheid te dragen voor een organisatie groter dan jijzelf. Als secretaris zullen je administratieve vaardigheden sterk verbeteren. En als voorzitter leer je een bepaalde vorm van leiderschap waar je de rest van je leven een hoop aan zult hebben. \n",
+          "description": "Je leert een hoop!\nJe leert echt een hoop van een bestuursjaar! Een jaar lang samenwerken met dezelfde mensen zorgt ervoor dat je goed leert samenwerken. In dat jaar heb je ook veel contact met mensen buiten je bestuur en vereniging, waardoor je communicatieve vaardigheden een boost krijgen. En je bent een van de laatste personen die de kwaliteit van de vereniging kan waarborgen, waardoor je een sterk verantwoordelijkheidsgevoel opbouwt.",
           "type": "text-left"
         },
         {
@@ -129,17 +121,12 @@
           "type": "text-left"
         },
         {
-          "title": "Een half bestuursjaar is niet mogelijk",
-          "description": "Een half bestuursjaar doen is eigenlijk niet mogelijk. De redenen hiervoor zijn natuurlijk duidelijk: je taken moeten halverwege het collegejaar worden overgedragen, de rest van het bestuur moet deze taken ineens overnemen of iemand inwerken die ze overneemt terwijl ze ook nog de vereniging draaiende moeten houden en het is natuurlijk helemaal niet leuk voor de overige bestuurders als een medebestuurder hun verlaat. Daarnaast kun je als bestuurder in een half jaar niet tot volle kracht stijgen, een bestuurder die een jaar lang blijft bestuur doet kan veel meer voor de vereniging betekenen. ",
-          "type": "text-left"
-        },
-        {
           "title": "Bestuurder worden?",
           "description": "Klik dan op de link hieronder en vul het formulier in, dan neemt iemand van het huidige bestuur contact met je op. Je moet inloggen met je Google-account. ",
           "type": "text-left",
           "button": {
             "text": "Solliciteer",
-            "url": "https://forms.gle/M1mPs3Kv8jxEj5Tx6"
+            "url": "https://forms.gle/Ux6unqJbCL4RbuXV8"
           }
         },
         {
@@ -177,7 +164,7 @@
         },
         {
           "title": "Het bestuur",
-          "description": "In bestuursjaar 2019-2020 hebben we een vijfkoppig bestuur. Na hard werken aan het begin van het jaar is er een bestuur gevormd, dat natuurlijk uit alleen maar HBO-ICT-studenten bestaat.",
+          "description": "In bestuursjaar 2019-2020 hebben we een vierkoppig bestuur. Na hard werken aan het begin van het jaar is er een bestuur gevormd, dat natuurlijk uit alleen maar HBO-ICT-studenten bestaat.",
           "type": "text-left",
           "button": {
             "text": "Meer weten",
@@ -506,11 +493,6 @@
           "title": "Rick Holtman",
           "subTitle": "Vicevoorzitter",
           "type": "text-right"
-        },
-        {
-          "title": "Alex Streumer",
-          "subTitle": "Algemeen lid",
-          "type": "text-left"
         }
       ]
     },
