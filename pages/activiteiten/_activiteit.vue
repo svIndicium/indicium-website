@@ -119,7 +119,7 @@ export default {
       ]
 
       return week[currentDay]
-    }
+    },
     getDateAsString(date) {
       return `${this.getDayAsString(date.getDay())} ${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()} ${this.getTimeAsString(date)}`
     },
