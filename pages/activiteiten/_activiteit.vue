@@ -109,16 +109,16 @@ export default {
     },
     getDayAsString(currentDay = new Date().getDay()) {
       const week = [
+        'Zondag',
         'Maandag',
         'Dinsdag',
         'Woensdag',
         'Donderdag',
         'Vrijdag',
-        'Zaterdag',
-        'Zondag'
+        'Zaterdag'
       ]
 
-      return week[currentDay - 1]
+      return week[currentDay]
     },
     getDateAsString(date) {
       return `${this.getDayAsString(date.getDay())} ${date.getDate()} ${this.getMonthAsString(date.getMonth())} ${date.getFullYear()} ${this.getTimeAsString(date)}`
