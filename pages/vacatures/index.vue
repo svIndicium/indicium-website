@@ -81,7 +81,7 @@ export default {
         case '9':
           return content.partners[3]
         default:
-          return content.partners[2]
+          return content.partners[0]
       }
     },
   }
