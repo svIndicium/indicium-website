@@ -15,7 +15,7 @@
         <p>{{ vacancy.address }}</p>
         <p>{{ vacancy.email }}</p>
         <div class="buttons">
-          <Button :url="vacancy.url" size="l">
+          <Button v-if="vacancy.url !== ''" :url="vacancy.url" size="l">
             Meer info over deze sollicitatie
           </Button>
           <Button :url="'/partners/' + getPartner(vacancy.partner).slug" size="l">
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div v-html="vacancy.description.long"></div>
-    <Button :url="vacancy.url" size="l">
+    <Button v-if="vacancy.url !== ''" :url="vacancy.url" size="l">
       Meer info over deze sollicitatie
     </Button>
   </div>
@@ -70,7 +70,7 @@ export default {
         case '9':
           return content.partners[3]
         default:
-          return content.partners[1]
+          return content.partners[0]
       }
     },
   }
@@ -78,6 +78,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/variables.scss';
 
 .bold {
   font-weight: 450;
@@ -100,6 +101,10 @@ export default {
 
 .head {
   display: flex;
+
+  @media screen and (max-width: $bp-tablet-sm) {
+    flex-flow: column-reverse;
+  }
 
   div {
     flex-basis: 50%;
