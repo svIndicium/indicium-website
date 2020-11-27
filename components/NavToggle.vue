@@ -2,7 +2,7 @@
   <div class="nav-toggle">
     <div class="logo" v-if="!isHome">
       <n-link to="/">
-        <img src="/logo/indicium-logo-left.svg" alt="Indicium Logo" />
+        <img :src="logoUrl" alt="Indicium Logo" />
       </n-link>
     </div>
     <div class="toggle" @click="emitNavToggle">
@@ -32,11 +32,26 @@ export default {
       return this.$route.path === "/";
     },
   },
+  mounted() {
+    this.$eventBus.$on("dark-mode", (payload) => {
+      const isDarkmode = payload;
+      this.$set(
+        this,
+        "logoUrl",
+        isDarkmode
+          ? "/logo/indicium-logo-left-dark.svg"
+          : "/logo/indicium-logo-left.svg"
+      );
+    });
+  },
   methods: {
     emitNavToggle() {
       this.$eventBus.$emit("nav-toggle", true);
     },
   },
+  data: () => ({
+    logoUrl: "/logo/indicium-logo-left.svg",
+  }),
 };
 </script>
 
