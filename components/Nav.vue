@@ -160,6 +160,7 @@ export default {
     }
 
     .close {
+        cursor: pointer;
         display: none;
     }
 
