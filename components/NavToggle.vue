@@ -45,6 +45,7 @@ export default {
   }
 
   .toggle {
+    cursor: pointer;
     display: none;
     position: fixed;
     z-index: 90;
