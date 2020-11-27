@@ -7,7 +7,6 @@
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#8d8f91"
                 stroke-width="3"
                 stroke-linecap="square"
                 stroke-linejoin="arcs"
@@ -194,6 +193,8 @@ export default {
         }
 
         .close {
+            
+            stroke: var(--text-color);
             display: block;
             position: absolute;
             top: 24px;
