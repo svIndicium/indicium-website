@@ -17,11 +17,15 @@
             </svg>
         </div>
 
-        <div class="container flex">
-            <div v-show="!isHome && !isMobile" class="logo">
+        <div class="container flex" @click="$eventBus.$emit('nav-toggle', false)">
+            <div v-show="!isHome" class="logo">
                 <n-link to="/">
                     <img :src="logoUrl" alt="Indicium Logo" />
                 </n-link>
+            </div>
+
+            <div v-show="isHome" class="logo">
+                <img :src="logoUrl" alt="Indicium Logo" />
             </div>
 
             <ul :style="{ margin: isHome ? '0 auto' : '0'}">
