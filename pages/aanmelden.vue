@@ -66,14 +66,14 @@
           required
         />
       </client-only>
-      <CheckBox v-model="registration.statuten" class="check-box" :error="fieldErrors['statuten']" required>
+      <CheckBox v-model="registration.statuten" class="check-box" :error="fieldErrors['acceptsStatuten']" required>
         Ik ga akkoord met de
         <TextLink url="statuten" inline>
           statuten
         </TextLink>
         van Studievereniging Indicium.
       </CheckBox>
-      <CheckBox v-model="registration.toReceiveNewsletter" class="check-box">
+      <CheckBox v-model="registration.receivingNewsletter" class="check-box">
         Ik wil graag de maandelijkse nieuwsbrief ontvangen met aankomende activiteiten, nieuwtjes en updates van de vereniging.
       </CheckBox>
       <div v-if="error">
@@ -92,15 +92,15 @@
 </template>
 
 <script>
-  import TextLink from '../components/interactions/TextLink.vue'
-  import Button from '../components/interactions/button.vue'
-  import TextInput from '../components/interactions/TextInput.vue'
-  import SelectBox from '../components/interactions/SelectBox.vue'
-  import CheckBox from '../components/interactions/CheckBox.vue'
-  import Loading from '../components/Loading.vue'
-  import Icon from '../components/Icon'
+import TextLink from '../components/interactions/TextLink.vue'
+import Button from '../components/interactions/button.vue'
+import TextInput from '../components/interactions/TextInput.vue'
+import SelectBox from '../components/interactions/SelectBox.vue'
+import CheckBox from '../components/interactions/CheckBox.vue'
+import Loading from '../components/Loading.vue'
+import Icon from '../components/Icon.vue'
 
-  export default {
+export default {
   name: 'Aanmelden',
   components: {
     CheckBox,
@@ -122,7 +122,7 @@
         dateOfBirth: null,
         studyTypeId: 0,
         statuten: false,
-        toReceiveNewsletter: false
+        receivingNewsletter: false
       },
       phoneNumberKey: 0,
       studyTypes: [],
