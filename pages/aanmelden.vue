@@ -202,8 +202,8 @@ export default {
       if (this.registration.studyTypeId === 0) {
         this.addFieldError('studyTypeId', 'Selecteer een studierichting')
       }
-      if (!this.registration.statuten) {
-        this.addFieldError('statuten', 'Ga akkoord met de statuten om verder te gaan')
+      if (!this.registration.acceptsStatuten) {
+        this.addFieldError('acceptsStatuten', 'Ga akkoord met de statuten om verder te gaan')
       }
     },
     checkNotBlank(field, error) {
