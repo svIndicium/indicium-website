@@ -21,7 +21,6 @@ export default {
   name: 'SelectBox',
   props: {
     value: {
-      type: Number,
       default: 0,
     },
     label: {
