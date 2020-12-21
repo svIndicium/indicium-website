@@ -66,7 +66,7 @@
           required
         />
       </client-only>
-      <CheckBox v-model="registration.statuten" class="check-box" :error="fieldErrors['acceptsStatuten']" required>
+      <CheckBox v-model="registration.acceptsStatuten" class="check-box" :error="fieldErrors['acceptsStatuten']" required>
         Ik ga akkoord met de
         <TextLink url="statuten" inline>
           statuten
@@ -121,7 +121,7 @@ export default {
         phoneNumber: null,
         dateOfBirth: null,
         studyTypeId: 0,
-        statuten: false,
+        acceptsStatuten: false,
         receivingNewsletter: false
       },
       phoneNumberKey: 0,
