@@ -589,6 +589,13 @@
       "logo": "/partners/utrecht-promotions-logo.png",
       "slug": "utrechtpromotions",
       "url": "https://www.utrecht-promotions.nl/"
+    },
+    {
+      "name": "Bizzerd",
+      "description": "Wij zijn bizzerd.com. We zijn een snelgroeiende Utrechtse start-up die de wereld wil veroveren met digitale visitekaartjes. ",
+      "logo": "/partners/bizzerd.svg",
+      "slug": "bizzerd",
+      "url": "https://www.bizzerd.com/"
     }
   ]
 }

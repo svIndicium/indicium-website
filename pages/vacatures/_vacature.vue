@@ -69,6 +69,8 @@ export default {
       switch (oldId) {
         case '9':
           return content.partners[3]
+        case '10':
+          return content.partners[5]
         default:
           return content.partners[0]
       }
