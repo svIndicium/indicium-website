@@ -44,7 +44,9 @@ export default {
   }),
   created() {
     content.partners.forEach(partner => {
-      this.sponsoren.push({path: partner.logo})
+      if (partner.show) {
+        this.sponsoren.push({path: partner.logo})
+      }
     })
   }
 }
