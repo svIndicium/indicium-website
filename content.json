@@ -560,6 +560,7 @@
       "description": "Iedere dag leren, werken en onderzoeken duizenden mensen bij Hogeschool Utrecht. Om betere professionals te worden. En om samen bij te dragen aan het werkveld en aan de samenleving. Onderwijs, onderzoek en werkveld komen samen bij de HU.",
       "logo": "/partners/hu-logo.svg",
       "slug": "hogeschool-utrecht",
+      "show": true,
       "url": "https://www.hu.nl/"
     },
     {
@@ -567,6 +568,7 @@
       "description": "Sue is met ruim honderd IT-specialisten het grootste IT-consultancybedrijf op het gebied van Unix, Linux en open source. Al meer dan twintig jaar bieden wij top-200 bedrijven en MKB’s in Nederland deskundige assistentie bij het beheer van hun IT-infrastructuur en bedrijfsapplicaties, denk hierbij o.a. aan system management & integration, cloud, automation, networking, security, containers en configuration management. Sue kenmerkt zich door een informele en ambitieuze sfeer, veel gezellige activiteiten en volop ruimte voor jouw persoonlijke ontwikkeling. We hebben een fietsclub, fotowedstrijden, bootcamps en pubquizzen. Wekelijks zijn er trainingen, workshops en meetups over zowel technische vaardigheden (denk aan Red Hat System Administration) als professionele vaardigheden (denk aan Adviseren als Expert). Nergens anders bouw je je cv zo goed op als bij Sue!",
       "logo": "/partners/sue.png",
       "slug": "sue",
+      "show": true,
       "url": "https://sue.nl/"
     },
     {
@@ -574,6 +576,7 @@
       "description": "Onze missie\nWij zijn een familiebedrijf dat IT-oplossingen levert op basis van vakmanschap. We staan dicht bij onze klanten.\n\nWij helpen organisaties om een efficiënte en gepersonaliseerde ervaring te creëren voor hun klanten, consumenten en burgers.\n\nOnze ambitie is om uit te groeien tot de Europese orchestrator op het gebied van digitale bedrijfsplatformen en ecosystemen in onze focusmarkten.",
       "logo": "/partners/logo_cegeka.png",
       "slug": "cegeka",
+      "show": true,
       "url": "https://www.cegeka.com/nl-nl/"
     },
     {
@@ -581,6 +584,7 @@
       "description": "Studentaanhuis, de digitale wegenwacht van Nederland\nHeb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze deskundige IT-studenten lossen het snel en vakkundig voor je op.\nWij verhelpen niet alleen je problemen, maar zorgen er ook voor dat je altijd veilig en goed van al je digitale apparaten gebruik kunt blijven maken. Wij fixen het wel!\n",
       "logo": "/partners/SAH.svg",
       "slug": "studentaanhuis",
+      "show": true,
       "url": "https://www.studentaanhuis.nl/"
     },
     {
@@ -588,6 +592,7 @@
       "description": "Textieldrukkerij Utrecht Promotions is onze vaste partner op het gebied van bedrukte en geborduurde textiel.\nLeden van Studievereniging Indicium kunnen hier hun bestellingen plaatsen en krijgen hier bij elke bestelling een standaard kortingspercentage van 10%.\nUtrecht Promotions is gevestigd in de wijk Oudwijk, net buiten het centrum van Utrecht, en is makkelijk per OV en fiets te bereiken.",
       "logo": "/partners/utrecht-promotions-logo.png",
       "slug": "utrechtpromotions",
+      "show": true,
       "url": "https://www.utrecht-promotions.nl/"
     },
     {
@@ -595,6 +600,7 @@
       "description": "Wij zijn bizzerd.com. We zijn een snelgroeiende Utrechtse start-up die de wereld wil veroveren met digitale visitekaartjes. ",
       "logo": "/partners/bizzerd.svg",
       "slug": "bizzerd",
+      "show": false,
       "url": "https://www.bizzerd.com/"
     }
   ]
