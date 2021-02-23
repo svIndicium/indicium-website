@@ -6,10 +6,11 @@
     </div>
     <div v-else>
       <p>
-        Harstikke leuk dat je lid wilt worden van Indicium! Om je in te schrijven hebben we een aantal standaard gegevens van je nodig. Uiteraard zullen we zorgvuldig omgaan met je gegevens, meer weten? Check ons
-        <TextLink url="privacyreglement" inline>
-          privacy reglement
-        </TextLink>
+        Harstikke leuk dat je lid wilt worden van Indicium! Om je in te
+        schrijven hebben we een aantal standaard gegevens van je nodig.
+        Uiteraard zullen we zorgvuldig omgaan met je gegevens, meer weten? Check
+        ons
+        <TextLink url="privacyreglement" inline> privacy reglement </TextLink>
         !
       </p>
       <TextInput
@@ -20,7 +21,13 @@
         :error="fieldErrors['firstName']"
         required
       />
-      <TextInput v-model="registration.middleName" placeholder="Tussenvoegsel" name="middleName" label="Tussenvoegsel" :error="fieldErrors['middleName']" />
+      <TextInput
+        v-model="registration.middleName"
+        placeholder="Tussenvoegsel"
+        name="middleName"
+        label="Tussenvoegsel"
+        :error="fieldErrors['middleName']"
+      />
       <TextInput
         v-model="registration.lastName"
         placeholder="Achternaam"
@@ -31,9 +38,9 @@
       />
       <TextInput
         v-model="registration.mailAddress"
-        placeholder="Emailadres"
+        placeholder="E-mailadres"
         name="email"
-        label="Emailadres"
+        label="E-mailadres"
         required
         :error="fieldErrors['mailAddress']"
       />
@@ -66,22 +73,26 @@
           required
         />
       </client-only>
-      <CheckBox v-model="registration.acceptsStatuten" class="check-box" :error="fieldErrors['acceptsStatuten']" required>
+      <CheckBox
+        v-model="registration.acceptsStatuten"
+        class="check-box"
+        :error="fieldErrors['acceptsStatuten']"
+        required
+      >
         Ik ga akkoord met de
-        <TextLink url="statuten" inline>
-          statuten
-        </TextLink>
+        <TextLink url="statuten" inline> statuten </TextLink>
         van Studievereniging Indicium.
       </CheckBox>
       <CheckBox v-model="registration.receivingNewsletter" class="check-box">
-        Ik wil graag de maandelijkse nieuwsbrief ontvangen met aankomende activiteiten, nieuwtjes en updates van de vereniging.
+        Ik wil graag de maandelijkse nieuwsbrief ontvangen met aankomende
+        activiteiten, nieuwtjes en updates van de vereniging.
       </CheckBox>
       <div v-if="error">
         <div class="errorcontainer">
           <Icon type="alert-triangle" class="icon" />
           <span class="message">
-          {{ error }}
-        </span>
+            {{ error }}
+          </span>
         </div>
       </div>
       <Button size="l" class="submit-buttom" @click.native="saveRegistration">
@@ -92,16 +103,16 @@
 </template>
 
 <script>
-import TextLink from '../components/interactions/TextLink.vue'
-import Button from '../components/interactions/button.vue'
-import TextInput from '../components/interactions/TextInput.vue'
-import SelectBox from '../components/interactions/SelectBox.vue'
-import CheckBox from '../components/interactions/CheckBox.vue'
-import Loading from '../components/Loading.vue'
-import Icon from '../components/Icon.vue'
+import TextLink from "../components/interactions/TextLink.vue";
+import Button from "../components/interactions/button.vue";
+import TextInput from "../components/interactions/TextInput.vue";
+import SelectBox from "../components/interactions/SelectBox.vue";
+import CheckBox from "../components/interactions/CheckBox.vue";
+import Loading from "../components/Loading.vue";
+import Icon from "../components/Icon.vue";
 
 export default {
-  name: 'Aanmelden',
+  name: "Aanmelden",
   components: {
     CheckBox,
     SelectBox,
@@ -122,128 +133,160 @@ export default {
         dateOfBirth: null,
         studyTypeId: 0,
         acceptsStatuten: false,
-        receivingNewsletter: false
+        receivingNewsletter: false,
       },
       phoneNumberKey: 0,
       studyTypes: [],
       loading: false,
       error: null,
-      fieldErrors: {}
-    }
+      fieldErrors: {},
+    };
   },
   computed: {
     getStudyTypesForSelectBox() {
-      return this.studyTypes.map(studyType => ({ key: studyType.name, value: studyType.id }))
+      return this.studyTypes.map((studyType) => ({
+        key: studyType.name,
+        value: studyType.id,
+      }));
     },
     getDefaultItemForSelectBox() {
-      return { key: 'Selecteer studierichting', value: 0 }
+      return { key: "Selecteer studierichting", value: 0 };
     },
   },
   watch: {
     error(e) {
       if (e !== null && e.errors !== undefined) {
-        this.fieldErrors = []
+        this.fieldErrors = [];
         e.errors.forEach((err) => {
-          this.fieldErrors[err.field] = err.message
-        })
+          this.fieldErrors[err.field] = err.message;
+        });
       }
-    }
+    },
   },
   mounted() {
-    this.getStudyTypes()
+    this.getStudyTypes();
   },
   methods: {
     getStudyTypes() {
-      this.$api.get('/studytypes')
-        .then((res) => {
-          this.studyTypes = res.data
-        })
+      this.$api.get("/studytypes").then((res) => {
+        this.studyTypes = res.data;
+      });
     },
     async saveRegistration() {
-      this.validateRegistration()
+      this.validateRegistration();
       if (Object.keys(this.fieldErrors).length !== 0) {
-        this.error = 'Je aanmelding klopt niet helemaal, verbeter hem en lever hem opnieuw in!'
-        return
+        this.error =
+          "Je aanmelding klopt niet helemaal, verbeter hem en lever hem opnieuw in!";
+        return;
       }
-      this.loading = true
+      this.loading = true;
       try {
-        const { status } = await this.$api.post('/registrations', this.registration)
+        const { status } = await this.$api.post(
+          "/registrations",
+          this.registration
+        );
         if (status === 201) {
-          this.$router.push('/aangemeld')
+          this.$router.push("/aangemeld");
         }
       } catch (e) {
         if (e.response.status === 400) {
-          this.error = e.response.data.error.message
+          this.error = e.response.data.error.message;
         }
       }
-      this.loading = false
+      this.loading = false;
     },
     fixPhoneNumber() {
       if (this.registration.phoneNumber !== null) {
-        if (this.registration.phoneNumber.startsWith('06')) {
-          this.$set(this.registration, 'phoneNumber', `+316${this.registration.phoneNumber.slice(2, 10)}`)
-          this.phoneNumberKey += 1
+        if (this.registration.phoneNumber.startsWith("06")) {
+          this.$set(
+            this.registration,
+            "phoneNumber",
+            `+316${this.registration.phoneNumber.slice(2, 10)}`
+          );
+          this.phoneNumberKey += 1;
         }
       }
     },
     addFieldError(field, error) {
-      this.fieldErrors[field] = error
+      this.fieldErrors[field] = error;
     },
     validateRegistration() {
-      this.fieldErrors = {}
-      this.checkNotBlank('firstName', 'Voornaam mag niet leeg zijn.')
-      this.checkNotBlank('lastName', 'Achternaam mag niet leeg zijn.')
-      this.checkNotBlank('mailAddress', 'Emailadres mag niet leeg zijn.')
-      this.checkNotBlank('phoneNumber', 'Telefoonnummer mag niet leeg zijn.')
-      this.checkNotBlank('dateOfBirth', 'Geboortedatum mag niet leeg zijn.')
-      if (this.registration.phoneNumber !== null && (!this.registration.phoneNumber.startsWith('+316') || this.registration.phoneNumber.length !== 12)) {
-        this.addFieldError('phoneNumber', 'Voer alsjeblieft een geldig mobiel nummer in')
+      this.fieldErrors = {};
+      this.checkNotBlank("firstName", "Voornaam mag niet leeg zijn.");
+      this.checkNotBlank("lastName", "Achternaam mag niet leeg zijn.");
+      if (
+        (this.registration.mailAddress !== null &&
+          !this.registration.mailAddress.includes("@")) ||
+        this.registration.mailAddress.includes("@student.hu")
+      ) {
+        this.addFieldError(
+          "mailAddress",
+          "Voer alsjeblieft een geldig NIET HU email adress in"
+        );
+      }
+      this.checkNotBlank("phoneNumber", "Telefoonnummer mag niet leeg zijn.");
+      this.checkNotBlank("dateOfBirth", "Geboortedatum mag niet leeg zijn.");
+      if (
+        this.registration.phoneNumber !== null &&
+        (!this.registration.phoneNumber.startsWith("+316") ||
+          this.registration.phoneNumber.length !== 12)
+      ) {
+        this.addFieldError(
+          "phoneNumber",
+          "Voer alsjeblieft een geldig mobiel nummer in"
+        );
       }
       if (this.registration.studyTypeId === 0) {
-        this.addFieldError('studyTypeId', 'Selecteer een studierichting')
+        this.addFieldError("studyTypeId", "Selecteer een studierichting");
       }
       if (!this.registration.acceptsStatuten) {
-        this.addFieldError('acceptsStatuten', 'Ga akkoord met de statuten om verder te gaan')
+        this.addFieldError(
+          "acceptsStatuten",
+          "Ga akkoord met de statuten om verder te gaan"
+        );
       }
     },
     checkNotBlank(field, error) {
-      if (this.registration[field] === null || this.registration.firstName === '') {
-        this.addFieldError(field, error)
+      if (
+        this.registration[field] === null ||
+        this.registration.firstName === ""
+      ) {
+        this.addFieldError(field, error);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  label {
-    display: inline;
+label {
+  display: inline;
+}
+
+.check-box {
+  margin-top: 8px;
+}
+
+.submit-buttom {
+  margin-top: 16px;
+}
+
+.errorcontainer {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--indi-error);
+  margin-bottom: 16px;
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
   }
 
-  .check-box {
-    margin-top: 8px;
+  .message {
+    padding-left: 8px;
   }
-
-  .submit-buttom {
-    margin-top: 16px;
-  }
-
-  .errorcontainer {
-    margin-top: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    color: var(--indi-error);
-    margin-bottom: 16px;
-
-    .icon {
-      width: 32px;
-      height: 32px;
-      font-size: 32px;
-    }
-
-    .message {
-      padding-left: 8px;
-    }
-  }
+}
 </style>
