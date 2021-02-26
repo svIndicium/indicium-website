@@ -62,12 +62,12 @@ export default {
       {
         title: "Inschrijven",
         link:
-          "https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform",
+          "/aanmelden",
       },
-      // {
-      //   title: 'Vacatures',
-      //   link: '#'
-      // },
+      {
+        title: "Vacatures",
+        url: "/vacatures",
+      },
       {
         title: "Statuten",
         link: "/statuten",

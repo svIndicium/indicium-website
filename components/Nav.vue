@@ -101,7 +101,7 @@ export default {
       },
       {
         title: "Vacatures",
-        url: "https://old.indicium.hu/vacatures",
+        url: "/vacatures",
       },
       {
         title: "Contact",
