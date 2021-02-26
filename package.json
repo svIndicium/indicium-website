@@ -27,7 +27,7 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.2",
     "vuejs-datepicker": "^1.6.2",
-    "vue-slick": "^1.1.15"
+    "vue-slick": "^1.1.16"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
