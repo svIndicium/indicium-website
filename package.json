@@ -25,7 +25,7 @@
     "axios-middleware": "^0.3.1",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.14.0",
+    "nuxt": "^2.15.2",
     "vuejs-datepicker": "^1.6.2",
     "vue-slick": "^1.1.15"
   },
@@ -38,6 +38,6 @@
     "eslint-plugin-vue": "^7.6.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.4",
-    "sass-loader": "^10.0.1"
+    "sass-loader": "^10.1.1"
   }
 }
