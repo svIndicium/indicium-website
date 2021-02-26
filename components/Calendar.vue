@@ -1,11 +1,7 @@
 <template>
   <FullCalendar
-    v-if="events.length > 0"
-    defaultView="dayGridMonth"
-    :plugins="calendarPlugins"
-    :events="events"
-    :firstDay="1"
-    :eventTimeFormat="{hour: 'numeric', minute: '2-digit', hour12: false}"
+    v-if="calendarOptions.events.length > 0"
+    :options="calendarOptions"
   />
   <div v-else class="height-fix">
     <Loading />
@@ -25,6 +21,17 @@ export default {
     Loading
   },
   data: () => ({
+    calendarOptions: {
+      plugins: [dayGridPlugin],
+      defaultView: "dayGridMonth",
+      events: [],
+      firstDay: 1,
+      eventTimeFormat: {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: false
+      }
+    },
     calendarPlugins: [dayGridPlugin],
     events: []
   }),
@@ -37,16 +44,14 @@ export default {
   },
   methods: {
     mapFetchedEvents(events) {
-      const mappedEvents = events.map(event => ({
+      this.calendarOptions.events = events.map(event => ({
         id: event.id,
         title: event.attributes.title,
         start: event.attributes.start,
         end: event.attributes.end,
         url: `/activiteiten/${event.attributes.slug}-${event.id}`,
         allday: true
-      }))
-
-      this.$set(this, 'events', mappedEvents)
+      }));
     }
   }
 }
