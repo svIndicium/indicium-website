@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <h1>Onze partners</h1>
     <div class="partner-container">
-      <div v-for="(partner, i) in partners" :key="i" class="partner">
+      <div v-for="(partner, i) in shuffle(partners)" :key="i" class="partner">
         <div class="logo">
           <div class="logo-container">
             <img :src="partner.logo" :alt="partner.name + ' logo'" />
@@ -10,7 +11,9 @@
         <div class="text">
           <h4>{{ partner.name }}</h4>
           <p>{{ getDescription(partner.description) }}</p>
-          <Button :url="'/partners/' + partner.slug">Lees meer</Button>
+          <Button :url="'/partners/' + partner.slug">
+            Lees meer
+          </Button>
         </div>
       </div>
     </div>
@@ -19,11 +22,11 @@
 
 <script>
 import content from '../../content.json'
-import Button from "~/components/interactions/button";
+import Button from '~/components/interactions/button'
 
 export default {
   name: 'Index',
-  components: {Button},
+  components: { Button },
   data: () => ({ partners: content.partners }),
   methods: {
     getDescription(description) {
@@ -32,6 +35,13 @@ export default {
         return `${text}...`
       }
       return text
+    },
+    shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]]
+      }
+      return a
     }
   }
 }
