@@ -67,7 +67,7 @@ export default {
     max-width: 60%;
     display: none;
 
-    @media screen and (max-width: $bp-tablet-sm) {
+    @media screen and (max-width: $bp-tablet-md) {
       display: block;
     }
   }
@@ -81,7 +81,7 @@ export default {
     top: 24px;
     right: 24px;
 
-    @media screen and (max-width: $bp-tablet-sm) {
+    @media screen and (max-width: $bp-tablet-md) {
       display: block;
     }
   }

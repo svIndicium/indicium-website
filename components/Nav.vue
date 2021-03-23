@@ -136,27 +136,44 @@ export default {
   .logo {
     img {
       max-width: 204px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 
+  .container.flex{
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   ul {
-    list-style: none;
+    //list-style: none;
     display: flex;
-    max-width: 984px;
+    // max-width: 984px;
     // margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     overflow: auto;
 
     li {
+      width: 500px;
+      padding-top: 15px;
+      padding-bottom: 15px;
       a {
+        position: relative;
         display: block;
-        padding: 24px;
         font-size: 1rem;
         font-weight: 500;
         color: var(--text-color);
         text-align: center;
         text-decoration: none;
+      }
+
+      a:hover{
+        text-decoration: underline;
       }
     }
   }
@@ -166,8 +183,9 @@ export default {
     display: none;
   }
 
+
   // mobile nav
-  @media screen and (max-width: $bp-tablet-sm) {
+  @media screen and (max-width: $bp-tablet-md) {
     opacity: 1;
     position: fixed;
     top: 0;
