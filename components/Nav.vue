@@ -85,7 +85,7 @@ export default {
   },
   data: () => ({
     logoUrl: "/logo/indicium-logo-left.svg",
-    isNavShown: true,
+    isNavShown: false,
     items: [
       {
         title: "Partners",
@@ -96,7 +96,7 @@ export default {
         url: "/activiteiten",
       },
       {
-        title: Math.random() > 0.6 ? "Over Indicium" : "Commissies",
+        title: "Over Indicium / Commissies",
         url: "/over-indicium",
       },
       {
@@ -171,7 +171,7 @@ export default {
     opacity: 1;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     height: 100%;
     width: 100%;
     background: var(--root-background-color);
@@ -181,10 +181,8 @@ export default {
     align-items: center;
     transition: 100ms linear;
 
-    transform: translateX(-100%);
-
     &.open {
-      transform: translateX(00%);
+      transform: translateX(100%);
     }
 
     ul {
