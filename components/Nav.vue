@@ -27,21 +27,48 @@
         <img :src="logoUrl" alt="Indicium Logo" />
       </div>
 
-      <ul :style="{ margin: isHome ? '0 auto' : '0' }">
+      <ul>
         <li v-show="isMobile">
           <n-link to="/" prefetch @click.native="hideNav">Home</n-link>
         </li>
-        <li v-for="item in items" :key="item.title + item.url">
+        <li v-for="item in items" :key="item.title + item.url + item.childs">
           <a
             v-if="item.url.startsWith('http')"
             :href="item.url"
             target="_blank"
             @click="hideNav"
-            >{{ item.title }}</a
           >
-          <n-link v-else :to="item.url" prefetch @click.native="hideNav">{{
-            item.title
-          }}</n-link>
+            {{ item.title }}
+          </a>
+
+          <n-link
+            v-else-if="item.childs"
+            :to="item.url"
+            prefetch
+            @click.native="hideNav"
+          >
+            {{ item.title }} ▽
+          </n-link>
+
+          <n-link v-else :to="item.url" prefetch @click.native="hideNav">
+            {{ item.title }}
+          </n-link>
+          <ul class="sub-menu">
+            <li v-for="child in item.childs" :key="child.title + child.url">
+              <a
+                v-if="child.url.startsWith('http')"
+                :href="child.url"
+                target="_blank"
+                @click="hideNav"
+              >
+                {{ child.title }}
+              </a>
+
+              <n-link v-else :to="item.url" prefetch @click.native="hideNav">
+                {{ child.title }}
+              </n-link>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -96,8 +123,18 @@ export default {
         url: "/activiteiten",
       },
       {
-        title: "Over Indicium / Commissies",
+        title: "Over ons",
         url: "/over-indicium",
+        childs: [
+          {
+            title: "Over Indicium",
+            url: "/over-indicium",
+          },
+          {
+            title: "Commissies",
+            url: "/over-indicium",
+          },
+        ],
       },
       {
         title: "Vacatures",
@@ -110,6 +147,28 @@ export default {
       {
         title: "Info voor eerstejaars",
         url: "/info-voor-eerstejaars",
+        childs: [
+          {
+            title: "Hoe moet je drinken",
+            url: "/over-indicium",
+          },
+          {
+            title: "Feut 101",
+            url: "/over-indicium",
+          },
+          {
+            title: "php haat voor beginners",
+            url: "/over-indicium",
+          },
+          {
+            title: "Welke koffie moet ik halen?",
+            url: "/over-indicium",
+          },
+          {
+            title: "Help mijn docent is Wouter😢",
+            url: "/over-indicium",
+          },
+        ],
       },
       {
         title: "Lid worden",
@@ -141,25 +200,40 @@ export default {
     }
   }
 
-  .container.flex{
-    padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
+  .container.flex {
+    position: relative;
+    /* center the menu if made bigger
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    */
     padding-left: 10px;
     padding-right: 10px;
   }
 
   ul {
-    //list-style: none;
     display: flex;
-    // max-width: 984px;
-    // margin: 0 auto;
+    margin: 0;
     justify-content: space-between;
     align-items: center;
     overflow: auto;
 
+    a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:focus-within {
+      outline: none;
+      text-decoration: underline overline;
+    }
+
     li {
-      width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 200px;
       padding-top: 15px;
       padding-bottom: 15px;
       a {
@@ -171,9 +245,36 @@ export default {
         text-align: center;
         text-decoration: none;
       }
+    }
 
-      a:hover{
-        text-decoration: underline;
+    .sub-menu {
+      display: none;
+      position: absolute;
+      background: var(--root-background-color);
+      top: 100%;
+      min-width: 200px;
+      box-shadow: inset 0 0 0 2px var(--indi-blue-1);
+      transition: 0.2s ease-out;
+      opacity: 1;
+      visibility: hidden; /*hidden   inset 0 -2px 0 var(--indi-blue-1);*/
+      z-index: 1;
+
+      a {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    li:hover,
+    li:focus-within {
+      .sub-menu {
+        display: list-item;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .sub-menu.li.a {
+        text-decoration: none;
       }
     }
   }
@@ -182,7 +283,6 @@ export default {
     cursor: pointer;
     display: none;
   }
-
 
   // mobile nav
   @media screen and (max-width: $bp-tablet-md) {
