@@ -54,7 +54,7 @@
             {{ item.title }}
           </n-link>
           <ul class="sub-menu">
-            <li v-for="child in item.childs" :key="child.title + child.url">
+            <li class="sub-menu-li" v-for="child in item.childs" :key="child.title + child.url">
               <a
                 v-if="child.url.startsWith('http')"
                 :href="child.url"
@@ -165,7 +165,7 @@ export default {
             url: "/over-indicium",
           },
           {
-            title: "Help mijn docent is Wouter😢",
+            title: "Help mijn docent is Wouter😢Help mijn docent is Wouter😢Help mijn docent is Wouter😢",
             url: "/over-indicium",
           },
         ],
@@ -232,13 +232,13 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-
-      width: 200px;
+      height: 60px;
+      width: 150px;
       padding-top: 15px;
       padding-bottom: 15px;
       a {
-        position: relative;
-        display: block;
+        top: 50%;
+        display: flex;
         font-size: 1rem;
         font-weight: 500;
         color: var(--text-color);
@@ -252,7 +252,6 @@ export default {
       position: absolute;
       background: var(--root-background-color);
       top: 100%;
-      min-width: 200px;
       box-shadow: inset 0 0 0 2px var(--indi-blue-1);
       transition: 0.2s ease-out;
       opacity: 1;
@@ -271,10 +270,16 @@ export default {
         display: list-item;
         opacity: 1;
         visibility: visible;
-      }
+        width: 250px;
 
-      .sub-menu.li.a {
-        text-decoration: none;
+        .sub-menu-li{
+          width: 100%;
+          height: auto;
+          .a {
+          text-decoration: none;
+          width: 100%;
+          }
+        }
       }
     }
   }
