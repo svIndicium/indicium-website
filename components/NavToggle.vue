@@ -75,6 +75,9 @@ export default {
   .toggle {
     cursor: pointer;
     stroke: var(--text-color);
+    padding: 3px;
+    padding-bottom: 0px;
+    background-color: var(--root-background-color);
     display: none;
     position: fixed;
     z-index: 90;
