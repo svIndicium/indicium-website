@@ -41,20 +41,26 @@
             {{ item.title }}
           </a>
 
-          <n-link
-            v-else-if="item.childs"
-            :to="item.url"
-            prefetch
-            @click.native="hideNav"
-          >
-            {{ item.title }} ▽
-          </n-link>
-
           <n-link v-else :to="item.url" prefetch @click.native="hideNav">
             {{ item.title }}
           </n-link>
+
+          <span v-if="item.childs" prefetch class="drop-icon-desktop-header"
+            >▾</span
+          >
+          <label
+            v-if="item.childs"
+            title="Toggle Drop-down"
+            class="drop-icon-mobile"
+            >▸</label
+          >
+
           <ul class="sub-menu">
-            <li class="sub-menu-li" v-for="child in item.childs" :key="child.title + child.url">
+            <li
+              class="sub-menu-li"
+              v-for="child in item.childs"
+              :key="child.title + child.url + child.childs"
+            >
               <a
                 v-if="child.url.startsWith('http')"
                 :href="child.url"
@@ -67,6 +73,39 @@
               <n-link v-else :to="item.url" prefetch @click.native="hideNav">
                 {{ child.title }}
               </n-link>
+
+              <label
+                v-if="child.childs"
+                title="Toggle Drop-down"
+                class="drop-icon"
+                >▸</label
+              >
+
+              <ul class="sub-sub-menu">
+                <li
+                  class="sub-sub-menu-li"
+                  v-for="grand_child in child.childs"
+                  :key="grand_child.title + grand_child.url"
+                >
+                  <a
+                    v-if="grand_child.url.startsWith('http')"
+                    :href="grand_child.url"
+                    target="_blank"
+                    @click="hideNav"
+                  >
+                    {{ grand_child.title }}
+                  </a>
+
+                  <n-link
+                    v-else
+                    :to="item.url"
+                    prefetch
+                    @click.native="hideNav"
+                  >
+                    {{ grand_child.title }}
+                  </n-link>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
@@ -133,6 +172,20 @@ export default {
           {
             title: "Commissies",
             url: "/over-indicium",
+            childs: [
+              {
+                title: "Games!",
+                url: "/over-indicium",
+              },
+              {
+                title: "CommissieSS (css)",
+                url: "/over-indicium",
+              },
+              {
+                title: "Ka$co",
+                url: "/over-indicium",
+              },
+            ],
           },
         ],
       },
@@ -161,11 +214,34 @@ export default {
             url: "/over-indicium",
           },
           {
+            title: "Hotel?",
+            url: "/over-indicium",
+            childs: [
+              {
+                title: "Trivago!",
+                url: "/over-indicium",
+              },
+              {
+                title: "boek nu!",
+                url: "/over-indicium",
+              },
+            ],
+          },
+          {
             title: "Welke koffie moet ik halen?",
             url: "/over-indicium",
           },
           {
-            title: "Help mijn docent is Wouter😢Help mijn docent is Wouter😢Help mijn docent is Wouter😢",
+            title: "Ned's Survivel gids voor studenten",
+            url: "/over-indicium",
+          },
+          {
+            title: "De legende van een open Hideout",
+            url: "/over-indicium",
+          },
+          {
+            title:
+              "Waarom zeggen mensen soms 'techlab' als ze het TIlab bedoelen?",
             url: "/over-indicium",
           },
         ],
@@ -245,22 +321,9 @@ export default {
         text-align: center;
         text-decoration: none;
       }
-    }
 
-    .sub-menu {
-      display: none;
-      position: absolute;
-      background: var(--root-background-color);
-      top: 100%;
-      box-shadow: inset 0 0 0 2px var(--indi-blue-1);
-      transition: 0.2s ease-out;
-      opacity: 1;
-      visibility: hidden; /*hidden   inset 0 -2px 0 var(--indi-blue-1);*/
-      z-index: 1;
-
-      a {
-        padding-left: 15px;
-        padding-right: 15px;
+      .drop-icon-mobile {
+        display: none;
       }
     }
 
@@ -270,16 +333,76 @@ export default {
         display: list-item;
         opacity: 1;
         visibility: visible;
-        width: 250px;
+        width: 200px;
 
-        .sub-menu-li{
+        .sub-menu-li {
           width: 100%;
           height: auto;
           .a {
-          text-decoration: none;
-          width: 100%;
+            text-decoration: none;
+            width: 100%;
           }
         }
+      }
+    }
+
+    .sub-menu {
+      display: list-item;
+      position: absolute;
+      align-items: center;
+      flex-direction: column;
+      background: var(--root-background-color);
+      top: 100%;
+      box-shadow: inset 0 0 0 2px var(--indi-blue-green-1);
+      opacity: 1;
+      visibility: hidden; /*hidden   inset 0 -2px 0 var(--indi-blue-1);*/
+      z-index: 1;
+      overflow: visible;
+
+      a {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      li:hover,
+      li:focus-within {
+        .sub-sub-menu {
+          opacity: 1;
+          visibility: visible;
+          width: 200px;
+
+          .sub-sub-menu-li {
+            width: 100%;
+            height: auto;
+            .a {
+              text-decoration: none;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .sub-sub-menu {
+      /*display: none;*/
+      position: absolute;
+      flex-direction: column;
+      background: var(--root-background-color);
+      left: 100%;
+      margin-top: 48px;
+      /* // todo put it better nex to eachther*/
+      box-shadow: inset 0 0 0 2px var(--indi-green-1);
+      opacity: 1;
+      visibility: hidden; /*hidden   inset 0 -2px 0 var(--indi-blue-1);*/
+      z-index: 2;
+
+      a {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      li {
+        width: 200px;
       }
     }
   }
@@ -310,6 +433,38 @@ export default {
 
     ul {
       flex-direction: column;
+
+      li {
+        height: 40px;
+
+        .drop-icon-desktop-header {
+          display: none;
+        }
+
+        .drop-icon-mobile {
+          display: flex;
+        }
+      }
+
+      .sub-menu {
+        display: none;
+      }
+
+      li:hover,
+      li:focus-within {
+        .sub-menu {
+          display: none;
+
+          .sub-menu-li {
+            width: 100%;
+            height: auto;
+            .a {
+              text-decoration: none;
+              width: 100%;
+            }
+          }
+        }
+      }
     }
 
     .container {
