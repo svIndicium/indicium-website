@@ -491,9 +491,9 @@ export default {
     opacity: 1;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 100%;
     height: 100%;
-    width: 100%;
+    width: 90%;
     background: var(--root-background-color);
     z-index: 100;
     display: flex;
@@ -502,7 +502,7 @@ export default {
     transition: 100ms linear;
 
     &.open {
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
 
     ul {

@@ -77,6 +77,7 @@ export default {
     stroke: var(--text-color);
     padding: 3px;
     padding-bottom: 0px;
+    border-radius: 4px;
     background-color: var(--root-background-color);
     display: none;
     position: fixed;
