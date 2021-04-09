@@ -493,7 +493,10 @@ export default {
     top: 0;
     left: 100%;
     height: 100%;
-    width: 90%;
+    width: 80vw;
+    border-left-width: 5vw;
+    border-left-style: solid;
+    border-left-color: red;
     background: var(--root-background-color);
     z-index: 100;
     display: flex;
