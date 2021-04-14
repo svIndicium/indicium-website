@@ -1,5 +1,21 @@
 <template>
-  <nav :class="'nav'">
+  <nav :class="['nav', { open: isNavShown }]">
+    <div class="close" @click="$eventBus.$emit('nav-toggle', false)">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke-width="3"
+        stroke-linecap="square"
+        stroke-linejoin="arcs"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </div>
+
     <div class="container flex" @click="$eventBus.$emit('nav-toggle', false)">
       <div v-show="!isHome" class="logo">
         <n-link to="/">
@@ -11,13 +27,13 @@
         <img :src="logoUrl" alt="Indicium Logo" />
       </div>
 
-      <script>
-        console.log("items");
-      </script>
       <ul>
+        <li v-show="isMobile">
+          <n-link to="/" prefetch @click.native="hideNav">Home</n-link>
+        </li>
         <li v-for="item in items" :key="item.title + item.url + item.childs">
           <script>
-            console.log(item);
+            console.log(items);
           </script>
           <a
             v-if="item.url.startsWith('http')"
@@ -136,9 +152,6 @@
 
 <script>
 /* eslint-disable */
-import menu from "../assets/menu.json";
-console.log("test");
-console.log(menu.items);
 export default {
   name: "Nav",
   computed: {
@@ -150,6 +163,10 @@ export default {
     },
   },
   mounted() {
+    this.$set(this, "isNavShown", !this.isMobile);
+    this.$eventBus.$on("nav-toggle", (payload) => {
+      this.$set(this, "isNavShown", payload);
+    });
     this.$eventBus.$on("dark-mode", (payload) => {
       const isDarkmode = payload;
       this.$set(
@@ -160,11 +177,118 @@ export default {
           : "/logo/indicium-logo-left.svg"
       );
     });
-    const items = menu.items;
   },
-  data() {
-    return menu;
+  methods: {
+    hideNav() {
+      if (this.isMobile) {
+        this.$eventBus.$emit("nav-toggle", false);
+      }
+    },
   },
+  data: () => ({
+    logoUrl: "/logo/indicium-logo-left.svg",
+    isNavShown: false,
+    items: [
+      {
+        title: "Partners",
+        url: "/partners",
+      },
+      {
+        title: "Activiteiten",
+        url: "/activiteiten",
+      },
+      {
+        title: "Over ons",
+        url: "/over-indicium",
+        childs: [
+          {
+            title: "Over Indicium",
+            url: "/over-indicium",
+          },
+          {
+            title: "Commissies",
+            url: "/over-indicium",
+            childs: [
+              {
+                title: "Games!",
+                url: "/over-indicium",
+              },
+              {
+                title: "CommissieSS (css)",
+                url: "/over-indicium",
+              },
+              {
+                title: "Ka$co",
+                url: "/over-indicium",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Vacatures",
+        url: "/vacatures",
+      },
+      {
+        title: "Contact",
+        url: "/contact",
+      },
+      {
+        title: "Info voor eerstejaars",
+        url: "/info-voor-eerstejaars",
+        childs: [
+          {
+            title: "Hoe moet je drinken",
+            url: "/over-indicium",
+          },
+          {
+            title: "Feut 101",
+            url: "/over-indicium",
+          },
+          {
+            title: "php haat voor beginners",
+            url: "/over-indicium",
+          },
+          {
+            title: "Hotel?",
+            url: "/over-indicium",
+            childs: [
+              {
+                title: "Trivago!",
+                url: "/over-indicium",
+              },
+              {
+                title: "boek nu!",
+                url: "/over-indicium",
+              },
+            ],
+            childs_left: true,
+          },
+          {
+            title: "Welke koffie moet ik halen?",
+            url: "/over-indicium",
+          },
+          {
+            title: "Ned's Survivel gids voor studenten",
+            url: "/over-indicium",
+          },
+          {
+            title: "De legende van een open Hideout",
+            url: "/over-indicium",
+          },
+          {
+            title:
+              "Waarom zeggen mensen soms 'techlab' als ze het TIlab bedoelen?",
+            url: "/over-indicium",
+          },
+        ],
+      },
+      {
+        title: "Lid worden",
+        url: "/aanmelden",
+      },
+    ],
+  }),
 };
 </script>
 
@@ -363,8 +487,9 @@ export default {
   }
 
   @media screen and (max-width: $bp-tablet-md) {
-    display: block;
-    visibility: hidden;
+      .nav {
+          display: block;
+      }
   }
 }
 </style>
