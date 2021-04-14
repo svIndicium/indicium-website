@@ -11,14 +11,8 @@
         <img :src="logoUrl" alt="Indicium Logo" />
       </div>
 
-      <script>
-        console.log("items");
-      </script>
       <ul>
         <li v-for="item in items" :key="item.title + item.url + item.childs">
-          <script>
-            console.log(item);
-          </script>
           <a
             v-if="item.url.startsWith('http')"
             :href="item.url"
@@ -137,8 +131,6 @@
 <script>
 /* eslint-disable */
 import menu from "../assets/menu.json";
-console.log("test");
-console.log(menu.items);
 export default {
   name: "Nav",
   computed: {
