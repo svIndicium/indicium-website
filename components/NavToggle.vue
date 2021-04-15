@@ -1,26 +1,19 @@
 <template>
-  <div class="nav-toggle">
-    <div class="logo" v-if="!isHome">
-      <n-link to="/">
-        <img :src="logoUrl" alt="Indicium Logo" />
-      </n-link>
-    </div>
-    <div class="toggle" @click="emitNavToggle">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke-width="3"
-        stroke-linecap="square"
-        stroke-linejoin="arcs"
-      >
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </div>
+  <div class="toggle" @click="emitNavToggle">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke-width="3"
+      stroke-linecap="square"
+      stroke-linejoin="arcs"
+    >
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
   </div>
 </template>
 
@@ -31,18 +24,6 @@ export default {
     isHome() {
       return this.$route.path === "/";
     },
-  },
-  mounted() {
-    this.$eventBus.$on("dark-mode", (payload) => {
-      const isDarkmode = payload;
-      this.$set(
-        this,
-        "logoUrl",
-        isDarkmode
-          ? "/logo/indicium-logo-left-dark.svg"
-          : "/logo/indicium-logo-left.svg"
-      );
-    });
   },
   methods: {
     emitNavToggle() {
@@ -62,15 +43,6 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 24px 24px 16px;
-
-  .logo {
-    max-width: 60%;
-    display: none;
-
-    @media screen and (max-width: $bp-tablet-md) {
-      display: block;
-    }
-  }
 
   .toggle {
     cursor: pointer;

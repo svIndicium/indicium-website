@@ -1,31 +1,40 @@
 <template>
-  <nav :class="'moible-nav'">
-    <div class="close" @click="$eventBus.$emit('nav-toggle', false)">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke-width="3"
-        stroke-linecap="square"
-        stroke-linejoin="arcs"
-      >
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
-      </svg>
-    </div>
-
+  <nav class="mobile-nav">
     <div
       class="mobile-container flex"
       @click="$eventBus.$emit('nav-toggle', false)"
     >
-      <div class="logo">
+      <div v-show="!isHome" class="logo">
+        <n-link to="/">
+          <img :src="logoUrl" alt="Indicium Logo" />
+        </n-link>
+      </div>
+
+      <div v-show="isHome" class="logo">
         <img :src="logoUrl" alt="Indicium Logo" />
       </div>
 
+      <div class="toggle" @click="emitNavToggle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="3"
+          stroke-linecap="square"
+          stroke-linejoin="arcs"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </div>
+    </div>
+
+    <div class="mobile-menu flex">
       <ul>
-        <!-- <li v-for="item in items" :key="item.title + item.url + item.childs">
+        <li v-for="item in items" :key="item.title + item.url + item.childs">
           <a
             v-if="item.url.startsWith('http')"
             :href="item.url"
@@ -135,19 +144,22 @@
               </ul>
             </li>
           </ul>
-        </li> -->
+        </li>
       </ul>
     </div>
   </nav>
 </template>
 
 <script>
-//import nav from "nav";
+import menu from "../assets/menu.json";
 export default {
   name: "NavMobile",
   computed: {
     isHome() {
       return this.$route.path === "/";
+    },
+    isMobile() {
+      return process.browser ? window.innerWidth < 700 : false;
     },
   },
   mounted() {
@@ -161,22 +173,71 @@ export default {
           : "/logo/indicium-logo-left.svg"
       );
     });
+    const items = menu.items;
+  },
+  data() {
+    return menu;
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
-.nav {
-  // mobile nav
-  @media screen and (max-width: $bp-tablet-md) {
+
+.mobile-nav {
+  padding-top: 80px;
+
+  .mobile-container.flex {
+    background-color: var(--root-background-color);
+    z-index: 100;
+    background-color: red;
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 16vw;
+    max-height: 68px;
+    box-shadow: inset 0 -2px 0 var(--indi-blue-1);
+
+    // visibility: hidden;
+
+    .logo {
+      position: relative;
+      img {
+        transform: translateY(10%);
+        position: relative;
+        // padding-top: 5%;
+        padding-left: 10px;
+        height: 12vw;
+        max-height: 51px;
+      }
+    }
+
+    .toggle {
+      cursor: pointer;
+      stroke: var(--text-color);
+      padding: 3px;
+      padding-bottom: 0px;
+      border-radius: 4px;
+      background-color: var(--root-background-color);
+      display: none;
+      position: fixed;
+      z-index: 90;
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+  .mobile-menu {
+    visibility: hidden;
     opacity: 1;
     position: fixed;
     top: 0;
-    left: 100%;
+    left: 80vw;
     height: 100%;
     width: 80vw;
-    border-left-width: 5vw;
+    border-left-width: 3vw;
     border-left-style: solid;
     border-left-color: red;
     background: var(--root-background-color);
@@ -225,18 +286,14 @@ export default {
         }
       }
     }
+  }
 
-    .container {
-      flex-direction: column;
-    }
-
-    .close {
-      stroke: var(--text-color);
-      display: block;
-      position: absolute;
-      top: 24px;
-      right: 24px;
-    }
+  // @media screen and (max-width: $bp-tablet-md) {
+  //   display: block;
+  // }
+  @media screen and (min-width: $bp-tablet-md) {
+    display: block;
+    visibility: hidden;
   }
 }
 </style>

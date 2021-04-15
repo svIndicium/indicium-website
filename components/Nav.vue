@@ -17,12 +17,11 @@
             v-if="item.url.startsWith('http')"
             :href="item.url"
             target="_blank"
-            @click="hideNav"
           >
             {{ item.title }}
           </a>
 
-          <n-link v-else :to="item.url" prefetch @click.native="hideNav">
+          <n-link v-else :to="item.url">
             {{ item.title }}
           </n-link>
 
@@ -53,12 +52,11 @@
                 v-if="child.url.startsWith('http')"
                 :href="child.url"
                 target="_blank"
-                @click="hideNav"
               >
                 {{ child.title }}
               </a>
 
-              <n-link v-else :to="item.url" prefetch @click.native="hideNav">
+              <n-link v-else :to="item.url">
                 {{ child.title }}
               </n-link>
 
@@ -79,17 +77,11 @@
                     v-if="grand_child.url.startsWith('http')"
                     :href="grand_child.url"
                     target="_blank"
-                    @click="hideNav"
                   >
                     {{ grand_child.title }}
                   </a>
 
-                  <n-link
-                    v-else
-                    :to="item.url"
-                    prefetch
-                    @click.native="hideNav"
-                  >
+                  <n-link v-else :to="item.url">
                     {{ grand_child.title }}
                   </n-link>
                 </li>
@@ -105,17 +97,11 @@
                     v-if="grand_child.url.startsWith('http')"
                     :href="grand_child.url"
                     target="_blank"
-                    @click="hideNav"
                   >
                     {{ grand_child.title }}
                   </a>
 
-                  <n-link
-                    v-else
-                    :to="item.url"
-                    prefetch
-                    @click.native="hideNav"
-                  >
+                  <n-link v-else :to="item.url">
                     {{ grand_child.title }}
                   </n-link>
                 </li>

@@ -61,8 +61,7 @@ export default {
     menuItems: [
       {
         title: "Inschrijven",
-        link:
-          "/aanmelden",
+        link: "/aanmelden",
       },
       {
         title: "Vacatures",
@@ -93,24 +92,25 @@ export default {
         link: "/privacyreglement",
       },
     ],
-  socialMediaItems: [
+    socialMediaItems: [
       {
-        title: 'Facebook',
-        link: 'https://www.facebook.com/SVIndicium'
+        title: "Facebook",
+        link: "https://www.facebook.com/SVIndicium",
       },
       {
-        title: 'Instagram',
-        link: 'https://instagram.com/svindicium'
+        title: "Instagram",
+        link: "https://instagram.com/svindicium",
       },
       {
-        title: 'Github',
-        link: 'https://github.com/svIndicium'
+        title: "Github",
+        link: "https://github.com/svIndicium",
       },
       {
-        title: 'LinkedIn',
-        link: 'https://www.linkedin.com/company/s.v.indicium'
-      }
-    ]}),
+        title: "LinkedIn",
+        link: "https://www.linkedin.com/company/s.v.indicium",
+      },
+    ],
+  }),
   methods: {
     changeContrast(e) {
       const isChecked = e.target.checked;
@@ -154,8 +154,6 @@ export default {
   watch: {
     $route(to, from) {
       // h4c: correct logo render on page change
-      console.log("hehe");
-
       setTimeout(this.saveDarkMode);
     },
   },
