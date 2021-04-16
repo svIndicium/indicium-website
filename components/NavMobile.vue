@@ -14,20 +14,20 @@
         <img :src="logoUrl" alt="Indicium Logo" />
       </div>
 
-      <div class="toggle" @click="emitNavToggle">
+      <div class="nav-toggle" @click="emitNavToggle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
+          width="30"
+          height="30"
+          viewBox="0 0 30 20"
           fill="none"
-          stroke-width="3"
+          stroke-width="2"
           stroke-linecap="square"
           stroke-linejoin="arcs"
         >
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
+          <line x1="10" y1="5" x2="25" y2="5"></line>
+          <line x1="10" y1="10" x2="25" y2="10"></line>
+          <line x1="10" y1="15" x2="25" y2="15"></line>
         </svg>
       </div>
     </div>
@@ -147,6 +147,8 @@
         </li>
       </ul>
     </div>
+
+    <div class="shadow" />
   </nav>
 </template>
 
@@ -183,21 +185,24 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
-
+:root {
+  --navbar-height: 16vw;
+  --navbar-max-height: 68px;
+}
 .mobile-nav {
-  padding-top: 80px;
+  padding-top: 68px;
 
   .mobile-container.flex {
     background-color: var(--root-background-color);
     z-index: 100;
-    background-color: red;
+    background-color: green;
     display: flex;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 16vw;
-    max-height: 68px;
+    height: var(--navbar-heigh);
+    max-height: var(--navbar-max-height);
     box-shadow: inset 0 -2px 0 var(--indi-blue-1);
 
     // visibility: hidden;
@@ -214,26 +219,47 @@ export default {
       }
     }
 
-    .toggle {
+    .nav-toggle {
+      display: flex;
       cursor: pointer;
       stroke: var(--text-color);
-      padding: 3px;
       padding-bottom: 0px;
-      border-radius: 4px;
-      background-color: var(--root-background-color);
-      display: none;
-      position: fixed;
-      z-index: 90;
-      top: 24px;
-      right: 24px;
+      position: relative;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: auto;
+      width: auto;
+      height: auto;
+
+      svg {
+        display: block;
+        width: 16vw;
+        max-width: 68px;
+        height: 16vw;
+        max-height: 68px;
+      }
+      // @media screen and (max-width: $bp-tablet-md) {
+      // display: block;
+      // }
     }
   }
 
+  .shadow {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    background-color: cyan;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
   .mobile-menu {
-    visibility: hidden;
+    // visibility: hidden;
     opacity: 1;
     position: fixed;
-    top: 0;
+    top: clamp(0px, 16vw, 68px);
     left: 80vw;
     height: 100%;
     width: 80vw;
@@ -294,6 +320,8 @@ export default {
   @media screen and (min-width: $bp-tablet-md) {
     display: block;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }
 </style>
