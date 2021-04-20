@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-ARG MODE=live
+ARG MODE=production
 ENV APP_ROOT /home/appuser
 ENV HOST 0.0.0.0
 
