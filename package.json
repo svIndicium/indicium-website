@@ -4,11 +4,11 @@
   "description": "Wij zijn de studievereniging voor HBO-ICT van Hogeschool Utrecht",
   "author": "Noud Adrichem <info@noudadrichem.com>",
   "scripts": {
-    "dev": "npm run dev-dev",
+    "dev": "npm run dev-development",
     "dev-production": "cross-env NODE_ENV=production nuxt",
     "dev-testing": "cross-env NODE_ENV=testing nuxt",
     "dev-development": "cross-env NODE_ENV=development nuxt",
-    "build": "npm run build-live",
+    "build": "npm run build-production",
     "build-production": "cross-env NODE_ENV=production nuxt build",
     "build-testing": "cross-env NODE_ENV=testing nuxt build",
     "build-development": "cross-env NODE_ENV=development nuxt build",
