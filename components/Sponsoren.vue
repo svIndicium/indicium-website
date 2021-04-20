@@ -56,8 +56,8 @@ export default {
 @import '../assets/scss/variables.scss';
 
 .sponsoren {
-  background: #fff;
-  box-shadow: inset 0 -1px 0 0 #C6D1E0, inset 0 1px 0 0 #C6D1E0;
+  background: var(--secondary-background-color);
+  box-shadow: inset 0 -1px 0 0 var(--root-background-color), inset 0 1px 0 0 var(--root-background-color);
   padding: 8px 0 32px;
   overflow: hidden;
 

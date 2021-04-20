@@ -19,7 +19,7 @@
           "type": "text-center",
           "button": {
             "text": "Direct Inschrijven",
-            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform"
+            "url": "/aanmelden"
           }
         },
         {
@@ -290,7 +290,7 @@
           "description": "Leuk dat je HBO-ICT bij ons komt studeren! Op deze pagina zie je wat Indicium voor jou kan betekenen en waarom je lid moet worden. Ook staat er informatie over onze intro, die dit jaar anders is dan normaal! Ben je nu al overtuigd om lid te worden? Klik dan op de knop hieronder.",
           "button": {
             "text": "Lid worden",
-            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform"
+            "url": "/aanmelden"
           }
         },
         {
@@ -349,7 +349,7 @@
           "description": "Dus wil je lid worden van Indicium? Dat kan voor maar €15! Je zit nergens aan vast, niks moet, alles mag! Inschrijven doe je via onderstaande knop.",
           "button": {
             "text": "Lid worden",
-            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform"
+            "url": "/aanmelden"
           }
         },
         {

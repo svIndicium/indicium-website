@@ -1,8 +1,8 @@
 <template>
-  <a v-if="url.startsWith('http')" :href="url" class="text-link">
+  <a v-if="url.startsWith('http')" :href="url" :class="['text-link', inline ? 'inline' : '']">
     <slot></slot>
   </a>
-  <n-link v-else :to="url" class="text-link">
+  <n-link v-else :to="url" :class="['text-link', inline ? 'inline' : '']">
     <slot></slot>
   </n-link>
 </template>
@@ -14,6 +14,10 @@ export default {
     url: {
       type: String,
       required: true
+    },
+    inline: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -26,8 +30,8 @@ export default {
     font-weight: 500;
     font-size: 1.2rem;
     line-height: 140%;
-    letter-spacing: 1.5px ;
-    color: #72C9E0;
+    letter-spacing: 1.5px;
+    color: var(--indi-blue-1);
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -42,7 +46,8 @@ export default {
       height: 2px;
       width: 101%;
       border-radius: 1px;
-      background-color: #DBEFF4;
+      background-color: var(--indi-blue-1);
+;
       content: '';
       left: -1px;
       bottom: 0;
@@ -51,5 +56,9 @@ export default {
     &:hover {
       color: #97cfc7;
     }
+  }
+
+  .text-link.inline {
+    letter-spacing: normal;
   }
 </style>

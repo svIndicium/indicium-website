@@ -1,10 +1,13 @@
 /* eslint-disable */
-import axios from 'axios'
 import content from './content.json'
+
 console.log(JSON.stringify(content.pages, null, 2))
 
 export default {
   mode: 'universal',
+  env: {
+    NODE_ENV: process.env.NODE_ENV
+  },
   server: {
     port: 3000,
     host: '0.0.0.0'
@@ -24,43 +27,37 @@ export default {
       content: process.env.npm_package_description || ''
     }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicons/favicon.ico'
-    },
-    {
-      rel: 'apple-touch-icon',
-      type: 'image/x-icon',
-      href: '/favicons/apple-touch-icon.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicons/favicon-32x32.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon-16x16.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicons/favicon.ico'
-    },
-    {
-      rel: 'manifest',
-      href: '/favicons/site.webmanifest'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicons/favicon.ico'
+      },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/x-icon',
+        href: '/favicons/apple-touch-icon.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicons/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicons/favicon.ico'
+      },
+      {
+        rel: 'manifest',
+        href: '/favicons/site.webmanifest'
+      }
+    ]
   },
   loading: {
     color: '#72c9e0'
@@ -70,13 +67,30 @@ export default {
     '@/assets/scss/main.scss'
   ],
   plugins: [
-    { src: '~/plugins/full-calendar', ssr: false },
-    { src: '~/plugins/slick', ssr: false },
-    { src: '~/plugins/busje', ssr: false },
+    {
+      src: '~/plugins/full-calendar',
+      ssr: false
+    },
+    {
+      src: '~/plugins/slick',
+      ssr: false
+    },
+    {
+      src: '~/plugins/busje',
+      ssr: false
+    },
+    {
+      src: '~/plugins/axios',
+      ssr: false
+    },
+    {
+      src: '~/plugins/dateinput',
+      ssr: false,
+    },
   ],
   modules: [
     '@nuxtjs/google-analytics',
-    ['@nuxtjs/google-tag-manager', {id: 'GTM-TPDRMLG'}]
+    '@nuxtjs/gtm',
   ],
   generate: {
     // routes: () => {
@@ -120,5 +134,8 @@ export default {
   },
   googleAnalytics: {
     id: 'UA-147953098-1'
-  }
+  },
+  gtm: {
+    id: 'GTM-TPDRMLG'
+  },
 }

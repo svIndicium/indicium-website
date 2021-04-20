@@ -1,6 +1,6 @@
 sudo: required
 
-dist: trusty
+dist: xenial
 
 language: node_js
 
@@ -29,13 +29,17 @@ addons:
 cache:
   npm: true
 
+before_install:
+  - echo "//npm.pkg.github.com/:_authToken=$DOCKER_PASS" >> .npmrc
+
 install:
   - npm install
 
 script:
   - echo "Skipping tests"
+  - export MODE=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "live"; else echo "dev"; fi`
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "stable"; elif [ "$TRAVIS_BRANCH" == "dev" ]; then echo "latest"; else echo $TRAVIS_BRANCH | tr "/" -; fi`
-  - docker build -t docker.pkg.github.com/svindicium/indicium-website/website:$TAG .
+  - docker build --build-arg MODE -t docker.pkg.github.com/svindicium/indicium-website/website:$TAG .
 
 deploy:
   provider: script
