@@ -84,7 +84,7 @@
         </span>
         </div>
       </div>
-      <Button size="l" class="submit-buttom" @click.native="validateRegistration">
+      <Button size="l" class="submit-buttom" @click.native="saveRegistration">
         Meld je aan
       </Button>
     </div>
