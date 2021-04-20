@@ -1,6 +1,7 @@
 FROM node:lts-alpine
 
 ARG MODE=production
+ENV NODE_ENV=$MODE
 ENV APP_ROOT /home/appuser
 ENV HOST 0.0.0.0
 
