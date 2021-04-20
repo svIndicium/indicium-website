@@ -12,8 +12,6 @@ RUN adduser -D -s /bin/bash -h /home/appuser appuser
 WORKDIR ${APP_ROOT}
 COPY . ${APP_ROOT}
 
-RUN echo $MODE
-
 RUN npm install
 RUN npm rebuild node-sass
 RUN npm run build-$MODE

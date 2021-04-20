@@ -5,6 +5,9 @@ console.log(JSON.stringify(content.pages, null, 2))
 
 export default {
   mode: 'universal',
+  env: {
+    NODE_ENV: process.env.NODE_ENV
+  },
   server: {
     port: 3000,
     host: '0.0.0.0'
