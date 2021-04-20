@@ -49,9 +49,10 @@ jobs:
 
       - name: Build image
         run: |
-          export MODE=`if [ "${{ github.ref }}" == "master" ]; then echo "production"; else echo "development"; fi`
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          MODE=`if [ "$VERSION" == "master" ]; then echo "production"; else echo "testing"; fi`
 
-          docker build . --file Dockerfile --tag $IMAGE_NAME --build-arg MODE
+          docker build . --file Dockerfile --tag $IMAGE_NAME --build-arg MODE=$MODE
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
