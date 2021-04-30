@@ -1,20 +1,21 @@
 <template>
   <nav class="mobile-nav">
-    <div
-      class="mobile-container flex"
-      @click="$eventBus.$emit('nav-toggle', false)"
-    >
-      <div v-show="!isHome" class="logo">
+    <div class="mobile-container flex">
+      <div v-show="!isHome" class="logo" @click="setNavLevel(0)">
         <n-link to="/">
           <img :src="logoUrl" alt="Indicium Logo" />
         </n-link>
       </div>
 
-      <div v-show="isHome" class="logo">
+      <div v-show="isHome" class="logo" @click="setNavLevel(0)">
         <img :src="logoUrl" alt="Indicium Logo" />
       </div>
 
-      <div class="nav-toggle" @click="emitNavToggle">
+      <div
+        class="nav-toggle"
+        @click="NavToggle()"
+        v-bind:class="{ active: 0 > NavLevel }"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -25,130 +26,24 @@
           stroke-linecap="square"
           stroke-linejoin="arcs"
         >
-          <line x1="10" y1="5" x2="25" y2="5"></line>
-          <line x1="10" y1="10" x2="25" y2="10"></line>
-          <line x1="10" y1="15" x2="25" y2="15"></line>
+          <line class="A" x1="10" y1="5" x2="25" y2="5"></line>
+          <line class="B" x1="10" y1="10" x2="25" y2="10"></line>
+          <line class="C" x1="10" y1="15" x2="25" y2="15"></line>
         </svg>
       </div>
     </div>
 
-    <div class="mobile-menu flex">
-      <ul>
-        <li v-for="item in items" :key="item.title + item.url + item.childs">
-          <a
-            v-if="item.url.startsWith('http')"
-            :href="item.url"
-            target="_blank"
-            @click="hideNav"
-          >
-            {{ item.title }}
-          </a>
-
-          <n-link v-else :to="item.url" prefetch @click.native="hideNav">
-            {{ item.title }}
-          </n-link>
-
-          <span v-if="item.childs" prefetch class="drop-icon-desktop-header"
-            >▾</span
-          >
-          <label
-            v-if="item.childs"
-            title="Toggle Drop-down"
-            class="drop-icon-mobile"
-            >▸</label
-          >
-
-          <ul class="sub-menu">
-            <li
-              class="sub-menu-li"
-              v-for="child in item.childs"
-              :key="child.title + child.url + child.childs + child.childs_side"
-            >
-              <label
-                v-if="child.childs && child.childs_left"
-                title="Toggle Drop-down"
-                class="drop-icon"
-                >◂</label
-              >
-
-              <a
-                v-if="child.url.startsWith('http')"
-                :href="child.url"
-                target="_blank"
-                @click="hideNav"
-              >
-                {{ child.title }}
-              </a>
-
-              <n-link v-else :to="item.url" prefetch @click.native="hideNav">
-                {{ child.title }}
-              </n-link>
-
-              <label
-                v-if="child.childs && !child.childs_left"
-                title="Toggle Drop-down"
-                class="drop-icon"
-                >▸</label
-              >
-
-              <ul v-if="!child.childs_left" class="sub-sub-menu">
-                <li
-                  class="sub-sub-menu-li"
-                  v-for="grand_child in child.childs"
-                  :key="grand_child.title + grand_child.url"
-                >
-                  <a
-                    v-if="grand_child.url.startsWith('http')"
-                    :href="grand_child.url"
-                    target="_blank"
-                    @click="hideNav"
-                  >
-                    {{ grand_child.title }}
-                  </a>
-
-                  <n-link
-                    v-else
-                    :to="item.url"
-                    prefetch
-                    @click.native="hideNav"
-                  >
-                    {{ grand_child.title }}
-                  </n-link>
-                </li>
-              </ul>
-
-              <ul v-if="child.childs_left" class="sub-sub-menu-left">
-                <li
-                  class="sub-sub-menu-li"
-                  v-for="grand_child in child.childs"
-                  :key="grand_child.title + grand_child.url"
-                >
-                  <a
-                    v-if="grand_child.url.startsWith('http')"
-                    :href="grand_child.url"
-                    target="_blank"
-                    @click="hideNav"
-                  >
-                    {{ grand_child.title }}
-                  </a>
-
-                  <n-link
-                    v-else
-                    :to="item.url"
-                    prefetch
-                    @click.native="hideNav"
-                  >
-                    {{ grand_child.title }}
-                  </n-link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <div class="mobile-menu">
+      <div
+        class="mobile-menu-shadow"
+        v-bind:class="{ hidden: !NavLevel }"
+        @click="setNavLevel(0)"
+      />
+      <div class="menubar blue" @click="setNavLevel(1)" />
+      <div class="menubar bluegreen" @click="setNavLevel(2)" />
+      <div class="menubar green" />
     </div>
-
-    <div class="shadow" />
+    <!-- class="mobile-menu-shadow" -->
   </nav>
 </template>
 
@@ -162,6 +57,24 @@ export default {
     },
     isMobile() {
       return process.browser ? window.innerWidth < 700 : false;
+    },
+  },
+  methods: {
+    setNavLevel(value) {
+      console.log("NavLevel: " + value);
+      this.$NavLevel = value;
+      if (value == 0) {
+      } else if (value == 1) {
+      } else if (value == 2) {
+      } else if (value == 3) {
+      }
+    },
+    NavToggle() {
+      if (this.$NavLevel == 0) {
+        this.setNavLevel(1);
+      } else {
+        this.setNavLevel(0);
+      }
     },
   },
   mounted() {
@@ -244,15 +157,19 @@ export default {
     }
   }
 
-  .shadow {
+  .mobile-menu-shadow {
     display: flex;
-    position: absolute;
+    position: relative;
     z-index: 99;
-    background-color: cyan;
+    background-color: hsla(0, 0, 0, 0.9);
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+
+    &hidden {
+      // visibility: hidden;
+    }
   }
 
   .mobile-menu {
@@ -260,63 +177,22 @@ export default {
     opacity: 1;
     position: fixed;
     top: clamp(0px, 16vw, 68px);
-    left: 80vw;
+    left: 0;
     height: 100%;
-    width: 80vw;
-    border-left-width: 3vw;
-    border-left-style: solid;
-    border-left-color: red;
-    background: var(--root-background-color);
+    width: 100%;
+    background: red;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 100ms linear;
 
-    &.open {
+    &:focus-within,
+    &:focus {
       transform: translateX(-100%);
-    }
-
-    ul {
-      flex-direction: column;
-
-      li {
-        height: 40px;
-
-        .drop-icon-desktop-header {
-          display: none;
-        }
-
-        .drop-icon-mobile {
-          display: flex;
-        }
-      }
-
-      .sub-menu {
-        display: none;
-      }
-
-      li:hover,
-      li:focus-within {
-        .sub-menu {
-          display: none;
-
-          .sub-menu-li {
-            width: 100%;
-            height: auto;
-            .a {
-              text-decoration: none;
-              width: 100%;
-            }
-          }
-        }
-      }
     }
   }
 
-  // @media screen and (max-width: $bp-tablet-md) {
-  //   display: block;
-  // }
   @media screen and (min-width: $bp-tablet-md) {
     display: block;
     visibility: hidden;

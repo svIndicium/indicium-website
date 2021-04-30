@@ -1,6 +1,7 @@
 {
   "logoUrl": "/logo/indicium-logo-left.svg",
   "isNavShown": false,
+  "NavLevel": 0,
   "items": [
     {
       "title": "Partners",
