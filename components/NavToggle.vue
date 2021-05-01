@@ -11,9 +11,6 @@ export default {
       this.$eventBus.$emit("nav-toggle", true);
     },
   },
-  data: () => ({
-    logoUrl: "/logo/indicium-logo-left.svg",
-  }),
 };
 </script>
 

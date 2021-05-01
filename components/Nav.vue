@@ -28,12 +28,6 @@
           <span v-if="item.childs" prefetch class="drop-icon-desktop-header"
             >▾</span
           >
-          <label
-            v-if="item.childs"
-            title="Toggle Drop-down"
-            class="drop-icon-mobile"
-            >▸</label
-          >
 
           <ul class="sub-menu">
             <li
@@ -211,10 +205,6 @@ export default {
         color: var(--text-color);
         text-align: center;
         text-decoration: none;
-      }
-
-      .drop-icon-mobile {
-        display: none;
       }
     }
 

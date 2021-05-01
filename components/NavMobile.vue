@@ -13,30 +13,48 @@
 
       <div
         class="nav-toggle"
-        @click="NavToggle()"
-        v-bind:class="{ active: 0 > NavLevel }"
+        v-bind:class="{ rotated: navLevel }"
+        @click="setNavLevel(Number(!navLevel))"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="30"
-          viewBox="0 0 30 20"
+          viewBox="0 0 30 30"
           fill="none"
           stroke-width="2"
           stroke-linecap="square"
           stroke-linejoin="arcs"
         >
-          <line class="A" x1="10" y1="5" x2="25" y2="5"></line>
-          <line class="B" x1="10" y1="10" x2="25" y2="10"></line>
-          <line class="C" x1="10" y1="15" x2="25" y2="15"></line>
+          <line
+            v-bind:class="{ green: navLevel == 3 }"
+            x1="7.5"
+            y1="10"
+            x2="22.5"
+            y2="10"
+          ></line>
+          <line
+            v-bind:class="{ bluegreen: navLevel == 2 }"
+            x1="7.5"
+            y1="15"
+            x2="22.5"
+            y2="15"
+          ></line>
+          <line
+            v-bind:class="{ blue: navLevel == 1 }"
+            x1="7.5"
+            y1="20"
+            x2="22.5"
+            y2="20"
+          ></line>
         </svg>
       </div>
     </div>
 
-    <div class="mobile-menu">
+    <div class="mobile-menu" v-bind:class="{ visible: navLevel }">
       <div
         class="mobile-menu-shadow"
-        v-bind:class="{ hidden: !NavLevel }"
+        v-bind:class="{ hidden: !navLevel }"
         @click="setNavLevel(0)"
       />
       <div class="menubar blue" @click="setNavLevel(1)" />
@@ -62,18 +80,17 @@ export default {
   methods: {
     setNavLevel(value) {
       console.log("NavLevel: " + value);
+      this.$set(this, "navLevel", value);
       this.$NavLevel = value;
-      if (value == 0) {
-      } else if (value == 1) {
-      } else if (value == 2) {
-      } else if (value == 3) {
-      }
     },
+
     NavToggle() {
       if (this.$NavLevel == 0) {
         this.setNavLevel(1);
+        this.$set(this, "navLevel", 1);
       } else {
         this.setNavLevel(0);
+        this.$set(this, "navLevel", 0);
       }
     },
   },
@@ -98,17 +115,17 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
-:root {
-  --navbar-height: 16vw;
-  --navbar-max-height: 68px;
-}
+
+$navbar-height: 16vw;
+$navbar-max-height: 68px;
+$transition-time: 0.5s;
+
 .mobile-nav {
   padding-top: 68px;
 
   .mobile-container.flex {
     background-color: var(--root-background-color);
     z-index: 100;
-    background-color: green;
     display: flex;
     position: fixed;
     left: 0;
@@ -150,7 +167,28 @@ export default {
         max-width: 68px;
         height: 16vw;
         max-height: 68px;
+        transition: $transition-time ease-in-out;
+        line {
+          transition-property: stroke;
+          &.blue {
+            transition-delay: $transition-time;
+            stroke: var(--indi-blue-1);
+          }
+          &.bluegreen {
+            transition-delay: $transition-time;
+            stroke: var(--indi-blue-green-1);
+          }
+          &.green {
+            transition-delay: $transition-time;
+            stroke: var(--indi-green-1);
+          }
+        }
       }
+
+      &.rotated svg {
+        transform: rotate(90deg);
+      }
+
       // @media screen and (max-width: $bp-tablet-md) {
       // display: block;
       // }
@@ -166,14 +204,15 @@ export default {
     left: 0;
     height: 100%;
     width: 100%;
-
-    &hidden {
-      // visibility: hidden;
+    transition: $transition-time ease-in-out;
+    opacity: 1;
+    &.hidden {
+      opacity: 0;
     }
   }
 
   .mobile-menu {
-    // visibility: hidden;
+    visibility: hidden;
     opacity: 1;
     position: fixed;
     top: clamp(0px, 16vw, 68px);
@@ -186,7 +225,9 @@ export default {
     justify-content: center;
     align-items: center;
     transition: 100ms linear;
-
+    &.visible {
+      visibility: visible;
+    }
     &:focus-within,
     &:focus {
       transform: translateX(-100%);
