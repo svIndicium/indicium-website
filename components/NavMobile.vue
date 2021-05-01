@@ -27,21 +27,21 @@
           stroke-linejoin="arcs"
         >
           <line
-            v-bind:class="{ green: navLevel == 3 }"
+            v-bind:class="{ green: navLevel > 2 }"
             x1="7.5"
             y1="10"
             x2="22.5"
             y2="10"
           ></line>
           <line
-            v-bind:class="{ bluegreen: navLevel == 2 }"
+            v-bind:class="{ bluegreen: navLevel > 1 }"
             x1="7.5"
             y1="15"
             x2="22.5"
             y2="15"
           ></line>
           <line
-            v-bind:class="{ blue: navLevel == 1 }"
+            v-bind:class="{ blue: navLevel > 0 }"
             x1="7.5"
             y1="20"
             x2="22.5"
@@ -58,8 +58,6 @@
         @click="setNavLevel(0)"
       />
       <div class="menubar blue" @click="setNavLevel(1)" />
-      <div class="menubar bluegreen" @click="setNavLevel(2)" />
-      <div class="menubar green" />
     </div>
     <!-- class="mobile-menu-shadow" -->
   </nav>
@@ -195,22 +193,6 @@ $transition-time: 0.5s;
     }
   }
 
-  .mobile-menu-shadow {
-    display: flex;
-    position: relative;
-    z-index: 99;
-    background-color: hsla(0, 0, 0, 0.9);
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transition: $transition-time ease-in-out;
-    opacity: 1;
-    &.hidden {
-      opacity: 0;
-    }
-  }
-
   .mobile-menu {
     visibility: hidden;
     opacity: 1;
@@ -228,9 +210,21 @@ $transition-time: 0.5s;
     &.visible {
       visibility: visible;
     }
-    &:focus-within,
-    &:focus {
-      transform: translateX(-100%);
+
+    .mobile-menu-shadow {
+      display: flex;
+      position: relative;
+      z-index: -1;
+      background-color: hsla(0, 0, 0, 0.9);
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: $transition-time ease-in-out;
+      opacity: 1;
+      &.hidden {
+        opacity: 0;
+      }
     }
   }
 
