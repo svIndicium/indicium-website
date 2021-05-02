@@ -56,7 +56,12 @@
         class="menubar blue"
         v-bind:class="{ visible: navLevel > 0 }"
         @click="setNavLevel(1)"
-      />
+      >
+        <div
+          class="menu level-1"
+          v-bind:class="{ visible: navLevel > 0 }"
+        ></div>
+      </div>
       <div
         class="mobile-menu-shadow"
         v-bind:class="{ hidden: !navLevel }"
@@ -121,6 +126,7 @@ $navbar-height: 16vw;
 $navbar-max-height: 68px;
 $transition-time: 0.5s;
 $linespace: 10%;
+//$linespace: 7%;
 
 .mobile-nav {
   padding-top: 68px;
@@ -219,16 +225,63 @@ $linespace: 10%;
       display: block;
       position: relative;
       z-index: 0;
-      background-color: rgba(255, 0, 0, 0.644);
+      background-color: red;
       top: 0;
       left: 100%;
       height: 100%;
       width: 100%; // 100%
       transition: $transition-time ease-in-out;
       transition-delay: $transition-time;
+
+      &.blue {
+        background-color: var(--indi-blue-1);
+      }
+
+      &.bluegreen {
+        background-color: var(--indi-blue-green-1);
+      }
+
+      &.green {
+        background-color: var(--indi-green-1);
+      }
+
       &.visible {
         left: $linespace * 2;
         transition-delay: 0s;
+      }
+
+      .menu {
+        display: flexbox;
+        position: relative;
+        height: 100%;
+        left: 100%;
+        background-color: var(--root-background-color);
+        width: calc(100%-$linespace);
+        transition-delay: 0s;
+        transition: $transition-time ease-in-out;
+
+        ul {
+          display: flex;
+          margin: 0;
+          justify-content: space-between;
+          align-items: center;
+          overflow: auto;
+
+          a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          a:focus-within {
+            outline: none;
+            text-decoration: underline overline;
+          }
+        }
+
+        &.visible {
+          left: $linespace;
+          transition-delay: $transition-time;
+        }
       }
     }
 
@@ -246,6 +299,13 @@ $linespace: 10%;
         transition-delay: $transition-time;
         opacity: 0;
       }
+    }
+
+    @media screen and (min-width: $bp-tablet-md) {
+      display: block;
+      visibility: hidden;
+      width: 0;
+      height: 0;
     }
   }
 
