@@ -53,13 +53,16 @@
 
     <div class="mobile-menu" v-bind:class="{ visible: navLevel }">
       <div
+        class="menubar blue"
+        v-bind:class="{ visible: navLevel > 0 }"
+        @click="setNavLevel(1)"
+      />
+      <div
         class="mobile-menu-shadow"
         v-bind:class="{ hidden: !navLevel }"
         @click="setNavLevel(0)"
-      />
-      <div class="menubar blue" @click="setNavLevel(1)" />
+      ></div>
     </div>
-    <!-- class="mobile-menu-shadow" -->
   </nav>
 </template>
 
@@ -117,6 +120,7 @@ export default {
 $navbar-height: 16vw;
 $navbar-max-height: 68px;
 $transition-time: 0.5s;
+$linespace: 10%;
 
 .mobile-nav {
   padding-top: 68px;
@@ -158,6 +162,8 @@ $transition-time: 0.5s;
       margin-left: auto;
       width: auto;
       height: auto;
+      transition-delay: $transition-time;
+      transition-property: transform;
 
       svg {
         display: block;
@@ -183,7 +189,8 @@ $transition-time: 0.5s;
         }
       }
 
-      &.rotated svg {
+      &.rotated {
+        transition-delay: 0s;
         transform: rotate(90deg);
       }
 
@@ -195,25 +202,38 @@ $transition-time: 0.5s;
 
   .mobile-menu {
     visibility: hidden;
-    opacity: 1;
     position: fixed;
     top: clamp(0px, 16vw, 68px);
     left: 0;
     height: 100%;
     width: 100%;
-    background: red;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 100ms linear;
     &.visible {
       visibility: visible;
     }
 
-    .mobile-menu-shadow {
-      display: flex;
+    .menubar {
+      display: block;
       position: relative;
+      z-index: 0;
+      background-color: rgba(255, 0, 0, 0.644);
+      top: 0;
+      left: 100%;
+      height: 100%;
+      width: 100%; // 100%
+      transition: $transition-time ease-in-out;
+      transition-delay: $transition-time;
+      &.visible {
+        left: $linespace * 2;
+        transition-delay: 0s;
+      }
+    }
+
+    .mobile-menu-shadow {
+      position: absolute;
       z-index: -1;
       background-color: hsla(0, 0, 0, 0.9);
       top: 0;
@@ -223,6 +243,7 @@ $transition-time: 0.5s;
       transition: $transition-time ease-in-out;
       opacity: 1;
       &.hidden {
+        transition-delay: $transition-time;
         opacity: 0;
       }
     }
