@@ -55,12 +55,45 @@
       <div
         class="menubar blue"
         v-bind:class="{ visible: navLevel > 0 }"
-        @click="setNavLevel(1)"
+        @click.self="setNavLevel(1)"
       >
-        <div
-          class="menu level-1"
-          v-bind:class="{ visible: navLevel > 0 }"
-        ></div>
+        <div class="menu level-1" v-bind:class="{ visible: navLevel > 0 }">
+          <ul>
+            <li v-show="isMobile">
+              <n-link to="/" prefetch @click.native="setNavLevel(0)"
+                >Home</n-link
+              >
+            </li>
+            <li
+              v-for="item in items"
+              :key="item.title + item.url + item.childs"
+              @click="setNavLevel(0)"
+            >
+              <script>
+                console.log(items);
+              </script>
+              <a
+                v-if="item.url.startsWith('http')"
+                :href="item.url"
+                target="_blank"
+                @click="setNavLevel(0)"
+              >
+                {{ item.title }}
+              </a>
+
+              <n-link v-else :to="item.url" prefetch @click="setNavLevel(0)">
+                {{ item.title }}
+              </n-link>
+
+              <a
+                v-if="item.childs"
+                title="Toggle Drop-down"
+                class="sub-menu-toggle"
+                >▸</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
       <div
         class="mobile-menu-shadow"
@@ -85,18 +118,10 @@ export default {
   },
   methods: {
     setNavLevel(value) {
-      console.log("NavLevel: " + value);
-      this.$set(this, "navLevel", value);
-      this.$NavLevel = value;
-    },
-
-    NavToggle() {
-      if (this.$NavLevel == 0) {
-        this.setNavLevel(1);
-        this.$set(this, "navLevel", 1);
-      } else {
-        this.setNavLevel(0);
-        this.$set(this, "navLevel", 0);
+      if (value != this.$NavLevel) {
+        console.log("NavLevel: " + value);
+        this.$set(this, "navLevel", value);
+        this.$NavLevel = value;
       }
     },
   },
@@ -125,8 +150,7 @@ export default {
 $navbar-height: 16vw;
 $navbar-max-height: 68px;
 $transition-time: 0.5s;
-$linespace: 10%;
-//$linespace: 7%;
+$linespace: 7%;
 
 .mobile-nav {
   padding-top: 68px;
@@ -199,10 +223,6 @@ $linespace: 10%;
         transition-delay: 0s;
         transform: rotate(90deg);
       }
-
-      // @media screen and (max-width: $bp-tablet-md) {
-      // display: block;
-      // }
     }
   }
 
@@ -215,21 +235,19 @@ $linespace: 10%;
     width: 100%;
     z-index: 100;
     display: flex;
-    justify-content: center;
-    align-items: center;
+
     &.visible {
       visibility: visible;
     }
 
     .menubar {
-      display: block;
+      display: flex;
       position: relative;
       z-index: 0;
-      background-color: red;
       top: 0;
       left: 100%;
       height: 100%;
-      width: 100%; // 100%
+      width: 100%-$linespace; // 100%
       transition: $transition-time ease-in-out;
       transition-delay: $transition-time;
 
@@ -246,7 +264,7 @@ $linespace: 10%;
       }
 
       &.visible {
-        left: $linespace * 2;
+        left: $linespace;
         transition-delay: 0s;
       }
 
@@ -256,25 +274,31 @@ $linespace: 10%;
         height: 100%;
         left: 100%;
         background-color: var(--root-background-color);
-        width: calc(100%-$linespace);
+        width: 100%-$linespace;
         transition-delay: 0s;
         transition: $transition-time ease-in-out;
 
         ul {
-          display: flex;
           margin: 0;
-          justify-content: space-between;
-          align-items: center;
-          overflow: auto;
+          li {
+            a {
+              display: inline-block;
+              padding: 1em;
 
-          a:hover {
-            text-decoration: underline;
-            cursor: pointer;
+              &.sub-menu-toggle {
+                padding: auto;
+                float: right;
+              }
+            }
           }
+        }
 
-          a:focus-within {
-            outline: none;
-            text-decoration: underline overline;
+        &.level-1 {
+          ul {
+            li {
+              border-bottom: solid 1px var(--indi-blue-1);
+              //border-bottom: solid 10px red;
+            }
           }
         }
 
