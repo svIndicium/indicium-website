@@ -67,16 +67,13 @@
             <li
               v-for="item in items"
               :key="item.title + item.url + item.childs"
-              @click="setNavLevel(0)"
+              @click.self="setNavLevel(0)"
             >
-              <script>
-                console.log(items);
-              </script>
               <a
                 v-if="item.url.startsWith('http')"
                 :href="item.url"
                 target="_blank"
-                @click="setNavLevel(0)"
+                @click.self="setNavLevel(0)"
               >
                 {{ item.title }}
               </a>
@@ -85,12 +82,36 @@
                 {{ item.title }}
               </n-link>
 
-              <a
+              <label
                 v-if="item.childs"
                 title="Toggle Drop-down"
                 class="sub-menu-toggle"
-                >▸</a
+                @click="setCurrentLevel2(item.title)"
+                >‌‌ ‌‌ ‌‌ ▸‌‌ ‌‌ ‌‌‌‌ ‌‌‌‌
+              </label>
+              <div
+                class="menu level-2"
+                v-bind:class="{ visible: item.title == currentLevel2 }"
               >
+                <ul class="sub-menu">
+                  <li
+                    class="sub-menu-li"
+                    v-for="child in item.childs"
+                    :key="
+                      child.title + child.url + child.childs + child.childs_side
+                    "
+                  >
+                    <a
+                      v-if="child.url.startsWith('http')"
+                      :href="child.url"
+                      target="_blank"
+                      @click="hideNav"
+                    >
+                      {{ child.title }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
@@ -118,11 +139,30 @@ export default {
   },
   methods: {
     setNavLevel(value) {
-      if (value != this.$NavLevel) {
+      if (value != this.$navLevel) {
         console.log("NavLevel: " + value);
+        if (value < 3) {
+          this.$currentLevel3 = "-";
+        }
+        if (value < 2) {
+          this.$currentLevel2 = "-";
+        }
+
         this.$set(this, "navLevel", value);
-        this.$NavLevel = value;
+        this.$nNavLevel = value;
       }
+    },
+    setCurrentLevel2(name) {
+      console.log("currentLevel2: " + name);
+      this.$set(this, "currentLevel2", name);
+      this.$currentLevel2 = name;
+      setNavLevel(2);
+    },
+    setCurrentLevel3(name) {
+      console.log("currentLevel3: " + name);
+      this.$set(this, "currentLevel3", name);
+      this.$currentLevel3 = name;
+      setNavLevel(3);
     },
   },
   mounted() {
@@ -247,7 +287,7 @@ $linespace: 7%;
       top: 0;
       left: 100%;
       height: 100%;
-      width: 100%-$linespace; // 100%
+      width: 100%- ($linespace * 2); // 100%
       transition: $transition-time ease-in-out;
       transition-delay: $transition-time;
 
@@ -264,7 +304,7 @@ $linespace: 7%;
       }
 
       &.visible {
-        left: $linespace;
+        left: ($linespace * 2);
         transition-delay: 0s;
       }
 
@@ -284,10 +324,15 @@ $linespace: 7%;
             a {
               display: inline-block;
               padding: 1em;
+            }
 
-              &.sub-menu-toggle {
-                padding: auto;
-                float: right;
+            .sub-menu-toggle {
+              padding: 1em;
+              padding: auto;
+              float: right;
+
+              :focus {
+                background-color: red;
               }
             }
           }
@@ -297,8 +342,24 @@ $linespace: 7%;
           ul {
             li {
               border-bottom: solid 1px var(--indi-blue-1);
+
+              .sub-menu-toggle {
+                border-left: solid 1px var(--indi-blue-1);
+              }
               //border-bottom: solid 10px red;
             }
+          }
+        }
+
+        &.level-2 {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          background-color: red;
+
+          &.visible {
+            left: 0px;
+            transition-delay: $transition-time;
           }
         }
 

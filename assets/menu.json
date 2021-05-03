@@ -2,6 +2,8 @@
   "logoUrl": "/logo/indicium-logo-left.svg",
   "isNavShown": false,
   "navLevel": 0,
+  "currentLevel2": "-",
+  "currentLevel3": "-",
   "items": [
     {
       "title": "Partners",
