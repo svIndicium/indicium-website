@@ -143,9 +143,11 @@ export default {
         console.log("NavLevel: " + value);
         if (value < 3) {
           this.$currentLevel3 = "-";
+          this.$set(this, "currentLevel3", "-");
         }
         if (value < 2) {
           this.$currentLevel2 = "-";
+          this.$set(this, "currentLevel2", "-");
         }
 
         this.$set(this, "navLevel", value);
@@ -156,13 +158,13 @@ export default {
       console.log("currentLevel2: " + name);
       this.$set(this, "currentLevel2", name);
       this.$currentLevel2 = name;
-      setNavLevel(2);
+      this.setNavLevel(2);
     },
     setCurrentLevel3(name) {
       console.log("currentLevel3: " + name);
       this.$set(this, "currentLevel3", name);
       this.$currentLevel3 = name;
-      setNavLevel(3);
+      this.setNavLevel(3);
     },
   },
   mounted() {
