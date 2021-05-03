@@ -87,7 +87,7 @@
                 title="Toggle Drop-down"
                 class="sub-menu-toggle"
                 @click="setCurrentLevel2(item.title)"
-                >‌‌ ‌‌ ‌‌ ▸‌‌ ‌‌ ‌‌‌‌ ‌‌‌‌
+                >‌‌ ‌‌ ‌‌▸‌‌ ‌‌ ‌‌‌‌ ‌‌‌
               </label>
               <div
                 class="menu level-2"
@@ -192,7 +192,8 @@ export default {
 $navbar-height: 16vw;
 $navbar-max-height: 68px;
 $transition-time: 0.5s;
-$linespace: 7%;
+$linespace: 5%;
+$shadowspace: 10%;
 
 .mobile-nav {
   padding-top: 68px;
@@ -289,7 +290,7 @@ $linespace: 7%;
       top: 0;
       left: 100%;
       height: 100%;
-      width: 100%- ($linespace * 2); // 100%
+      width: 100%- ($shadowspace); // 100%
       transition: $transition-time ease-in-out;
       transition-delay: $transition-time;
 
@@ -306,7 +307,7 @@ $linespace: 7%;
       }
 
       &.visible {
-        left: ($linespace * 2);
+        left: ($shadowspace);
         transition-delay: 0s;
       }
 
@@ -332,10 +333,6 @@ $linespace: 7%;
               padding: 1em;
               padding: auto;
               float: right;
-
-              :focus {
-                background-color: red;
-              }
             }
           }
         }
