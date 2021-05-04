@@ -73,7 +73,7 @@
                 v-if="item.url.startsWith('http')"
                 :href="item.url"
                 target="_blank"
-                @click.self="setNavLevel(0)"
+                @click.native="setNavLevel(0)"
               >
                 {{ item.title }}
               </a>
@@ -89,28 +89,84 @@
                 @click="setCurrentLevel2(item.title)"
                 >‌‌ ‌‌ ‌‌▸‌‌ ‌‌ ‌‌‌‌ ‌‌‌
               </label>
+
               <div
-                class="menu level-2"
+                class="menubar bluegreen"
                 v-bind:class="{ visible: item.title == currentLevel2 }"
+                @click.self="setNavLevel(2)"
               >
-                <ul class="sub-menu">
-                  <li
-                    class="sub-menu-li"
-                    v-for="child in item.childs"
-                    :key="
-                      child.title + child.url + child.childs + child.childs_side
-                    "
-                  >
-                    <a
-                      v-if="child.url.startsWith('http')"
-                      :href="child.url"
-                      target="_blank"
-                      @click="hideNav"
+                <div
+                  class="menu level-2"
+                  v-bind:class="{ visible: item.title == currentLevel2 }"
+                >
+                  <ul class="sub-menu">
+                    <li
+                      class="sub-menu-li"
+                      v-for="child in item.childs"
+                      :key="
+                        child.title +
+                        child.url +
+                        child.childs +
+                        child.childs_side
+                      "
                     >
-                      {{ child.title }}
-                    </a>
-                  </li>
-                </ul>
+                      <a
+                        v-if="child.url.startsWith('http')"
+                        :href="child.url"
+                        target="_blank"
+                        @click.native="setNavLevel(0)"
+                      >
+                        {{ child.title }}
+                      </a>
+
+                      <n-link v-else :to="item.url">
+                        {{ child.title }}
+                      </n-link>
+
+                      <label
+                        v-if="child.childs"
+                        title="Toggle Drop-down"
+                        class="sub-menu-toggle"
+                        @click="setCurrentLevel3(child.title)"
+                        >‌‌ ‌‌ ‌‌▸‌‌ ‌‌ ‌‌‌‌ ‌‌‌
+                      </label>
+
+                      <div
+                        class="menubar green"
+                        v-bind:class="{ visible: child.title == currentLevel3 }"
+                        @click.self="setNavLevel(3)"
+                      >
+                        <div
+                          class="menu level-3"
+                          v-bind:class="{
+                            visible: child.title == currentLevel3,
+                          }"
+                        >
+                          <ul class="sub-sub-menu">
+                            <li
+                              class="sub-sub-menu-li"
+                              v-for="grand_child in child.childs"
+                              :key="grand_child.title + grand_child.url"
+                            >
+                              <a
+                                v-if="grand_child.url.startsWith('http')"
+                                :href="grand_child.url"
+                                target="_blank"
+                                @click.native="setNavLevel(0)"
+                              >
+                                {{ grand_child.title }}
+                              </a>
+
+                              <n-link v-else :to="item.url">
+                                {{ grand_child.title }}
+                              </n-link>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </li>
           </ul>
@@ -192,8 +248,8 @@ export default {
 $navbar-height: 16vw;
 $navbar-max-height: 68px;
 $transition-time: 0.5s;
-$linespace: 5%;
-$shadowspace: 10%;
+$linespace: 5vw;
+$shadowspace: 10vw;
 
 .mobile-nav {
   padding-top: 68px;
@@ -290,25 +346,40 @@ $shadowspace: 10%;
       top: 0;
       left: 100%;
       height: 100%;
-      width: 100%- ($shadowspace); // 100%
+      width: 100vw - $shadowspace; // 100%
       transition: $transition-time ease-in-out;
       transition-delay: $transition-time;
 
       &.blue {
         background-color: var(--indi-blue-1);
+
+        &.visible {
+          left: ($shadowspace);
+          transition-delay: 0s;
+        }
       }
 
       &.bluegreen {
         background-color: var(--indi-blue-green-1);
+        position: absolute;
+        top: 0;
+        width: 100vw - $shadowspace - $shadowspace;
+
+        &.visible {
+          left: 0;
+          transition-delay: 0s;
+        }
       }
 
       &.green {
         background-color: var(--indi-green-1);
-      }
-
-      &.visible {
-        left: ($shadowspace);
-        transition-delay: 0s;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        &.visible {
+          left: 0;
+          transition-delay: 0s;
+        }
       }
 
       .menu {
@@ -317,7 +388,6 @@ $shadowspace: 10%;
         height: 100%;
         left: 100%;
         background-color: var(--root-background-color);
-        width: 100%-$linespace;
         transition-delay: 0s;
         transition: $transition-time ease-in-out;
 
@@ -338,27 +408,40 @@ $shadowspace: 10%;
         }
 
         &.level-1 {
+          width: 100vw - $shadowspace - $linespace;
           ul {
             li {
               border-bottom: solid 1px var(--indi-blue-1);
-
               .sub-menu-toggle {
                 border-left: solid 1px var(--indi-blue-1);
               }
-              //border-bottom: solid 10px red;
             }
           }
         }
 
         &.level-2 {
           position: absolute;
-          top: 0;
-          width: 100%;
-          background-color: red;
+          width: 100vw - $shadowspace - $linespace * 2;
+          ul {
+            li {
+              border-bottom: solid 1px var(--indi-blue-green-1);
+              .sub-menu-toggle {
+                border-left: solid 1px var(--indi-blue-green-1);
+              }
+            }
+          }
+        }
 
-          &.visible {
-            left: 0px;
-            transition-delay: $transition-time;
+        &.level-3 {
+          position: absolute;
+          width: 100vw - $shadowspace - $linespace * 3;
+          ul {
+            li {
+              border-bottom: solid 1px var(--indi-green-1);
+              .sub-menu-toggle {
+                border-left: solid 1px var(--indi-green-1);
+              }
+            }
           }
         }
 
