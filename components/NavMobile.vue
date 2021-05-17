@@ -464,6 +464,13 @@ $shadowspace: 10vw;
           left: $linespace;
           transition-delay: $transition-time;
         }
+
+        @media screen and (min-width: $bp-tablet-md) {
+          display: block;
+          visibility: hidden;
+          width: 0;
+          height: 0;
+        }
       }
     }
 
