@@ -1,0 +1,43 @@
+{
+  "logoUrl": "/logo/indicium-logo-left.svg",
+  "isNavShown": false,
+  "navLevel": 0,
+  "currentLevel2": "-",
+  "currentLevel3": "-",
+  "items": [
+    {
+      "title": "Partners",
+      "url": "/partners"
+    },
+    {
+      "title": "Activiteiten",
+      "url": "/activiteiten"
+    },
+    {
+      "title": "Over ons",
+      "url": "/over-indicium",
+      "childs": [
+        {
+          "title": "Over Indicium",
+          "url": "/over-indicium"
+        },
+        {
+          "title": "Commissies",
+          "url": "/over-indicium"
+        }
+      ]
+    },
+    {
+      "title": "Vacatures",
+      "url": "/vacatures"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact"
+    },
+    {
+      "title": "Lid worden",
+      "url": "/aanmelden"
+    }
+  ]
+}

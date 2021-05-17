@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
 @import "variables";
 @import "typography";
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--text-color);
   overflow-x: hidden;
   max-width: 100vw;
@@ -11,8 +11,8 @@ body {
   background-color: var(--root-background-color);
 
   * {
-    transition:  background 300ms; 
-}
+    transition: background 300ms;
+  }
 
   @media screen and (max-width: $bp-tablet-md) {
     padding-top: 0;
