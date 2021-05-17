@@ -78,7 +78,12 @@
                 {{ item.title }}
               </a>
 
-              <n-link v-else :to="item.url" prefetch @click="setNavLevel(0)">
+              <n-link
+                v-else
+                :to="item.url"
+                prefetch
+                @click.native="setNavLevel(0)"
+              >
                 {{ item.title }}
               </n-link>
 
@@ -119,7 +124,12 @@
                         {{ child.title }}
                       </a>
 
-                      <n-link v-else :to="item.url">
+                      <n-link
+                        v-else
+                        :to="item.url"
+                        prefetch
+                        @click.native="setNavLevel(0)"
+                      >
                         {{ child.title }}
                       </n-link>
 
@@ -157,7 +167,12 @@
                                 {{ grand_child.title }}
                               </a>
 
-                              <n-link v-else :to="item.url">
+                              <n-link
+                                v-else
+                                :to="item.url"
+                                prefetch
+                                @click.native="setNavLevel(0)"
+                              >
                                 {{ grand_child.title }}
                               </n-link>
                             </li>
@@ -247,7 +262,7 @@ export default {
 
 $navbar-height: 16vw;
 $navbar-max-height: 68px;
-$transition-time: 0.5s;
+$transition-time: 0.2s;
 $linespace: 5vw;
 $shadowspace: 10vw;
 

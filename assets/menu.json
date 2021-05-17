@@ -23,21 +23,7 @@
         },
         {
           "title": "Commissies",
-          "url": "/over-indicium",
-          "childs": [
-            {
-              "title": "Games!",
-              "url": "/over-indicium"
-            },
-            {
-              "title": "CommissieSS (css)",
-              "url": "/over-indicium"
-            },
-            {
-              "title": "Ka$co",
-              "url": "/over-indicium"
-            }
-          ]
+          "url": "/over-indicium"
         }
       ]
     },
@@ -48,56 +34,6 @@
     {
       "title": "Contact",
       "url": "/contact"
-    },
-    {
-      "title": "Info voor eerstejaars",
-      "url": "/info-voor-eerstejaars",
-      "childs": [
-        {
-          "title": "Hoe moet je drinken",
-          "url": "/over-indicium"
-        },
-        {
-          "title": "Feut 101",
-          "url": "/over-indicium"
-        },
-        {
-          "title": "php haat voor beginners",
-          "url": "/over-indicium"
-        },
-        {
-          "title": "Hotel?",
-          "url": "/over-indicium",
-          "childs_left": true,
-          "childs": [
-            {
-              "title": "Trivago!",
-              "url": "/over-indicium"
-            },
-            {
-              "title": "boek nu!",
-              "url": "/over-indicium"
-            }
-          ]
-        },
-        {
-          "title": "Welke koffie moet ik halen?",
-          "url": "/over-indicium"
-        },
-        {
-          "title": "Ned's Survivel gids voor studenten",
-          "url": "/over-indicium"
-        },
-        {
-          "title": "De legende van een open Hideout",
-          "url": "/over-indicium"
-        },
-        {
-          "title":
-            "Waarom zeggen mensen soms 'techlab' als ze het TIlab bedoelen?",
-          "url": "/over-indicium"
-        }
-      ]
     },
     {
       "title": "Lid worden",
