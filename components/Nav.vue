@@ -94,6 +94,10 @@
           url: '/contact'
         },
         {
+          title: 'Bestuur worden',
+          url: '/bestuur-worden'
+        },
+        {
           title: 'Lid worden',
           url: 'https://docs.google.com/forms/d/e/1FAIpQLSeYE3T-IdYrxb1FB2wKGtltf5D16aLzsDdaW3g1IZAj5Lxj3Q/viewform'
         }

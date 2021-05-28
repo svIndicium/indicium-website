@@ -99,8 +99,12 @@
           "type": "text-left"
         },
         {
-          "description": "Wat we momenteel zoeken is een algemeen commissaris. Als algemeen commissaris zal je minstens 1 commissie op je nemen en zal je algemene portefuilles, denk hierbij aan social media, partners of promotie, op kunnen pakken. Dit ligt vooral aan waar je goed in bent en waar je voorkeur zelf ligt.",
-          "type": "text-left"
+          "description": "Er is wel een andere optie: de minor Leiderschap. Deze minor is gemaakt voor studentbestuurders die graag een jaar bestuur willen doen en daarvoor hun studie (deels) aan de kant willen zetten. Deze minor duurt een jaar en levert je net als de meeste minors 30 EC (studiepunten) op. Als je verder geen studievertraging oploopt, kun je dus in 4,5 jaar je diploma halen in plaats van 4 jaar. De minor Leiderschap kun je ook een hoop van leren naast je bestuursjaar.",
+          "type": "text-left",
+          "button": {
+            "text": "Lees meer over de minor leiderschap",
+            "url": "http://minorleiderschap.nl/"
+          }
         },
         {
           "title": "Wat heb je eraan?",
@@ -112,7 +116,7 @@
           "type": "text-left"
         },
         {
-          "description": "Je leert een hoop!\nJe leert echt een hoop van een bestuursjaar! Een jaar lang samenwerken met dezelfde mensen zorgt ervoor dat je goed leert samenwerken. In dat jaar heb je ook veel contact met mensen buiten je bestuur en vereniging, waardoor je communicatieve vaardigheden een boost krijgen. En je bent een van de laatste personen die de kwaliteit van de vereniging kan waarborgen, waardoor je een sterk verantwoordelijkheidsgevoel opbouwt.",
+          "description": "Je leert een hoop!\nJe leert echt een hoop van een bestuursjaar! Een jaar lang samenwerken met dezelfde mensen zorgt ervoor dat je goed leert samenwerken. In dat jaar heb je ook veel contact met mensen buiten je bestuur en vereniging, waardoor je communicatieve vaardigheden een boost krijgen. En je bent een van de laatste personen die de kwaliteit van de vereniging kan waarborgen, waardoor je een sterk verantwoordelijkheidsgevoel opbouwt. \nVerder zijn er natuurlijk nog vaardigheden die per bestuursrol uniek zijn. Als penningmeester zul je bijvoorbeeld leren financiële verantwoordelijkheid te dragen voor een organisatie groter dan jijzelf. Als secretaris zullen je administratieve vaardigheden sterk verbeteren. En als voorzitter leer je een bepaalde vorm van leiderschap waar je de rest van je leven een hoop aan zult hebben. \n",
           "type": "text-left"
         },
         {
@@ -125,12 +129,17 @@
           "type": "text-left"
         },
         {
+          "title": "Een half bestuursjaar is niet mogelijk",
+          "description": "Een half bestuursjaar doen is eigenlijk niet mogelijk. De redenen hiervoor zijn natuurlijk duidelijk: je taken moeten halverwege het collegejaar worden overgedragen, de rest van het bestuur moet deze taken ineens overnemen of iemand inwerken die ze overneemt terwijl ze ook nog de vereniging draaiende moeten houden en het is natuurlijk helemaal niet leuk voor de overige bestuurders als een medebestuurder hun verlaat. Daarnaast kun je als bestuurder in een half jaar niet tot volle kracht stijgen, een bestuurder die een jaar lang blijft bestuur doet kan veel meer voor de vereniging betekenen. ",
+          "type": "text-left"
+        },
+        {
           "title": "Bestuurder worden?",
           "description": "Klik dan op de link hieronder en vul het formulier in, dan neemt iemand van het huidige bestuur contact met je op. Je moet inloggen met je Google-account. ",
           "type": "text-left",
           "button": {
             "text": "Solliciteer",
-            "url": "https://forms.gle/Ux6unqJbCL4RbuXV8"
+            "url": "https://forms.gle/H8FsEqmu8FgCaDwRA"
           }
         },
         {
